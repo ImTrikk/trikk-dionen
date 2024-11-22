@@ -9,3 +9,23 @@
  font-family: "Roboto", monospace;
  color: white;
 }
+
+@layer utilities {
+ .img-hero-wrapper {
+  @apply relative bg-gradient-to-b to-slate-800 rounded-full overflow-hidden;
+ }
+
+ .img-hero-wrapper::before {
+  background: conic-gradient(
+   rgba(255, 255, 255, 0.8) 0deg,
+   rgba(255, 255, 255, 0.3) 60deg,
+   transparent 190deg
+  );
+
+  @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
+ }
+
+ .img-hero {
+  @apply relative h-[calc(100%-0.1px)] w-[calc(100%-0.1px)] top-[0.25px] left-[0.25px];
+ }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { main } from "framer-motion/client";
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function About() {
@@ -26,9 +26,29 @@ export default function About() {
      </div>
     </div>
     <div className="mt-5 flex items-end justify-end">
-     <button className="h-10 rounded-xl border border-white px-4">
+     <motion.button 
+      className="h-10 text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2"
+      whileHover={{ scale: 1.05 }}
+     >
       see more
-     </button>
+      <motion.svg
+       xmlns="http://www.w3.org/2000/svg"
+       fill="none"
+       viewBox="0 0 24 24"
+       strokeWidth="1.5"
+       stroke="currentColor"
+       className="size-4 pointer-events-auto"
+       initial={{ rotate: 0 }}
+       whileHover={{ rotate: 45 }}
+       transition={{ duration: 0.3 }}
+      >
+       <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+       />
+      </motion.svg>
+     </motion.button>
     </div>
    </div>
   </main>
