@@ -4,8 +4,8 @@ const links = ["HOME", "ABOUT", "SKILLS", "RECENT PROJECTS", "STACKS"];
 
 export default function Navbar() {
  return (
-  <main>
-   <div className="h-14  w-full border border-white rounded-3xl flex items-center justify-between px-4">
+  <nav className="sticky top-5 w-full bg-black/50 backdrop-blur-md z-50 px-5 sm:px-10">
+   <div className="max-w-4xl mx-auto h-14 w-full border border-white rounded-3xl flex items-center justify-between px-4">
     <h1 className="text-sm font-semibold">TRKKU.</h1>
     <div className="flex items-center gap-3 ">
      {links.map((data, id) => (
@@ -18,6 +18,6 @@ export default function Navbar() {
      </button>
     </div>
    </div>
-  </main>
+  </nav>
  );
 }

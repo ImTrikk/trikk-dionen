@@ -17,7 +17,7 @@ const tags = [
 export default function Hero() {
  return (
   <main className="h-screen w-full flex items-center justify-between gap-10">
-   <div className="flex w-[700px] flex-col gap-2 items-end">
+   <div className="flex w-[800px] flex-col gap-2 items-end">
     <motion.div
      initial={{ opacity: 0, y: 100 }}
      animate={{
@@ -40,7 +40,7 @@ export default function Hero() {
        }}
        transition={{ duration: 0.5 }}
        key={id}
-       className="h-10 border border-white rounded-full px-3 py-1 flex items-center justify-center text-xs font-semibold"
+       className="h-8 border border-white rounded-full px-5 py-1 flex items-center justify-center text-sm font-semibold"
       >
        {data}
       </motion.div>
