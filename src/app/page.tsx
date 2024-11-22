@@ -5,6 +5,7 @@ import Connect from "./components/sections/Connect";
 import Hero from "./components/sections/Hero";
 import OtherSkills from "./components/sections/OtherSkills";
 import Projects from "./components/sections/Projects";
+import Stack from "./components/sections/Stack";
 
 export default function Home() {
  return (
@@ -15,6 +16,7 @@ export default function Home() {
     <Hero />
     <About />
     {/* <Projects /> */}
+    <Stack/>
     <OtherSkills />
     <Connect />
     <Footer />
