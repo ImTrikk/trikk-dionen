@@ -5,9 +5,9 @@ import React from "react";
 
 export default function About() {
  return (
-  <main className="h-screen w-full flex items-center justify-between gap-10">
+  <section className="h-screen w-full flex items-center justify-between gap-10">
    <div>
-    <h1 className="text-5xl font-bold">About Me.</h1>
+    <h1 className="text-5xl font-bold">ABOUT ME.</h1>
     <div className="w-full mt-5 border border-white p-10 rounded-xl">
      <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
      <h1 className="text-4xl font-bold">PATRICK JAMES DIONEN</h1>
@@ -26,7 +26,7 @@ export default function About() {
      </div>
     </div>
     <div className="mt-5 flex items-end justify-end">
-     <motion.button 
+     <motion.button
       className="h-10 text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2"
       whileHover={{ scale: 1.05 }}
      >
@@ -51,6 +51,6 @@ export default function About() {
      </motion.button>
     </div>
    </div>
-  </main>
+  </section>
  );
 }

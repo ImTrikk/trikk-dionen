@@ -1,6 +1,9 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./components/sections/About";
+import Connect from "./components/sections/Connect";
 import Hero from "./components/sections/Hero";
+import OtherSkills from "./components/sections/OtherSkills";
 import Projects from "./components/sections/Projects";
 
 export default function Home() {
@@ -11,7 +14,10 @@ export default function Home() {
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     <Hero />
     <About />
-    <Projects/>
+    {/* <Projects /> */}
+    <OtherSkills />
+    <Connect />
+    <Footer />
    </div>
   </main>
  );
