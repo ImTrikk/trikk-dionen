@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import HeroTrikk from "@/assets/HeroTrikk.svg";
+import HeroTrikk from "@/assets/HeroTrikk_2.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -27,8 +27,12 @@ export default function Hero() {
      transition={{ duration: 0.5 }}
      className="flex flex-col items-end justify-end"
     >
-     <h1 className="text-6xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Hooked on Tech</h1>
-     <h1 className="text-6xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Build with Trikk</h1>
+     <h1 className="text-6xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+      Hooked on Tech
+     </h1>
+     <h1 className="text-6xl font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+      Build with Trikk
+     </h1>
     </motion.div>
     <div className="flex flex-wrap gap-2 items-end justify-end">
      {tags.map((data, id) => (
