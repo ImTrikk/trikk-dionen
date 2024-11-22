@@ -9,6 +9,32 @@ export default function About() {
    <div>
     <h1 className="text-5xl font-bold">ABOUT ME.</h1>
     <div className="w-full mt-5 border border-white p-10 rounded-xl">
+     <div className="grid grid-cols-4 gap-3 my-3">
+      <motion.div
+       initial={{ rotate: 0 }}
+       whileHover={{ rotateY:  180, scale: 1.1 }}
+       transition={{ duration: 0.3 }}
+       className="h-[200px] w-full border border-white rounded-xl"
+      ></motion.div>
+      <motion.div
+       initial={{ rotate: 0 }}
+       whileHover={{ rotateY:  180, scale: 1.1 }}
+       transition={{ duration: 0.3 }}
+       className="h-[200px] w-full border border-white rounded-xl"
+      ></motion.div>
+      <motion.div
+       initial={{ rotate: 0 }}
+       whileHover={{ rotateY:  180, scale: 1.1 }}
+       transition={{ duration: 0.3 }}
+       className="h-[200px] w-full border border-white rounded-xl"
+      ></motion.div>
+      <motion.div
+       initial={{ rotate: 0 }}
+       whileHover={{ rotateY:  180, scale: 1.1 }}
+       transition={{ duration: 0.3 }}
+       className="h-[200px] w-full border border-white rounded-xl"
+      ></motion.div>
+     </div>
      <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
      <h1 className="text-4xl font-bold">PATRICK JAMES DIONEN</h1>
      <div className="mt-5">
