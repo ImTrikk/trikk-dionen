@@ -7,7 +7,7 @@ import { projectData, type Project } from "@/assets/projectData";
 
 export default function Projects() {
  return (
-  <main className="h-screen w-full">
+  <main className="h-full w-full">
    <h1 className="text-5xl font-bold mb-10">PROJECTS.</h1>
    <div className="grid grid-cols-4 gap-4 auto-rows-[250px]">
     {projectData.map((project) => (

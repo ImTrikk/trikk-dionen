@@ -13,7 +13,7 @@
 
 @layer utilities {
  .img-hero-wrapper {
-  @apply relative bg-gradient-to-b to-slate-800 rounded-full overflow-hidden;
+  @apply relative bg-gradient-to-b to-slate-800 rounded-full overflow-hidden p-1;
  }
 
  .img-hero-wrapper::before {
@@ -35,7 +35,7 @@
  }
 
  .about-wrapper {
-  @apply relative  overflow-hidden;
+  @apply relative  overflow-hidden p-[2px];
  }
 
  .about-wrapper::before {
