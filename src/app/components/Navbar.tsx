@@ -1,10 +1,18 @@
+"use client"
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const links = ["HOME", "ABOUT", "SKILLS", "RECENT PROJECTS", "STACKS"];
 
 export default function Navbar() {
  return (
-  <nav className="sticky top-5 z-50 sm:px-10">
+  <motion.nav
+   initial={{ opacity: 0, y: 600 }}
+   animate={{ opacity: 1, y: 0 }}
+   transition={{ duration: 0.7 }}
+   className="sticky top-5 z-50 sm:px-10"
+  >
    <div className="max-w-4xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
     <h1 className="text-sm font-semibold">TRKKU.</h1>
     <div className="flex items-center gap-3 ">
@@ -18,6 +26,6 @@ export default function Navbar() {
      </button>
     </div>
    </div>
-  </nav>
+  </motion.nav>
  );
 }

@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+ font-family: "IntegralCF Heavy";
+ src: url("/fonts/integral-cf-heavy.otf") format("opentype");
+ font-weight: normal;
+ font-style: normal;
+}
+
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
  font-family: "Roboto", monospace;
  color: white;
- scroll-behavior: smooth
+ scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -24,10 +31,9 @@
   );
 
   @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) 
-         drop-shadow(0 0 30px rgba(255, 255, 255, 0.6)) 
-         drop-shadow(0 0 45px rgba(255, 255, 255, 0.4))
-         blur(2px);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))
+   drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+   drop-shadow(0 0 45px rgba(255, 255, 255, 0.4)) blur(2px);
  }
 
  .img-hero {
@@ -46,10 +52,9 @@
   );
 
   @apply absolute h-[150%] w-[150%] left-[-25%] top-[-25%] content-[''] animate-border-spin;
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8)) 
-         drop-shadow(0 0 30px rgba(255, 255, 255, 0.6)) 
-         drop-shadow(0 0 45px rgba(255, 255, 255, 0.4))
-         blur(2px);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8))
+   drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+   drop-shadow(0 0 45px rgba(255, 255, 255, 0.4)) blur(2px);
  }
 
  .about {

@@ -8,6 +8,9 @@ export default {
  ],
  theme: {
   extend: {
+   fontFamily: {
+    integral: ["IntegralCF Heavy", "sans-serif"],
+   },
    keyframes: {
     "border-spin": {
      "100%": {
