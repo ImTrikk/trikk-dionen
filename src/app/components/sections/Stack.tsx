@@ -5,12 +5,13 @@ import stacks from "@/assets/stacks.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { GithubGraph } from "@/app/components/github/Contributions";
 
 export default function Stack() {
  return (
   <section
    id="stack"
-   className="h-screen w-full flex flex-col justify-between mt-32"
+   className="h-auto w-full flex flex-col justify-between mt-32 py-32"
   >
    <div>
     <h1 className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
@@ -65,6 +66,7 @@ export default function Stack() {
      </motion.div>
     </div>
    </div>
+   <GithubGraph />
   </section>
  );
 }

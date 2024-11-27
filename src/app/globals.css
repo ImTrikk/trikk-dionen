@@ -18,6 +18,34 @@
  scroll-behavior: smooth;
 }
 
+/* Style for the scrollbar */
+::-webkit-scrollbar {
+ width: 5px;
+ height: 5px;
+ scroll-behavior: smooth;
+ transition: 0.3s ease-in-out;
+ background-color: transparent; /* Ensure scrollbar background is transparent */
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+ background-color: transparent; /* Remove the white background */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+ background-color: #39ff14; /* Neon Green color */
+ border-radius: 10px;
+ transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+ box-shadow: 0 0 8px #39ff14; /* Neon glowing effect */
+}
+
+/* Scrollbar on hover for thumb */
+::-webkit-scrollbar-thumb:hover {
+ background-color: #00ff00; /* Brighter Neon Green when hovered */
+ box-shadow: 0 0 16px #00ff00; /* Brighter glowing effect when hovered */
+}
+
 @layer utilities {
  .img-hero-wrapper {
   @apply relative bg-gradient-to-b to-slate-800 rounded-full overflow-hidden p-1;

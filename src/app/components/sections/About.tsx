@@ -32,10 +32,10 @@ export default function About() {
        <div className="grid grid-cols-3 gap-3 w-full">
         <CardItem
          translateZ="90"
-         className="col-span-2 w-full h-[24 0px] relative border border-white rounded-xl overflow-hidden"
+         className="col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
         >
          <Image
-         src={trik1}
+          src={trik1}
           alt="trik1"
           fill
           className="object-cover group-hover/card:shadow-xl"
@@ -43,7 +43,7 @@ export default function About() {
         </CardItem>
 
         <CardItem translateZ="200">
-         <div className="w-full h-[24 0px] relative border border-white rounded-xl overflow-hidden">
+         <div className="w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
           <Image
            src={trik2}
            alt="trik2"
