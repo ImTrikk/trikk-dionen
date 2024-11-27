@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 /**
  * Types for our data
@@ -147,6 +148,8 @@ export const GithubGraph = () => {
      </h1>
      <p className="mt-2 text-lg font-bold">Commited to changes</p>
     </div>
+
+    {/* motion div */}
     <div id="contributions" className="flex flex-wrap gap-1">
      {Array.from({ length: 35 }).map((_, i) => (
       <div
@@ -155,15 +158,24 @@ export const GithubGraph = () => {
        className={`flex flex-col gap-1 ${i < 20 ? "hidden md:flex" : "flex"}`}
       >
        {Array.from({ length: 7 }).map((_, j) => (
-        <div
+        <motion.div
          key={j}
          id={`week-${i}-day-${j}`}
-         className="h-2 w-2 lg:h-4 lg:w-4 rounded-[4px]" // No border-radius
+         className="h-2 w-2 lg:h-4 lg:w-4 rounded-[4px]" 
+         initial={{ opacity: 0 }} 
+         whileInView={{
+          opacity: 1,
+          transition: {
+           delay: (i * 7 + j) * 0.02, 
+           duration: 0.5, 
+          },
+         }} 
         />
        ))}
       </div>
      ))}
     </div>
+
     <p className="my-2 text-red-500 hidden" id="contribution-error">
      Ooops, error fetching from GitHub.
     </p>
