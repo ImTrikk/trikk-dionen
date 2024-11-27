@@ -101,7 +101,7 @@ export default function Projects() {
          </div>
         </motion.div>
 
-        {/* Image Section */}
+        {/* Rendering Title for All Projects */}
         <motion.div
          initial={{ opacity: 0, x: 100 }}
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
@@ -112,7 +112,8 @@ export default function Projects() {
           alt="project_picture"
           className="w-full h-auto rounded-lg"
          />
-         <h1 className="text-white text-lg font-medium">{data.title}</h1>
+         <h1 className="text-white text-lg font-medium">{data.title}</h1>{" "}
+         {/* Title displayed here */}
         </motion.div>
        </>
       )}

@@ -46,7 +46,9 @@ export default function Navbar() {
    className="sticky top-5 z-50 sm:px-10"
   >
    <div className="max-w-4xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
-    <h1 className="text-sm font-semibold">TRKKU.</h1>
+    <h1 className="glitch" data-text="⚡ TRKKU.">
+     ⚡ TRKKU.
+    </h1>
     <div className="flex items-center gap-3 ">
      {links.map((data, id) => (
       <ul
