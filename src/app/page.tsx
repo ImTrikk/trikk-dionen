@@ -15,7 +15,11 @@ export default function Home() {
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     <Hero />
     <About />
+   </div>
+   <div className="overflow-hidden">
     <Projects />
+   </div>
+   <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     <Stack />
     <OtherSkills />
     <Connect />

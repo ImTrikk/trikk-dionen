@@ -65,7 +65,7 @@ export default function About() {
          <CardItem translateZ="50">
           <div className="text-xs font-bold text-violet-700">trkku</div>
          </CardItem>
-         <CardItem translateZ="50">
+         <CardItem translateZ="300">
           <span className="text-xs text-yellow-500">[</span>
          </CardItem>
 
