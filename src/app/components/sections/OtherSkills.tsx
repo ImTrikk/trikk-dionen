@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function OtherSkills() {
  return (
-  <section className="h-screen">
+  <section id="skills" className="h-screen">
    <motion.h1
     initial={{ opacity: 0, x: 100 }}
     whileInView={{

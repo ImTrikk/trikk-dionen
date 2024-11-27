@@ -8,7 +8,10 @@ import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 export default function Stack() {
  return (
-  <section className="h-screen w-full flex flex-col justify-between mt-32">
+  <section
+   id="stack"
+   className="h-screen w-full flex flex-col justify-between mt-32"
+  >
    <div>
     <h1 className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
      TECH STACK

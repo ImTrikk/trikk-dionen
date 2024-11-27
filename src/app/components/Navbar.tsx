@@ -1,11 +1,43 @@
-"use client"
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 
-const links = ["HOME", "ABOUT", "SKILLS", "RECENT PROJECTS", "STACKS"];
+const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS", "SKILLS"];
 
 export default function Navbar() {
+ const handleNav = (data: string) => {
+  switch (data) {
+   case "HOME":
+    window.scroll(0, 0);
+    window.location.hash = "home";
+    break;
+   case "ABOUT":
+    window.scroll(0, 0);
+    window.location.hash = "about";
+    break;
+   case "SKILLS":
+    window.scroll(0, 0);
+    window.location.hash = "skills";
+    break;
+   case "RECENT PROJECTS":
+    window.scroll(0, 0);
+    window.location.hash = "projects";
+    break;
+   case "STACKS":
+    window.scroll(0, 0);
+    window.location.hash = "stack";
+    break;
+   default:
+    window.scroll(0, 0);
+    break;
+  }
+ };
+
+ const handleContact = () => {
+  window.location.hash = "contact";
+ };
+
  return (
   <motion.nav
    initial={{ opacity: 0, y: 600 }}
@@ -17,11 +49,18 @@ export default function Navbar() {
     <h1 className="text-sm font-semibold">TRKKU.</h1>
     <div className="flex items-center gap-3 ">
      {links.map((data, id) => (
-      <ul key={id} className="text-xs">
+      <ul
+       onClick={() => handleNav(data)}
+       key={id}
+       className="text-xs cursor-pointer"
+      >
        <li>{data}</li>
       </ul>
      ))}
-     <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold">
+     <button
+      onClick={handleContact}
+      className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold"
+     >
       CONTACT
      </button>
     </div>

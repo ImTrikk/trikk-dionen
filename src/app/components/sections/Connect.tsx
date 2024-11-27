@@ -4,7 +4,10 @@ import React from "react";
 
 export default function Connect() {
  return (
-  <section className="h-screen mt-44 w-full flex items-start justify-between gap-10">
+  <section
+   id="contact"
+   className="h-screen mt-44 w-full flex items-start justify-between gap-10"
+  >
    <div className="flex flex-col gap-2">
     <h1 className="text-4xl font-bold">LET'S CONNECT</h1>
     <p className="text-xs font-light">

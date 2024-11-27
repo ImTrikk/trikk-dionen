@@ -18,7 +18,7 @@ const tags = [
 
 export default function Hero() {
  return (
-  <main className="relative w-full">
+  <main id="hero" className="relative w-full">
    <Vortex
     backgroundColor="black"
     rangeY={200}
