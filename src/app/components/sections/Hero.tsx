@@ -67,7 +67,7 @@ export default function Hero() {
        initial={{ opacity: 0, y: 100 }}
        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
        key={id}
-       className="h-8 border border-white rounded-full px-5 py-1 flex items-center justify-center text-sm font-semibold"
+       className="h-8 border border-white rounded-full px-5 py-1 flex items-center justify-center text-sm font-semibold hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500"
       >
        {data}
       </motion.div>

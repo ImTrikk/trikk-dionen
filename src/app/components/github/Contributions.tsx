@@ -143,15 +143,28 @@ export const GithubGraph = () => {
   <section className="px-4 py-8">
    <div className="flex flex-col items-center justify-center">
     <div className="my-6 flex flex-col text-center">
-     <h1 className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral">
+     <motion.h1
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+      className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral"
+     >
       One Feature A Day
-     </h1>
-     <p className="mt-2 text-lg font-bold">Commited to changes</p>
+     </motion.h1>
+     <motion.p
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+      className="mt-2 text-lg font-bold"
+     >
+      Commited to changes
+     </motion.p>
     </div>
 
     {/* motion div */}
-    <div id="contributions" className="flex flex-wrap gap-1">
-     {Array.from({ length: 35 }).map((_, i) => (
+    <div
+     id="contributions"
+     className="flex flex-wrap gap-1 items-center justify-center"
+    >
+     {Array.from({ length: 40 }).map((_, i) => (
       <div
        key={i}
        id={`week-${i}`}
@@ -161,15 +174,15 @@ export const GithubGraph = () => {
         <motion.div
          key={j}
          id={`week-${i}-day-${j}`}
-         className="h-2 w-2 lg:h-4 lg:w-4 rounded-[4px]" 
-         initial={{ opacity: 0 }} 
+         className="h-[10px] w-[10px] rounded-[2px]"
+         initial={{ opacity: 0 }}
          whileInView={{
           opacity: 1,
           transition: {
-           delay: (i * 7 + j) * 0.02, 
-           duration: 0.5, 
+           delay: (i * 7 + j) * 0.02,
+           duration: 0.5,
           },
-         }} 
+         }}
         />
        ))}
       </div>
