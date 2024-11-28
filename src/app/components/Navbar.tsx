@@ -11,42 +11,41 @@ export default function Navbar() {
  const handleNav = (data: string) => {
   setIsActive(data); // Update active state
 
-  // Scroll and update hash
-  switch (data) {
-   case "HOME":
-    window.scroll(0, 0);
-    window.location.hash = "home";
-    break;
-   case "ABOUT":
-    window.scroll(0, 0);
-    window.location.hash = "about";
-    break;
-   case "SKILLS":
-    window.scroll(0, 0);
-    window.location.hash = "skills";
-    break;
-   case "RECENT PROJECTS":
-    window.scroll(0, 0);
-    window.location.hash = "projects";
-    break;
-   case "STACKS":
-    window.scroll(0, 0);
-    window.location.hash = "stack";
-    break;
-   default:
-    window.scroll(0, 0);
-    break;
+  // Scroll to the target section
+  const target = document.getElementById(data.toLowerCase().replace(" ", "-"));
+  if (target) {
+   target.scrollIntoView({ behavior: "smooth" });
   }
+
+  // Update hash
+  window.location.hash = data.toLowerCase().replace(" ", "-");
  };
 
- const handleContact = () => {
-  setIsActive("CONTACT"); // Optional if CONTACT is treated as a separate state
-  window.location.hash = "contact";
- };
+ useEffect(() => {
+  const handleScroll = () => {
+   // Detect which section is currently in view
+   links.forEach((section) => {
+    const element = document.getElementById(
+     section.toLowerCase().replace(" ", "-")
+    );
+    if (element) {
+     const rect = element.getBoundingClientRect();
+     const isInView =
+      rect.top <= window.innerHeight / 2 &&
+      rect.bottom >= window.innerHeight / 2;
+     if (isInView) {
+      setIsActive(section);
+     }
+    }
+   });
+  };
 
-  useEffect(() => {
+  window.addEventListener("scroll", handleScroll);
 
-  })
+  return () => {
+   window.removeEventListener("scroll", handleScroll);
+  };
+ }, []);
 
  return (
   <motion.nav
@@ -75,7 +74,7 @@ export default function Navbar() {
      ))}
 
      <button
-      onClick={handleContact}
+      onClick={() => handleNav("CONTACT")}
       className={`${
        isActive === "CONTACT"
         ? "bg-green-500 text-white"

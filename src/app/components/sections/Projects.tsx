@@ -25,7 +25,7 @@ export default function Projects() {
  }, []);
 
  return (
-  <main id="projects" className="h-full w-full px-8 my-32 py-32">
+  <main id="recent-projects" className="h-full w-full px-8 my-32 py-32">
    <h1 className="text-5xl font-bold mb-10">
     PROJECTS
     <span className="text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">

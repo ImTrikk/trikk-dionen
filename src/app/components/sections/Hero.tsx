@@ -19,7 +19,7 @@ const tags = [
 export default function Hero() {
  return (
   <main
-   id="hero"
+   id="home"
    className="relative h-screen w-full flex items-center justify-center gap-8"
   >
    {/* <Vortex

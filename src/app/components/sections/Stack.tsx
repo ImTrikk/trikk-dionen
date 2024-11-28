@@ -10,7 +10,7 @@ import { GithubGraph } from "@/app/components/github/Contributions";
 export default function Stack() {
  return (
   <section
-   id="stack"
+   id="stacks"
    className="h-auto w-full flex flex-col justify-between mt-32 py-32 "
   >
    <div>
