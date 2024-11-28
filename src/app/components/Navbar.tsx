@@ -1,12 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS", "SKILLS"];
 
 export default function Navbar() {
+ const [isActive, setIsActive] = useState<string>("HOME"); // Default to first link
+
  const handleNav = (data: string) => {
+  setIsActive(data); // Update active state
+
+  // Scroll and update hash
   switch (data) {
    case "HOME":
     window.scroll(0, 0);
@@ -35,8 +40,13 @@ export default function Navbar() {
  };
 
  const handleContact = () => {
+  setIsActive("CONTACT"); // Optional if CONTACT is treated as a separate state
   window.location.hash = "contact";
  };
+
+  useEffect(() => {
+
+  })
 
  return (
   <motion.nav
@@ -49,19 +59,28 @@ export default function Navbar() {
     <h1 className="glitch" data-text="⚡ TRKKU.">
      ⚡ TRKKU.
     </h1>
-    <div className="flex items-center gap-3 ">
+    <div className="flex items-center gap-2">
      {links.map((data, id) => (
-      <ul
+      <li
        onClick={() => handleNav(data)}
        key={id}
-       className="text-xs cursor-pointer"
+       className={`text-xs list-none cursor-pointer px-4 py-2 ${
+        isActive === data
+         ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
+         : "text-white"
+       }`}
       >
-       <li>{data}</li>
-      </ul>
+       {data}
+      </li>
      ))}
+
      <button
       onClick={handleContact}
-      className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold"
+      className={`${
+       isActive === "CONTACT"
+        ? "bg-green-500 text-white"
+        : "bg-white text-black"
+      } px-4 py-2 rounded-full text-sm font-semibold`}
      >
       CONTACT
      </button>

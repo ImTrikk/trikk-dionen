@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ProjectsData } from "@/data/projects";
 import Image from "next/image";
 
@@ -60,6 +60,9 @@ export default function Projects() {
          <div>
           <span className="text-xs text-green-400">ProjectInfo = </span> [
           <br />
+          <span className="text-orange-500">Project Title:</span>
+          <span className="text-white px-4 text-justify">{data.title}</span>
+          <br />
           <span className="text-orange-500">description:</span>
           <span className="text-white px-4 text-justify">
            {data.description}
@@ -86,6 +89,9 @@ export default function Projects() {
          <div>
           <span className="text-xs text-green-400">ProjectInfo = </span> [
           <br />
+          <span className="text-orange-500">Project Title:</span>
+          <span className="text-white px-4 text-justify">{data.title}</span>
+          <br />
           <span className="text-orange-500">description:</span>
           <span className="text-white px-4 text-justify">
            {data.description}
@@ -100,25 +106,41 @@ export default function Projects() {
           ]
          </div>
         </motion.div>
-
-        {/* Rendering Title for All Projects */}
+        {/* Image Section */}
         <motion.div
          initial={{ opacity: 0, x: 100 }}
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
          className="col-span-2 p-4 border border-white justify-center rounded-xl flex flex-col items-start"
         >
-         <Image
-          src={data.img_url[currentImages[index]] as unknown as string}
-          alt="project_picture"
-          className="w-full h-auto rounded-lg"
-         />
-         <h1 className="text-white text-lg font-medium">{data.title}</h1>{" "}
-         {/* Title displayed here */}
+         <AnimatePresence mode="wait">
+          {" "}
+          {/* Ensures smooth transitions */}
+          <motion.div
+           key={currentImages[index]} // Unique key for each image to trigger re-render
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           exit={{ opacity: 0 }}
+           transition={{ duration: 0.8 }}
+           className="w-full h-auto rounded-lg"
+          >
+           <Image
+            src={data.img_url[currentImages[index]] as unknown as string}
+            alt="project_picture"
+            className="w-full h-auto rounded-lg"
+           />
+          </motion.div>
+         </AnimatePresence>
         </motion.div>
        </>
       )}
      </React.Fragment>
     ))}
+
+    <div className="mt-10">
+     <h1 className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral">
+      Any many more...
+     </h1>
+    </div>
    </div>
   </main>
  );

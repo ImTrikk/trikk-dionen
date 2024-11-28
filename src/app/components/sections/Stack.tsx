@@ -11,7 +11,7 @@ export default function Stack() {
  return (
   <section
    id="stack"
-   className="h-auto w-full flex flex-col justify-between mt-32 py-32"
+   className="h-auto w-full flex flex-col justify-between mt-32 py-32 "
   >
    <div>
     <h1 className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
@@ -21,25 +21,25 @@ export default function Stack() {
      </span>
     </h1>
     <div className="flex items-center justify-between mt-5">
-     <div className="w-[400px]">
+     <div className="w-[500px]">
       <motion.h1
        initial={{ opacity: 0, y: 100 }}
        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
-       className="text-3xl font-semibold"
+       className="text-3xl font-black font-integral"
       >
        Equipped{" "}
       </motion.h1>
       <motion.h1
        initial={{ opacity: 0, y: 100 }}
        whileInView={{ opacity: 1, y: 0, transition: { duration: 1.2 } }}
-       className="text-3xl font-semibold"
+       className="text-3xl font-black font-integral"
       >
        With Powerful
       </motion.h1>
       <motion.h1
        initial={{ opacity: 0, y: 100 }}
        whileInView={{ opacity: 1, y: 0, transition: { duration: 1.6 } }}
-       className="text-3xl font-semibold"
+       className="text-3xl font-black font-integral"
       >
        Latest Technologies
       </motion.h1>

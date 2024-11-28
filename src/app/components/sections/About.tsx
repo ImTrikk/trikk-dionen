@@ -9,6 +9,11 @@ import trik1 from "@/assets/trkk/trik1.jpg";
 import trik2 from "@/assets/trkk/trik2.jpg";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import Link from "next/link";
+import {
+ TextRevealCard,
+ TextRevealCardDescription,
+ TextRevealCardTitle,
+} from "../ui/text-reveal-card";
 
 export default function About() {
  return (
@@ -24,78 +29,80 @@ export default function About() {
       </h1>
      </CardItem>
 
-     <CardItem
+     {/* <CardItem
       translateZ="70"
       className="about-wrapper w-full mt-5 border border-gray-300 rounded-2xl"
-     >
-      <CardItem translateZ="200" className="about p-10 rounded-2xl">
-       <div className="grid grid-cols-3 gap-3 w-full">
-        <CardItem
-         translateZ="90"
-         className="col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
-        >
-         <Image
-          src={trik1}
-          alt="trik1"
-          fill
-          className="object-cover group-hover/card:shadow-xl"
-         />
-        </CardItem>
+     > */}
+     {/* <CardItem translateZ="200" className="about p-10 rounded-2xl"> */}
+     <div className="grid grid-cols-3 gap-3 w-full mt-5">
+      <CardItem
+       translateZ="100"
+       className="col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
+      >
+       <Image
+        src={trik1}
+        alt="trik1"
+        fill
+        className="object-cover group-hover/card:shadow-xl"
+       />
+      </CardItem>
 
-        <CardItem translateZ="200">
-         <div className="w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
-          <Image
-           src={trik2}
-           alt="trik2"
-           className="object-cover group-hover/card:shadow-xl"
-          />
-         </div>
-        </CardItem>
-       </div>
-
-       <div className="mt-5">
-        <CardItem translateZ="210">
-         <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
-        </CardItem>
-        <CardItem translateZ="50">
-         <h1 className="text-4xl font-bold">PATRICK JAMES DIONEN</h1>
-        </CardItem>
-
-        <div className="mt-5">
-         <CardItem translateZ="50">
-          <div className="text-xs font-bold text-violet-700">trkku</div>
-         </CardItem>
-         <CardItem translateZ="300">
-          <span className="text-xs text-yellow-500">[</span>
-         </CardItem>
-
-         <div className="px-4">
-          <CardItem translateZ="50">
-           <div className="text-xs font-medium text-justify">
-            I am a senior Bachelor of Science in Information Technology student
-            at Caraga State University, with a passion for creating dynamic web
-            applications and crafting visually stunning user interfaces. My
-            focus is on blending functionality with design to deliver seamless
-            and engaging user experiences.
-           </div>
-          </CardItem>
-
-          <CardItem translateZ="50">
-           <div className="text-xs font-medium text-justify mt-3">
-            When I'm away from my desk, I like to keep my mind sharp and enjoy
-            nature by engaging in physical activities, such as running early in
-            the morning.
-           </div>
-          </CardItem>
-         </div>
-
-         <CardItem translateZ="50">
-          <span className="text-xs text-yellow-500">]</span>
-         </CardItem>
-        </div>
+      <CardItem translateZ="60">
+       <div className="w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
+        <Image
+         src={trik2}
+         alt="trik2"
+         className="object-cover group-hover/card:shadow-xl"
+        />
        </div>
       </CardItem>
+     </div>
+
+     <div className="mt-5">
+      <CardItem translateZ="60">
+       <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
+      </CardItem>
+      <CardItem translateZ="80" as="h1" className="mb-2">
+       <h1 className="text-4xl font-black font-integral text-green-600">
+        PATRICK JAMES DIONEN
+       </h1>
+      </CardItem>
+      <CardItem translateZ={60} className="w-full">
+       <TextRevealCard
+        text="Tech Enthusiast, Curios Explorer, Adapter"
+        revealText="Software Engineer, UI/UX Designer, Developer"
+       ></TextRevealCard>
+      </CardItem>
+
+      <CardItem translateZ="50" className="mt-10">
+       <div className="text-xs font-bold text-violet-700">trkku</div>
+      </CardItem>
+      <CardItem translateZ="60">
+       <span className="text-xs text-yellow-500">[</span>
+      </CardItem>
+
+      <CardItem translateZ="50" className="text-xs font-medium text-justify">
+       I am a senior Bachelor of Science in Information Technology student at
+       Caraga State University, with a passion for creating dynamic web
+       applications and crafting visually stunning user interfaces. My focus is
+       on blending functionality with design to deliver seamless and engaging
+       user experiences.
+      </CardItem>
+
+      <CardItem
+       translateZ="60"
+       className="text-xs font-medium text-justify mt-3"
+      >
+       When I'm away from my desk, I like to keep my mind sharp and enjoy nature
+       by engaging in physical activities, such as running early in the morning.
+      </CardItem>
+     </div>
+
+     <CardItem translateZ="50">
+      <span className="text-xs text-yellow-500">]</span>
      </CardItem>
+     {/* </CardItem> */}
+     {/* </CardItem> */}
 
      <CardItem translateZ="40">
       <div className="mt-5 flex items-end justify-end">
