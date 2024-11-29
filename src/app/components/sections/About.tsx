@@ -21,9 +21,9 @@ export default function About() {
    <CardContainer className="inter-var">
     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
      <CardItem translateZ="50">
-      <h1 className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-       ABOUT ME
-       <span className="text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+      <h1 className="text-4xl font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+       ABOUT ME{" "}
+       <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         .
        </span>
       </h1>

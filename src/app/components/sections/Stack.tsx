@@ -14,12 +14,16 @@ export default function Stack() {
    className="h-auto w-full flex flex-col justify-between mt-32 py-32 "
   >
    <div>
-    <h1 className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-     TECH STACK
-     <span className="text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+    <motion.h1
+     initial={{ opacity: 0, x: 100 }}
+     whileInView={{ opacity: 0.8, x: 0, transition: { duration: 0.8 } }}
+     className="text-4xl font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+    >
+     TECH STACK {""}
+     <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
       .
      </span>
-    </h1>
+    </motion.h1>
     <div className="flex items-center justify-between mt-5">
      <div className="w-[500px]">
       <motion.h1

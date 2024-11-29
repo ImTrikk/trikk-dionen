@@ -26,16 +26,20 @@ export default function Projects() {
 
  return (
   <main id="recent-projects" className="h-full w-full px-8 my-32 py-32">
-   <h1 className="text-5xl font-bold mb-10">
-    PROJECTS
-    <span className="text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+   <motion.h1
+    initial={{ opacity: 0, x: 100 }}
+    whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
+    className="text-5xl font-bold font-integral mb-10"
+   >
+    PROJECTS{" "}
+    <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
      .
     </span>
-   </h1>
-   <div className="grid grid-cols-3 gap-4">
+   </motion.h1>
+   <div className="grid grid-cols-3 gap-4 w-full">
     {ProjectsData.map((data, index) => (
      <React.Fragment key={index}>
-      {/* Alternating Layout: Image first if even, Text first if odd */}
+      {/* Alternating Layout: Image and Text */}
       {index % 2 === 0 ? (
        <>
         {/* Image Section */}
@@ -44,11 +48,22 @@ export default function Projects() {
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
          className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
         >
-         <Image
-          src={data.img_url[currentImages[index]] as unknown as string}
-          alt="project_picture"
-          className="w-full h-auto rounded-lg"
-         />
+         <AnimatePresence mode="wait">
+          <motion.div
+           key={currentImages[index]} // Unique key for animation
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           exit={{ opacity: 0 }}
+           transition={{ duration: 0.8 }}
+           className="w-full h-auto rounded-lg"
+          >
+           <Image
+            src={data.img_url[currentImages[index]] as unknown as string}
+            alt="project_picture"
+            className="w-full h-auto rounded-lg"
+           />
+          </motion.div>
+         </AnimatePresence>
         </motion.div>
 
         {/* Text Section */}
@@ -57,25 +72,7 @@ export default function Projects() {
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
          className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px] text-xs"
         >
-         <div>
-          <span className="text-xs text-green-400">ProjectInfo = </span> [
-          <br />
-          <span className="text-orange-500">Project Title:</span>
-          <span className="text-white px-4 text-justify">{data.title}</span>
-          <br />
-          <span className="text-orange-500">description:</span>
-          <span className="text-white px-4 text-justify">
-           {data.description}
-          </span>
-          <br />
-          <span className="text-orange-500">stack:</span>
-          <span className="text-white">
-           {data.stacks.map((tech, key) => (
-            <span key={key}>{tech.name}, </span>
-           ))}
-          </span>
-          ]
-         </div>
+         <ProjectInfo data={data} />
         </motion.div>
        </>
       ) : (
@@ -86,26 +83,9 @@ export default function Projects() {
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
          className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px] text-xs"
         >
-         <div>
-          <span className="text-xs text-green-400">ProjectInfo = </span> [
-          <br />
-          <span className="text-orange-500">Project Title:</span>
-          <span className="text-white px-4 text-justify">{data.title}</span>
-          <br />
-          <span className="text-orange-500">description:</span>
-          <span className="text-white px-4 text-justify">
-           {data.description}
-          </span>
-          <br />
-          <span className="text-orange-500">stack:</span>
-          <span className="text-white">
-           {data.stacks.map((tech, key) => (
-            <span key={key}>{tech.name}, </span>
-           ))}
-          </span>
-          ]
-         </div>
+         <ProjectInfo data={data} />
         </motion.div>
+
         {/* Image Section */}
         <motion.div
          initial={{ opacity: 0, x: 100 }}
@@ -113,10 +93,8 @@ export default function Projects() {
          className="col-span-2 p-4 border border-white justify-center rounded-xl flex flex-col items-start"
         >
          <AnimatePresence mode="wait">
-          {" "}
-          {/* Ensures smooth transitions */}
           <motion.div
-           key={currentImages[index]} // Unique key for each image to trigger re-render
+           key={currentImages[index]} // Unique key for animation
            initial={{ opacity: 0 }}
            animate={{ opacity: 1 }}
            exit={{ opacity: 0 }}
@@ -136,69 +114,48 @@ export default function Projects() {
      </React.Fragment>
     ))}
 
-    <div className="mt-10">
+    <div className="mt-10 flex items-center justify-between w-full">
      <h1 className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral">
-      Any many more...
+      And many more...
      </h1>
+     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="size-16"
+     >
+      <path
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+      />
+     </svg>
     </div>
    </div>
   </main>
  );
 }
 
-{
- /* <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px] text-xs"
-     >
-      <div>
-       <span className="text-xs text-green-400">ProjectInfo = </span> [
-       <span className="text-orange-500">description:</span>
-       <span className="text-white px-4 text-justify">
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex cupiditate
-        sunt ratione quaerat reprehenderit nostrum expedita, assumenda totam
-        voluptas quas iure quis odio dolorum neque laboriosam ea ab, eos
-        distinctio."
-       </span>
-       <span className="text-orange-500">stack:</span>
-       <span className="text-white">[ ]</span>
-      </div>
-      ]
-     </motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div>
-     <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-      className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-     ></motion.div> */
+function ProjectInfo({ data }: { data: any }) {
+ return (
+  <div>
+   <span className="text-xs text-green-400">ProjectInfo = </span> [
+   <br />
+   <span className="text-orange-500">Project Title:</span>
+   <span className="text-white px-4 text-justify">{data.title}</span>
+   <br />
+   <span className="text-orange-500">description:</span>
+   <span className="text-white px-4 text-justify">{data.description}</span>
+   <br />
+   <span className="text-orange-500">stack:</span>
+   <span className="text-white">
+    {data.stacks.map((tech: any, key: number) => (
+     <span key={key}>{tech.name}, </span>
+    ))}
+   </span>
+   ]
+  </div>
+ );
 }
