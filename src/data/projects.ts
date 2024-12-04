@@ -11,6 +11,12 @@ import visualify_3 from "@/assets/projects/visualify_3.png";
 import visualify_4 from "@/assets/projects/visualify_4.png";
 import visualify_5 from "@/assets/projects/visualify_5.png";
 
+import simplichat_1 from "@/assets/projects/simplichat_1.png";
+import simplichat_2 from "@/assets/projects/simplichat_2.png";
+import simplichat_3 from "@/assets/projects/simplichat_3.png";
+import simplichat_4 from "@/assets/projects/simplichat_4.png";
+import simplichat_5 from "@/assets/projects/simplichat_5.png";
+
 interface Stacks {
  name: string;
  logo: string;
@@ -100,6 +106,19 @@ export const ProjectsData: Projects[] = [
   title: "Counsefi",
   description: "lorem",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  stacks: [{ name: "ReactJS", logo: "" }],
+ },
+ {
+  id: 12,
+  title: "SimpliChat",
+  description: "lorem",
+  img_url: [
+   simplichat_1,
+   simplichat_2,
+   simplichat_3,
+   simplichat_4,
+   simplichat_5,
+  ],
   stacks: [{ name: "ReactJS", logo: "" }],
  },
 ];

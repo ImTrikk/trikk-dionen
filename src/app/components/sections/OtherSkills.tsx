@@ -15,7 +15,7 @@ export default function OtherSkills() {
       duration: 1,
      },
     }}
-    className="text-4xl font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-white"
+    className="text-4xl font-integral font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] text-white"
    >
     OTHER SKILLS
     <span className="text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">

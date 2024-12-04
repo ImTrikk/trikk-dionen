@@ -25,7 +25,10 @@ export default function Projects() {
  }, []);
 
  return (
-  <main id="recent-projects" className="h-full w-full px-8 my-32 py-32">
+  <main
+   id="recent-projects"
+   className="relative h-full w-full px-8 my-32 py-32"
+  >
    <motion.h1
     initial={{ opacity: 0, x: 100 }}
     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
@@ -36,7 +39,13 @@ export default function Projects() {
      .
     </span>
    </motion.h1>
-   <div className="grid grid-cols-3 gap-4 w-full">
+   <div className="flex items-center gpa-2">
+    <div className="text-white">
+     <hr className="text-neutral-100" />
+    </div>
+    <p>Recent Projects made with 💓</p>
+   </div>
+   <div className="grid grid-cols-3 gap-4 w-full max-h-[2500px] overflow-hidden">
     {ProjectsData.map((data, index) => (
      <React.Fragment key={index}>
       {/* Alternating Layout: Image and Text */}
@@ -81,7 +90,7 @@ export default function Projects() {
         <motion.div
          initial={{ opacity: 0, x: -100 }}
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-         className="col-span-1 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px] text-xs"
+         className="col-span-1 p-2 border border-white flex items-center justify-center rounded-xl min-h-[340px] text-xs"
         >
          <ProjectInfo data={data} />
         </motion.div>
@@ -115,25 +124,32 @@ export default function Projects() {
     ))}
 
     <div className="mt-10 flex items-center justify-between w-full">
-     <h1 className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral">
+     <motion.h1
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+      className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral"
+     >
       And many more...
-     </h1>
-     <svg
+     </motion.h1>
+     <motion.svg
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
       className="size-16"
      >
       <path
-       stroke-linecap="round"
-       stroke-linejoin="round"
+       strokeLinecap="round"
+       strokeLinejoin="round"
        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
       />
-     </svg>
+     </motion.svg>
     </div>
    </div>
+   <div className="absolute bottom-10 mt-auto h-32 w-full bg-gradient-to-t from-indigo-500 to-transparent pointer-events-none z-10" />
   </main>
  );
 }
@@ -141,16 +157,18 @@ export default function Projects() {
 function ProjectInfo({ data }: { data: any }) {
  return (
   <div>
-   <span className="text-xs text-green-400">ProjectInfo = </span> [
+   <span className="text-lg text-green-400">ProjectInfo = </span> [
    <br />
-   <span className="text-orange-500">Project Title:</span>
-   <span className="text-white px-4 text-justify">{data.title}</span>
+   <span className="text-md text-orange-500">Project Title:</span>
+   <span className="text-md text-white px-4 text-justify">{data.title}</span>
    <br />
-   <span className="text-orange-500">description:</span>
-   <span className="text-white px-4 text-justify">{data.description}</span>
+   <span className="text-md text-orange-500">description:</span>
+   <span className="text-md text-white px-4 text-justify">
+    {data.description}
+   </span>
    <br />
-   <span className="text-orange-500">stack:</span>
-   <span className="text-white">
+   <span className="text-md text-orange-500">stack:</span>
+   <span className="text-md text-white">
     {data.stacks.map((tech: any, key: number) => (
      <span key={key}>{tech.name}, </span>
     ))}

@@ -14,6 +14,7 @@ import {
  TextRevealCardDescription,
  TextRevealCardTitle,
 } from "../ui/text-reveal-card";
+import { h1 } from "framer-motion/client";
 
 export default function About() {
  return (
@@ -59,20 +60,20 @@ export default function About() {
      </div>
 
      <div className="mt-5">
-      <CardItem translateZ="60">
+      <CardItem translateZ="60" as="div">
        <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
       </CardItem>
-      <CardItem translateZ="80" as="h1" className="mb-2">
+      <CardItem translateZ="80" as="div" className="mb-2">
        <h1 className="text-4xl font-black font-integral text-green-600">
         PATRICK JAMES DIONEN
        </h1>
       </CardItem>
-      <CardItem translateZ={60} className="w-full">
+      {/* <CardItem translateZ={60} className="w-full">
        <TextRevealCard
         text="Tech Enthusiast, Curios Explorer, Adapter"
         revealText="Software Engineer, UI/UX Designer, Developer"
        ></TextRevealCard>
-      </CardItem>
+      </CardItem> */}
 
       <CardItem translateZ="50" className="mt-10">
        <div className="text-xs font-bold text-violet-700">trkku</div>
