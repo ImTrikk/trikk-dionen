@@ -15,7 +15,7 @@ export default function Connect() {
      whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.8 } }}
      className="text-4xl font-bold font-integral"
     >
-     LET'S CONNECT
+     LETs CONNECT
     </motion.h1>
     <p className="text-xs font-light">
      You can contact me through this form, feel free to message me anytime and I
@@ -30,7 +30,7 @@ export default function Connect() {
     </div>
    </div>
    <div className="w-[700px]">
-    <form action="" className="border border-white rounded-xl p-4">
+    {/* <form action="" className="border border-white rounded-xl p-4">
      <div className="flex flex-col gap-2 mt-2">
       <label htmlFor="">Email</label>
       <input
@@ -54,7 +54,7 @@ export default function Connect() {
        send message
       </button>
      </div>
-    </form>
+    </form> */}
    </div>
   </section>
  );

@@ -20,31 +20,31 @@
 
 /* Style for the scrollbar */
 ::-webkit-scrollbar {
- width: 5px;
- height: 5px;
- scroll-behavior: smooth;
- transition: 0.3s ease-in-out;
- background-color: transparent; /* Ensure scrollbar background is transparent */
+  width: 5px;
+  height: 5px;
+  background-color: transparent; /* Ensure scrollbar background is transparent */
 }
 
 /* Track (the background of the scrollbar) */
 ::-webkit-scrollbar-track {
- background-color: transparent; /* Remove the white background */
+  background-color: transparent; /* Remove the white background */
+  box-shadow: none; /* Remove any shadow that may appear */
 }
 
 /* Handle (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
- background-color: #39ff14; /* Neon Green color */
- border-radius: 10px;
- transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
- box-shadow: 0 0 8px #39ff14; /* Neon glowing effect */
+  background-color: #39ff14; /* Neon Green color */
+  border-radius: 10px;
+  box-shadow: 0 0 8px #39ff14; /* Neon glowing effect */
+  border: none; /* Remove any default border */
 }
 
-/* Scrollbar on hover for thumb */
+/* Hover effect for scrollbar handle */
 ::-webkit-scrollbar-thumb:hover {
- background-color: #00ff00; /* Brighter Neon Green when hovered */
- box-shadow: 0 0 16px #00ff00; /* Brighter glowing effect when hovered */
+  background-color: #00ff00; /* Brighter Neon Green when hovered */
+  box-shadow: 0 0 16px #00ff00; /* Brighter glowing effect when hovered */
 }
+
 
 #wrapper {
  text-align: center;

@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS", "SKILLS"];
+const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS"];
+// const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS", "SKILLS"];
 
 export default function Navbar() {
  const [isActive, setIsActive] = useState<string>("HOME"); // Default to first link
@@ -56,8 +57,16 @@ export default function Navbar() {
   >
    <div className="max-w-4xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
     <h1 className="glitch" data-text="⚡ TRKKU.">
-     ⚡ TRKKU.
+     <motion.span
+      initial={{ rotate: 0 }}
+      animate={{ rotate: 360 }}
+      transition={{ duration: 2, repeat: Infinity }}
+     >
+      ⚡
+     </motion.span>{" "}
+     TRKKU.
     </h1>
+
     <div className="flex items-center gap-2">
      {links.map((data, id) => (
       <li

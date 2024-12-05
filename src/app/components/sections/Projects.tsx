@@ -122,34 +122,33 @@ export default function Projects() {
       )}
      </React.Fragment>
     ))}
-
-    <div className="mt-10 flex items-center justify-between w-full">
-     <motion.h1
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
-      className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral"
-     >
-      And many more...
-     </motion.h1>
-     <motion.svg
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="size-16"
-     >
-      <path
-       strokeLinecap="round"
-       strokeLinejoin="round"
-       d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-      />
-     </motion.svg>
-    </div>
    </div>
-   <div className="absolute bottom-10 mt-auto h-32 w-full bg-gradient-to-t from-indigo-500 to-transparent pointer-events-none z-10" />
+   <div className="absolute bottom-10 mt-auto h-32 w-full bg-gradient-to-t from-gray-50 to-transparent pointer-events-none z-10" />
+   <div className="flex items-center justify-between w-full">
+    <motion.h1
+     initial={{ opacity: 0, x: 100 }}
+     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+     className="text-5xl text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral"
+    >
+     And many more...
+    </motion.h1>
+    <motion.svg
+     initial={{ opacity: 1, rotate: 0 }}
+     whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
+     xmlns="http://www.w3.org/2000/svg"
+     fill="none"
+     viewBox="0 0 24 24"
+     strokeWidth="1.5"
+     stroke="currentColor"
+     className="size-16"
+    >
+     <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+     />
+    </motion.svg>
+   </div>
   </main>
  );
 }

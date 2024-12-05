@@ -9,7 +9,7 @@ import Stack from "./components/sections/Stack";
 
 export default function Home() {
  return (
-  <main className="relative bg-black min-h-screen">
+  <main className="relative bg-eigengrau min-h-screen">
    <div className="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black via-black/40 to-transparent z-40" />
    <Navbar />
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
@@ -21,7 +21,7 @@ export default function Home() {
    </div>
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     <Stack />
-    <OtherSkills />
+    {/* <OtherSkills /> */}
     <Connect />
     <Footer />
    </div>
