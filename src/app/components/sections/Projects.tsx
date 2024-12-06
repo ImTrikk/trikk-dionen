@@ -29,21 +29,21 @@ export default function Projects() {
    id="recent-projects"
    className="relative h-full w-full px-8 my-32 py-32"
   >
-   <motion.h1
-    initial={{ opacity: 0, x: 100 }}
-    whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
-    className="text-5xl font-bold font-integral mb-10"
-   >
-    PROJECTS{" "}
-    <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
-     .
-    </span>
-   </motion.h1>
-   <div className="flex items-center gpa-2">
-    <div className="text-white">
-     <hr className="text-neutral-100" />
+   <div className="flex items-center justify-between">
+    <motion.h1
+     initial={{ opacity: 0, x: 100 }}
+     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
+     className="w-full text-5xl font-bold font-integral mb-10"
+    >
+     PROJECTS{" "}
+     <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+      .
+     </span>
+    </motion.h1>
+    <div className="flex items-center gap-2 w-full">
+     <hr className="w-full" />
+     <div className="w-full">Recent Projects made with 💓</div>
     </div>
-    <p>Recent Projects made with 💓</p>
    </div>
    <div className="grid grid-cols-3 gap-4 w-full max-h-[2500px] overflow-hidden">
     {ProjectsData.map((data, index) => (
@@ -156,23 +156,32 @@ export default function Projects() {
 function ProjectInfo({ data }: { data: any }) {
  return (
   <div>
-   <span className="text-lg text-green-400">ProjectInfo = </span> [
+   <span className="text-lg text-green-400">ProjectInfo</span> = {"{"}
    <br />
-   <span className="text-md text-orange-500">Project Title:</span>
-   <span className="text-md text-white px-4 text-justify">{data.title}</span>
+   &nbsp;&nbsp;<span className="text-md text-orange-500">
+    "Project Title"
+   </span>:{" "}
+   <span className="text-md text-white px-4 text-justify">"{data.title}"</span>,
    <br />
-   <span className="text-md text-orange-500">description:</span>
+   &nbsp;&nbsp;<span className="text-md text-orange-500">
+    "description"
+   </span>:{" "}
    <span className="text-md text-white px-4 text-justify">
-    {data.description}
+    "{data.description}"
    </span>
+   ,
    <br />
-   <span className="text-md text-orange-500">stack:</span>
+   &nbsp;&nbsp;<span className="text-md text-orange-500">"stack"</span>:{" ["}
    <span className="text-md text-white">
     {data.stacks.map((tech: any, key: number) => (
-     <span key={key}>{tech.name}, </span>
+     <span key={key}>
+      "{tech.name}"{key !== data.stacks.length - 1 ? "," : ""}{" "}
+     </span>
     ))}
    </span>
-   ]
+   {" ]"}
+   <br />
+   {"}"}
   </div>
  );
 }

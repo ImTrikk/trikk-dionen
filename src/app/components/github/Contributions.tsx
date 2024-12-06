@@ -146,9 +146,9 @@ export const GithubGraph = () => {
      <motion.h1
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-      className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] font-integral"
+      className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] font-integral"
      >
-      One Feature A Day
+      One Feature at a Time Dedicated to Progress
      </motion.h1>
      <motion.p
       initial={{ opacity: 0, y: 100 }}

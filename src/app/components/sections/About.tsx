@@ -20,7 +20,7 @@ export default function About() {
  return (
   <section id="about" className="h-auto w-full flex flex-col gap-1">
    <CardContainer className="inter-var">
-    <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+    <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#16161d] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-3xl p-8 border">
      <CardItem translateZ="50">
       <h1 className="text-4xl font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
        ABOUT ME{" "}
@@ -37,7 +37,7 @@ export default function About() {
      {/* <CardItem translateZ="200" className="about p-10 rounded-2xl"> */}
      <div className="grid grid-cols-3 gap-3 w-full mt-5">
       <CardItem
-       translateZ="100"
+       translateZ="120"
        className="col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
       >
        <Image
@@ -48,7 +48,7 @@ export default function About() {
        />
       </CardItem>
 
-      <CardItem translateZ="60">
+      <CardItem translateZ="90">
        <div className="w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
         <Image
          src={trik2}
@@ -60,10 +60,10 @@ export default function About() {
      </div>
 
      <div className="mt-5">
-      <CardItem translateZ="60" as="div">
+      <CardItem translateZ="80" as="div">
        <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
       </CardItem>
-      <CardItem translateZ="80" as="div" className="mb-2">
+      <CardItem translateZ="100" as="div" className="mb-2">
        <h1 className="text-4xl font-black font-integral text-green-600">
         PATRICK JAMES DIONEN
        </h1>
@@ -75,33 +75,39 @@ export default function About() {
        ></TextRevealCard>
       </CardItem> */}
 
-      <CardItem translateZ="50" className="mt-10">
-       <div className="text-xs font-bold text-violet-700">trkku</div>
-      </CardItem>
-      <CardItem translateZ="60">
-       <span className="text-xs text-yellow-500">[</span>
-      </CardItem>
+      <CardItem translateZ="80" className="">
+       <CardItem translateZ="50" className="mt-10">
+        <div className="text-md font-bold text-violet-700">
+         trkku <span className="text-orange-600">=</span>{" "}
+         <span className="text-md text-yellow-500">[</span>
+        </div>
+       </CardItem>
 
-      <CardItem translateZ="50" className="text-xs font-medium text-justify">
-       I am a senior Bachelor of Science in Information Technology student at
-       Caraga State University, with a passion for creating dynamic web
-       applications and crafting visually stunning user interfaces. My focus is
-       on blending functionality with design to deliver seamless and engaging
-       user experiences.
-      </CardItem>
+       <CardItem
+        translateZ="50"
+        className="text-md font-medium text-justify px-4 leading-6"
+       >
+        I am a senior Bachelor of Science in Information Technology student at
+        Caraga State University, with experience in creating dynamic web
+        applications and developing user interfaces. My focus is on combining
+        functionality with design to deliver effective and user-friendly
+        experiences.
+       </CardItem>
 
-      <CardItem
-       translateZ="60"
-       className="text-xs font-medium text-justify mt-3"
-      >
-       When I'm away from my desk, I like to keep my mind sharp and enjoy nature
-       by engaging in physical activities, such as running early in the morning.
+       <CardItem
+        translateZ="60"
+        className="text-md font-medium text-justify mt-3 px-4 leading-6"
+       >
+        When I'm away from my desk, I like to keep my mind sharp and enjoy
+        nature by engaging in physical activities, such as running early in the
+        morning.
+       </CardItem>
+       <CardItem translateZ="50">
+        <span className="text-md text-yellow-500">]</span>
+       </CardItem>
       </CardItem>
      </div>
 
-     <CardItem translateZ="50">
-      <span className="text-xs text-yellow-500">]</span>
-     </CardItem>
      {/* </CardItem> */}
      {/* </CardItem> */}
 
