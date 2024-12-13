@@ -60,30 +60,42 @@ export default function Projects() {
          className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
         >
          <AnimatePresence mode="wait">
-          <Image
-           src={data.img_url[currentImages[index]] as unknown as string}
-           alt="project_picture"
-           className="w-full h-auto rounded-lg"
-          />
+          <Link href={`/projects/${data.id}`}>
+           <Image
+            src={data.img_url[currentImages[index]] as unknown as string}
+            alt="project_picture"
+            className="w-full h-auto rounded-lg"
+           />
+          </Link>
          </AnimatePresence>
         </motion.div>
         {/* Text Section */}
-        <Link href={`/projects/${data.id}`}>
-         <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl min-h-[340px]">
-          <h2>{data.title}</h2>
-          <p>{data.description}</p>
-         </div>
-        </Link>
+        <motion.div
+         initial={{ opacity: 0, x: -100 }}
+         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
+        >
+         <Link href={`/projects/${data.id}`}>
+          <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl h-full">
+           <h2>{data.title}</h2>
+           <p>{data.description}</p>
+          </div>
+         </Link>
+        </motion.div>
        </>
       ) : (
        <>
         {/* Text Section */}
-        <Link href={`/projects/${data.id}`}>
-         <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl min-h-[340px]">
-          <h2>{data.title}</h2>
-          <p>{data.description}</p>
-         </div>
-        </Link>
+        <motion.div
+         initial={{ opacity: 0, x: 100 }}
+         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
+        >
+         <Link href={`/projects/${data.id}`}>
+          <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl h-full">
+           <h2>{data.title}</h2>
+           <p>{data.description}</p>
+          </div>
+         </Link>
+        </motion.div>
         {/* Image Section */}
         <motion.div
          initial={{ opacity: 0, x: 100 }}

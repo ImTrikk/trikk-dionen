@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Projects } from "@/data/projects";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
 
 const ProjectInfoPage = () => {
  const params = useParams();
@@ -26,14 +27,18 @@ const ProjectInfoPage = () => {
 
  return (
   <main className="h-screen bg-black">
-   <div className="mx-32 max-w-7xl">
+   <Navbar />
+   <div className="max-w-4xl w-full mx-auto  mt-20">
+    <div className="relative w-full h-[400px]">
+     <Image
+      src={project.img_url[0]} // Assuming img_url is an array and you want to display the first image
+      alt={project.title}
+      layout="fill" // Use layout fill
+      objectFit="cover" // Ensure the image covers the container
+      className="rounded-xl"
+     />
+    </div>
     <h1>{project.title}</h1>
-    <Image
-     src={project.img_url[0]} // Assuming img_url is an array and you want to display the first image
-     alt={project.title}
-     width={400}
-     height={400}
-    />
     <p>{project.description}</p>
     {/* Add more project details here */}
    </div>
