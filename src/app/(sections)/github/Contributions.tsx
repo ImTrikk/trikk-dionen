@@ -179,8 +179,8 @@ export const GithubGraph = () => {
          whileInView={{
           opacity: 1,
           transition: {
-           delay: (i * 7 + j) * 0.02,
-           duration: 0.5,
+           delay: (i * 7 + j) * 0.008,
+           duration: 0.3,
           },
          }}
         />

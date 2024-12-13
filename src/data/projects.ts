@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 // foodiego project
 import foodiego_1 from "@/assets/projects/foodiego_1.png";
 import foodiego_2 from "@/assets/projects/foodiego_2.png";
@@ -17,16 +19,16 @@ import simplichat_3 from "@/assets/projects/simplichat_3.png";
 import simplichat_4 from "@/assets/projects/simplichat_4.png";
 import simplichat_5 from "@/assets/projects/simplichat_5.png";
 
-interface Stacks {
+export interface Stacks {
  name: string;
  logo: string;
 }
 
-interface Projects {
+export interface Projects {
  id: number;
  title: string;
  description: string;
- img_url: object[];
+ img_url: (string | StaticImageData)[]; // Allow both string and StaticImageData
  stacks: Stacks[];
 }
 

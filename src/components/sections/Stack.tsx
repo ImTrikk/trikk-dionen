@@ -5,7 +5,7 @@ import stacks from "@/assets/stacks.svg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
-import { GithubGraph } from "@/app/components/github/Contributions";
+import { GithubGraph } from "@/app/(sections)/github/Contributions";
 
 export default function Stack() {
  return (
@@ -17,7 +17,7 @@ export default function Stack() {
     <motion.h1
      initial={{ opacity: 0, x: 100 }}
      whileInView={{ opacity: 0.8, x: 0, transition: { duration: 0.8 } }}
-     className="text-4xl font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+     className="text-4xl font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
     >
      TECH STACK {""}
      <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
@@ -26,36 +26,30 @@ export default function Stack() {
     </motion.h1>
     <div className="flex items-center justify-between mt-5">
      <div className="w-[500px]">
-      <motion.h1
-       initial={{ opacity: 0, y: 100 }}
-       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
-       className="text-3xl font-black font-integral"
-      >
-       Equipped{" "}
-      </motion.h1>
-      <motion.h1
-       initial={{ opacity: 0, y: 100 }}
-       whileInView={{ opacity: 1, y: 0, transition: { duration: 1.2 } }}
-       className="text-3xl font-black font-integral"
-      >
-       With Powerful
-      </motion.h1>
-      <motion.h1
-       initial={{ opacity: 0, y: 100 }}
-       whileInView={{ opacity: 1, y: 0, transition: { duration: 1.6 } }}
-       className="text-3xl font-black font-integral"
-      >
-       Latest Technologies
-      </motion.h1>
+      {[
+       { text: "Equipped", delay: 0.6 },
+       { text: "With Powerful", delay: 1.2 },
+       { text: "Latest Technologies", delay: 1.6 },
+      ].map((item, index) => (
+       <motion.h1
+        key={index}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0, transition: { duration: item.delay } }}
+        className="text-3xl font-black font-integral"
+       >
+        {item.text}
+       </motion.h1>
+      ))}
       <motion.p
        initial={{ opacity: 0, x: 100 }}
        whileInView={{ opacity: 1, x: 0, transition: { duration: 1.8 } }}
        className="text-sm font-light mt-10"
       >
-       To Keep up with latest technology, learning everyday is crucial for a
-       developer
+       To keep up with the latest technology, learning every day is crucial for
+       a developer.
       </motion.p>
      </div>
+
      <motion.div
       initial={{ opacity: 0, x: 100 }}
       whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
@@ -68,6 +62,17 @@ export default function Stack() {
        </CardBody>
       </CardContainer>
      </motion.div>
+    </div>
+    <div className="grid grid-cols-3 gap-3">
+     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+      Framer Motion
+     </div>
+     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+      Accernity UI
+     </div>
+     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+      Material UI
+     </div>
     </div>
    </div>
    <GithubGraph />

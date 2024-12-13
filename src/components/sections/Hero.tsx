@@ -42,7 +42,7 @@ export default function Hero() {
    <div className="flex w-[600px] flex-col gap-2 items-start flex-shrink-0">
     <div className="flex flex-col justify-start">
      <motion.h1
-      initial={{ opacity: 0, y: 200 }}
+      initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
       className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] font-integral"
      >
@@ -91,7 +91,7 @@ export default function Hero() {
      </div>
      <motion.div
       initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
       className="mt-5 border border-white rounded-xl  p-3"
      >
       <p className="text-xs font-regular text-justify">
@@ -113,7 +113,7 @@ export default function Hero() {
        viewBox="0 0 24 24"
        strokeWidth="1.5"
        stroke="currentColor"
-       className="size-4"
+       className="size-5"
       >
        <path
         strokeLinecap="round"
