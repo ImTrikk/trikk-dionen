@@ -45,7 +45,7 @@ export default function Projects() {
      <div className="w-full">
       <hr />
      </div>
-     <div className="shrink-0">Recent Projects made with 💓</div>
+     <div className="shrink-0">Projects made with 💓</div>
     </div>
    </div>
    <div className="grid grid-cols-3 gap-4 w-full max-h-[2500px] overflow-hidden">
@@ -103,11 +103,13 @@ export default function Projects() {
          className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
         >
          <AnimatePresence mode="wait">
-          <Image
-           src={data.img_url[currentImages[index]] as unknown as string}
-           alt="project_picture"
-           className="w-full h-auto rounded-lg"
-          />
+          <Link href={`/projects/${data.id}`}>
+           <Image
+            src={data.img_url[currentImages[index]] as unknown as string}
+            alt="project_picture"
+            className="w-full h-auto rounded-lg"
+           />
+          </Link>
          </AnimatePresence>
         </motion.div>
        </>

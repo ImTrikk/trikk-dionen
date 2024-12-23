@@ -53,8 +53,8 @@
 .glitch {
  position: relative;
  color: #fff;
- font-size: 1em;
- letter-spacing: 0.5em;
+ font-size: 14px;
+ /* letter-spacing: 0.5em; */
  animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 

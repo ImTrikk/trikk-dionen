@@ -55,7 +55,7 @@ export default function Navbar() {
    transition={{ duration: 0.7 }}
    className="sticky top-5 z-50 sm:px-10"
   >
-   <div className="max-w-4xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
+   <div className="max-w-xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
     <h1 className="glitch" data-text="⚡ TRKKU.">
      <motion.span
       initial={{ rotate: 0 }}
@@ -72,7 +72,7 @@ export default function Navbar() {
       <li
        onClick={() => handleNav(data)}
        key={id}
-       className={`text-xs list-none cursor-pointer px-4 py-2 ${
+       className={`text-[10px] list-none cursor-pointer px-4 py-2 ${
         isActive === data
          ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
          : "text-white"
@@ -88,7 +88,7 @@ export default function Navbar() {
        isActive === "CONTACT"
         ? "bg-green-500 text-white"
         : "bg-white text-black"
-      } px-4 py-2 rounded-full text-sm font-semibold`}
+      } px-4 py-2 rounded-full text-xs font-semibold`}
      >
       CONTACT
      </button>
