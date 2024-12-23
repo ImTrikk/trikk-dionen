@@ -14,7 +14,7 @@
  padding: 0;
  box-sizing: border-box;
  font-family: "Roboto", monospace;
- color: white;
+ /* color: white; */
  scroll-behavior: smooth;
 }
 

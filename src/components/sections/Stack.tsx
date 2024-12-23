@@ -17,7 +17,7 @@ export default function Stack() {
     <motion.h1
      initial={{ opacity: 0, x: 100 }}
      whileInView={{ opacity: 0.8, x: 0, transition: { duration: 0.8 } }}
-     className="text-4xl font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
+     className="text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
     >
      TECH STACK {""}
      <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
@@ -35,7 +35,7 @@ export default function Stack() {
         key={index}
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: item.delay } }}
-        className="text-3xl font-black font-integral"
+        className="text-3xl text-white font-black font-integral"
        >
         {item.text}
        </motion.h1>
@@ -43,7 +43,7 @@ export default function Stack() {
       <motion.p
        initial={{ opacity: 0, x: 100 }}
        whileInView={{ opacity: 1, x: 0, transition: { duration: 1.8 } }}
-       className="text-sm font-light mt-10"
+       className="text-md text-white font-bold mt-10"
       >
        To keep up with the latest technology, learning every day is crucial for
        a developer.
@@ -64,18 +64,20 @@ export default function Stack() {
      </motion.div>
     </div>
     <div className="grid grid-cols-3 gap-3">
-     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+     <div className="col-span-1 h-[60px] text-white flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
       Framer Motion
      </div>
-     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+     <div className="col-span-1 h-[60px] text-white flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
       Accernity UI
      </div>
-     <div className="col-span-1 h-[60px] flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
+     <div className="col-span-1 h-[60px] text-white flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
       Material UI
      </div>
     </div>
    </div>
-   <GithubGraph />
+   <div className="mt-32">
+    <GithubGraph />
+   </div>
   </section>
  );
 }

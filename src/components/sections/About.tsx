@@ -22,7 +22,7 @@ export default function About() {
    <CardContainer className="inter-var">
     <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#16161d] dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-3xl p-8 border">
      <CardItem translateZ="50">
-      <h1 className="text-4xl font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+      <h1 className="text-4xl text-white font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
        ABOUT ME{" "}
        <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         .
@@ -61,7 +61,7 @@ export default function About() {
 
      <div className="mt-5">
       <CardItem translateZ="80" as="div">
-       <h1 className="text-2xl font-semibold">MEET THE PROBLEM SOLVER</h1>
+       <h1 className="text-2xl text-white font-semibold">MEET THE PROBLEM SOLVER</h1>
       </CardItem>
       <CardItem translateZ="100" as="div" className="mb-2">
        <h1 className="text-4xl font-black font-integral text-green-600">
@@ -85,7 +85,7 @@ export default function About() {
 
        <CardItem
         translateZ="50"
-        className="text-md font-medium text-justify px-4 leading-6"
+        className="text-md text-white font-medium text-justify px-4 leading-6"
        >
         I am a senior Bachelor of Science in Information Technology student at
         Caraga State University, with experience in creating dynamic web
@@ -96,7 +96,7 @@ export default function About() {
 
        <CardItem
         translateZ="60"
-        className="text-md font-medium text-justify mt-3 px-4 leading-6"
+        className="text-md text-white font-medium text-justify mt-3 px-4 leading-6"
        >
         When I'm away from my desk, I like to keep my mind sharp and enjoy
         nature by engaging in physical activities, such as running early in the
@@ -113,7 +113,7 @@ export default function About() {
 
      <CardItem translateZ="40">
       <div className="mt-5 flex items-end justify-end">
-       <button className="h-10 text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2">
+       <button className="h-10 text-white text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2">
         see more
         <svg
          xmlns="http://www.w3.org/2000/svg"

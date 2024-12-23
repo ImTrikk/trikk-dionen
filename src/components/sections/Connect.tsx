@@ -15,32 +15,32 @@ export default function Connect() {
     <motion.h1
      initial={{ opacity: 0, x: 100 }}
      whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.8 } }}
-     className="text-4xl font-bold font-integral"
+     className="text-4xl text-white font-bold font-integral"
     >
      LETs CONNECT
     </motion.h1>
-    <p className="text-xs font-light">
+    <p className="text-xs text-white font-light">
      You can contact me through this form, feel free to message me anytime and I
      will get back to you promply.
     </p>
 
-    <div className="flex flex-col gap-2 mt-5">
+    <div className="flex flex-col text-white gap-2 mt-5">
      <h1 className="text-lg font-bold font-integral">Socials</h1>
      <p className="text-xs font-light">
       You can also reach me through these platforms
      </p>
      <div className="flex items-center gap-4">
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaGithub /> <span>Github</span>
+       <FaGithub className="text-gray-400" /> <span>Github</span>
       </div>
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <SiGmail /> <span>Gmail</span>
+       <SiGmail className="text-orange-500" /> <span>Gmail</span>
       </div>
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaLinkedin /> <span>Linkedin</span>
+       <FaLinkedin className="text-blue-300" /> <span>Linkedin</span>
       </div>
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaFacebookSquare /> <span>Facebook</span>
+       <FaFacebookSquare className="text-blue-600" /> <span>Facebook</span>
       </div>
      </div>
     </div>

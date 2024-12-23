@@ -34,7 +34,7 @@ export default function Projects() {
     <motion.h1
      initial={{ opacity: 0, x: 100 }}
      whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
-     className="text-5xl font-bold font-integral shrink-0 flex items-center justify-center m-0"
+     className="text-5xl text-white font-bold font-integral shrink-0 flex items-center justify-center m-0"
     >
      PROJECTS{" "}
      <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
@@ -75,7 +75,7 @@ export default function Projects() {
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
         >
          <Link href={`/projects/${data.id}`}>
-          <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl h-full">
+          <div className="col-span-1 p-4 text-white border border-white flex flex-col justify-center rounded-xl h-full">
            <h2>{data.title}</h2>
            <p>{data.description}</p>
           </div>
@@ -90,7 +90,7 @@ export default function Projects() {
          whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
         >
          <Link href={`/projects/${data.id}`}>
-          <div className="col-span-1 p-4 border border-white flex flex-col justify-center rounded-xl h-full">
+          <div className="col-span-1 p-4 text-white border border-white flex flex-col justify-center rounded-xl h-full">
            <h2>{data.title}</h2>
            <p>{data.description}</p>
           </div>
