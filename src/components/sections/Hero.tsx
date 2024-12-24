@@ -75,7 +75,7 @@ export default function Hero() {
        />
       </svg>*/}
 
-      <FaMapPin className="text-red-500" />
+      <FaMapPin className="text-orange-700" />
 
       <p className="text-sm font-medium text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
        Butuan City, Philippines
@@ -110,7 +110,10 @@ export default function Hero() {
      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
      className="mt-3 flex items-center gap-2 w-full"
     >
-     <button className="bg-gray-500 hover:bg-gray-700 bg-opacity-25 text-xs px-2 rounded-md h-10 border border-gray-400 border-opacity-40 flex items-center gap-3">
+     <button
+      className="bg-gray-500 hover:bg-gray-700 bg-opacity-25 text-xs px-2 rounded-md h-10 border border-gray-400 border-opacity-40 flex items-center gap-3"
+      onClick={() => window.open("/path/to/your/resume.pdf", "_blank")}
+     >
       <svg
        xmlns="http://www.w3.org/2000/svg"
        fill="none"
@@ -127,7 +130,10 @@ export default function Hero() {
       </svg>
       <span className="text-white"> resume</span>
      </button>
-     <button className="bg-gray-500 hover:bg-gray-700 bg-opacity-25 text-xs px-2 rounded-md h-10 border border-gray-400 border-opacity-40 flex items-center gap-3">
+     <button
+      className="bg-gray-500 hover:bg-gray-700 bg-opacity-25 text-xs px-2 rounded-md h-10 border border-gray-400 border-opacity-40 flex items-center gap-3"
+      onClick={() => window.open("https://github.com/ImTrikk", "_blank")}
+     >
       <svg
        xmlns="http://www.w3.org/2000/svg"
        width="16"

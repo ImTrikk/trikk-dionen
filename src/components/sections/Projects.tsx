@@ -5,6 +5,8 @@ import { ProjectsData } from "@/data/projects";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import { ImEarth } from "react-icons/im";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 export default function Projects() {
  const [currentImages, setCurrentImages] = useState<number[]>(
@@ -26,14 +28,11 @@ export default function Projects() {
  }, []);
 
  return (
-  <main
-   id="recent-projects"
-   className="relative h-full w-full px-8 my-32 py-32"
-  >
+  <main id="recent-projects" className="relative h-full w-full my-32 py-32">
    <div className="flex items-center justify-between gap-4 mb-10">
     <motion.h1
-     initial={{ opacity: 0, x: 100 }}
-     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.5 } }}
+     initial={{ opacity: 0, x: 300 }}
+     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.7 } }}
      className="text-5xl text-white font-bold font-integral shrink-0 flex items-center justify-center m-0"
     >
      PROJECTS{" "}
@@ -45,103 +44,77 @@ export default function Projects() {
      <div className="w-full">
       <hr />
      </div>
-     <div className="shrink-0">Projects made with 💓</div>
+     <div className=" text-white shrink-0">Projects made with 💓</div>
     </div>
    </div>
-   <div className="grid grid-cols-3 gap-4 w-full max-h-[2500px] overflow-hidden">
+   <div className="flex flex-col gap-8">
     {ProjectsData.map((data, index) => (
-     <React.Fragment key={index}>
-      {index % 2 === 0 ? (
-       <>
-        {/* Image Section */}
-        <motion.div
-         initial={{ opacity: 0, x: -100 }}
-         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-         className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-        >
-         <AnimatePresence mode="wait">
-          <Link href={`/projects/${data.id}`}>
-           <Image
-            src={data.img_url[currentImages[index]] as unknown as string}
-            alt="project_picture"
-            className="w-full h-auto rounded-lg"
-           />
-          </Link>
-         </AnimatePresence>
-        </motion.div>
-        {/* Text Section */}
-        <motion.div
-         initial={{ opacity: 0, x: -100 }}
-         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-        >
-         <Link href={`/projects/${data.id}`}>
-          <div className="col-span-1 p-4 text-white border border-white flex flex-col justify-center rounded-xl h-full">
-           <h2>{data.title}</h2>
-           <p>{data.description}</p>
+     <motion.div
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
+      key={index}
+     >
+      <div className="flex gap-4">
+       <div className="w-full h-auto relative rounded-xl border border-white">
+        <AnimatePresence>
+         <motion.div
+          key={currentImages[index]}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="absolute inset-0"
+         >
+          <Image
+           src={data.img_url[currentImages[index]]}
+           alt="project_picture"
+           className="h-auto rounded-xl"
+           // layout="fill"
+           objectFit="cover"
+          />
+         </motion.div>
+        </AnimatePresence>
+       </div>
+       <div className="w-full">
+        <div className="flex items-end gap-2">
+         <h1 className="text-2xl font-integral font-bold text-white">
+          {data.title}
+         </h1>
+         <motion.div
+          initial={{ opacity: 1, rotate: 0 }}
+          whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
+          className="flex items-center gap-2 text-green-500"
+         >
+          <FaArrowAltCircleRight size={18} />
+         </motion.div>
+        </div>
+        <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
+         <p className="text-xs font-medium text-white">
+          Description: {data.description}
+         </p>
+        </div>
+        <div className="mt-5">
+         <p className="text-white text-xs font-light">Stacks used: </p>
+         {data.stacks.map((data, index) => (
+          <div key={index}>
+           <h1 className="text-white">
+            {data.logo} {data.name}
+           </h1>
           </div>
-         </Link>
-        </motion.div>
-       </>
-      ) : (
-       <>
-        {/* Text Section */}
-        <motion.div
-         initial={{ opacity: 0, x: 100 }}
-         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-        >
-         <Link href={`/projects/${data.id}`}>
-          <div className="col-span-1 p-4 text-white border border-white flex flex-col justify-center rounded-xl h-full">
-           <h2>{data.title}</h2>
-           <p>{data.description}</p>
-          </div>
-         </Link>
-        </motion.div>
-        {/* Image Section */}
-        <motion.div
-         initial={{ opacity: 0, x: 100 }}
-         whileInView={{ opacity: 1, x: 0, transition: { duration: 1.2 } }}
-         className="col-span-2 p-4 border border-white flex items-center justify-center rounded-xl min-h-[340px]"
-        >
-         <AnimatePresence mode="wait">
-          <Link href={`/projects/${data.id}`}>
-           <Image
-            src={data.img_url[currentImages[index]] as unknown as string}
-            alt="project_picture"
-            className="w-full h-auto rounded-lg"
-           />
-          </Link>
-         </AnimatePresence>
-        </motion.div>
-       </>
-      )}
-     </React.Fragment>
+         ))}
+        </div>
+        <div className="mt-5 flex items-center gap-2">
+         <div
+          className={`${
+           data.status === "Completed" ? "bg-green-500" : "bg-red-500"
+          } w-2 h-2 rounded-full flex items-center justify-center`}
+         ></div>
+         <p className="text-xs text-white font-light">{data.status}</p>
+        </div>
+       </div>
+      </div>
+     </motion.div>
     ))}
-   </div>
-   <div className="absolute bg-transparent left-0 bottom-5 mt-auto h-32 w-full bg-gradient-to-t from-gray-50 opacity-5 to-transparent pointer-events-none z-10" />
-   <div className="flex items-center justify-between w-full">
-    <motion.h1
-     initial={{ opacity: 0, x: 100 }}
-     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
-     className="text-5xl mt-10 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] font-integral"
-    >
-     And many more...
-    </motion.h1>
-    <motion.svg
-     initial={{ opacity: 1, rotate: 0 }}
-     whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
-     xmlns="http://www.w3.org/2000/svg"
-     fill="none"
-     viewBox="0 0 24 24"
-     strokeWidth="1.5"
-     stroke="currentColor"
-     className="size-16"
-    >
-     <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-     />
-    </motion.svg>
    </div>
   </main>
  );

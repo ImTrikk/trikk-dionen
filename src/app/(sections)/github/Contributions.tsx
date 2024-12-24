@@ -153,7 +153,7 @@ export const GithubGraph = () => {
      <motion.p
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-      className="mt-2 text-lg font-bold"
+      className="mt-2 text-white text-lg font-bold"
      >
       Commited to changes
      </motion.p>
