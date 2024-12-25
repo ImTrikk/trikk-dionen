@@ -20,7 +20,7 @@ export default function About() {
  return (
   <section id="about" className="h-auto w-full flex flex-col gap-1">
    <CardContainer className="inter-var ">
-    <CardBody className=" relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-25 dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-3xl p-8 border">
+    <CardBody className=" relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-10 dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-3xl p-8 border">
      <CardItem translateZ="50">
       <h1 className="text-4xl text-white font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
        ABOUT ME{" "}

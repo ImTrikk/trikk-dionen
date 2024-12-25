@@ -89,9 +89,7 @@ export default function Projects() {
          </motion.div>
         </div>
         <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
-         <p className="text-xs font-medium text-white">
-          Description: {data.description}
-         </p>
+         <p className="text-xs font-medium text-white">{data.description}</p>
         </div>
         <div className="mt-5">
          <p className="text-white text-xs font-light">Stack: </p>

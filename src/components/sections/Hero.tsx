@@ -43,6 +43,17 @@ export default function Hero() {
    </motion.div>
    <div className="flex w-[600px] flex-col gap-2 items-start flex-shrink-0">
     <div className="flex flex-col justify-start">
+     <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+      className="flex items-center gap-2 mt-3"
+     >
+      <FaMapPin size={16} className="text-orange-700" />
+
+      <p className="text-xs font-medium text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+       Butuan City, Philippines
+      </p>
+     </motion.div>
      <motion.h1
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
@@ -50,44 +61,13 @@ export default function Hero() {
      >
       PATRICK JAMES DIONEN
      </motion.h1>
-     <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
-      className="flex items-center gap-2 mt-3"
-     >
-      {/* <svg
-       xmlns="http://www.w3.org/2000/svg"
-       fill="none"
-       viewBox="0 0 24 24"
-       strokeWidth="1.5"
-       stroke="orange"
-       className="size-5 text-orange-700"
-      >
-       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-       />
-       <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-       />
-      </svg>*/}
-
-      <FaMapPin className="text-orange-700" />
-
-      <p className="text-sm font-medium text-green-500 drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
-       Butuan City, Philippines
-      </p>
-     </motion.div>
      <div className="flex items-center gap-2 mt-3">
       {tags.map((data, id) => (
        <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
         key={id}
-        className="h-8 border border-white rounded-md px-5 py-1 flex items-center justify-center text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white flex-shrink-0"
+        className="border border-white rounded-md px-5 py-1 flex items-center justify-center text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white w-full"
        >
         {data}
        </motion.div>
