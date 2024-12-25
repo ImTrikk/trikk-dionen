@@ -32,7 +32,7 @@ export default function Projects() {
    <div className="flex items-center justify-between gap-4 mb-10">
     <motion.h1
      initial={{ opacity: 0, x: 300 }}
-     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.7 } }}
+     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7 } }}
      className="text-5xl text-white font-bold font-integral shrink-0 flex items-center justify-center m-0"
     >
      PROJECTS{" "}
@@ -69,7 +69,7 @@ export default function Projects() {
            src={data.img_url[currentImages[index]]}
            alt="project_picture"
            className="h-auto rounded-xl"
-           // layout="fill"
+           layout="fill"
            objectFit="cover"
           />
          </motion.div>
@@ -94,23 +94,26 @@ export default function Projects() {
          </p>
         </div>
         <div className="mt-5">
-         <p className="text-white text-xs font-light">Stacks used: </p>
-         {data.stacks.map((data, index) => (
-          <div key={index}>
-           <h1 className="text-white">
-            {data.logo} {data.name}
-           </h1>
-          </div>
-         ))}
+         <p className="text-white text-xs font-light">Stack: </p>
+         <div className="flex items-center gap-2">
+          {data.stacks.map((data, index) => (
+           <div key={index} className="flex items-center gap-2 mt-2">
+            <p className="text-orange-400">
+             <data.logo />
+            </p>
+            <h1 className="text-xs font-light text-white">{data.name}</h1>
+           </div>
+          ))}
+         </div>
         </div>
-        <div className="mt-5 flex items-center gap-2">
+        {/* <div className="mt-5 flex items-center gap-2">
          <div
           className={`${
            data.status === "Completed" ? "bg-green-500" : "bg-red-500"
           } w-2 h-2 rounded-full flex items-center justify-center`}
          ></div>
          <p className="text-xs text-white font-light">{data.status}</p>
-        </div>
+        </div> */}
        </div>
       </div>
      </motion.div>

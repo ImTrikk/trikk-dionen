@@ -81,13 +81,13 @@ export default function Hero() {
        Butuan City, Philippines
       </p>
      </motion.div>
-     <div className="flex flex-wrap gap-2 mt-3">
+     <div className="flex items-center gap-2 mt-3">
       {tags.map((data, id) => (
        <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
         key={id}
-        className="h-8 border border-white rounded-md px-5 py-1 flex items-center justify-center text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white"
+        className="h-8 border border-white rounded-md px-5 py-1 flex items-center justify-center text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white flex-shrink-0"
        >
         {data}
        </motion.div>

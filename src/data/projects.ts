@@ -19,9 +19,25 @@ import simplichat_3 from "@/assets/projects/simplichat_3.png";
 import simplichat_4 from "@/assets/projects/simplichat_4.png";
 import simplichat_5 from "@/assets/projects/simplichat_5.png";
 
+// Import icons from react-icons
+import { FaReact as reactIcon } from "react-icons/fa";
+import { FaNodeJs as nodeIcon } from "react-icons/fa";
+import { SiPostgresql as postgresIcon } from "react-icons/si";
+import { SiSupabase as supabaseIcon } from "react-icons/si";
+import { SiFirebase as firebaseIcon } from "react-icons/si";
+import { FaLaravel as laravelIcon } from "react-icons/fa";
+import { FaPython as pythonIcon } from "react-icons/fa";
+import { SiElectron as electronIcon } from "react-icons/si";
+import { SiFlask as flaskIcon } from "react-icons/si";
+import { SiPytorch as pytorchIcon } from "react-icons/si";
+import { SiTensorflow as tensorflowIcon } from "react-icons/si";
+import { SiMongodb as mongodbIcon } from "react-icons/si";
+import { SiVercel as vercelIcon } from "react-icons/si"; // Added Vercel icon import
+import React from "react";
+
 export interface Stacks {
  name: string;
- logo: string;
+ logo: React.ComponentType;
 }
 
 export interface Projects {
@@ -41,7 +57,7 @@ export const ProjectsData: Projects[] = [
    "FoodieGO is a food recipe sharing application that lets users create, share, and review recipes while having the ability to download and generate AI nutrition information.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
  {
   id: 2,
@@ -50,7 +66,7 @@ export const ProjectsData: Projects[] = [
    "Visualify is an advanced Business Intelligence platform designed to deliver actionable insights on retail performance, including sales trends, customer churn analysis, and more, empowering businesses to make data-driven decisions with ease.",
   img_url: [visualify_1, visualify_2, visualify_3, visualify_4, visualify_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "Python", logo: pythonIcon }],
  },
  {
   id: 3,
@@ -59,7 +75,12 @@ export const ProjectsData: Projects[] = [
    "ReviewUP is a student-driven platform for creating, sharing, and downloading reviewers, as well as crafting and practicing with custom quizzes, fostering collaborative learning and academic success.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [
+   { name: "ReactJS", logo: reactIcon },
+   { name: "NodeJS", logo: nodeIcon },
+   { name: "PostgreSQL", logo: postgresIcon },
+   { name: "Firebase", logo: firebaseIcon },
+  ],
  },
  {
   id: 4,
@@ -68,7 +89,12 @@ export const ProjectsData: Projects[] = [
    "SynthStyle is an AI-powered platform that transforms images by blending them with desired artistic styles using advanced neural network algorithms, unlocking endless creative possibilities.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [
+   { name: "ElectronJS", logo: electronIcon },
+   { name: "Flask", logo: flaskIcon },
+   { name: "Python", logo: pythonIcon },
+   { name: "PyTorch", logo: pytorchIcon },
+  ],
  },
  {
   id: 5,
@@ -77,7 +103,7 @@ export const ProjectsData: Projects[] = [
    "ParaGO is your all-in-one travel companion, offering personalized itineraries, uncovering hidden gems, seamless booking features, and opportunities to join exciting travel events for unforgettable adventures.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
  {
   id: 6,
@@ -86,7 +112,7 @@ export const ProjectsData: Projects[] = [
    "DoTrack is a web and mobile application designed to track student attendance during DoDay events, ensuring fair and equal participation time for all attendees.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
  {
   id: 7,
@@ -95,7 +121,10 @@ export const ProjectsData: Projects[] = [
    "WeatherApp is a simple yet powerful application built with React.js and Laravel, leveraging the OpenWeather API to provide real-time weather updates and accurate forecasts for cities worldwide.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [
+   { name: "ReactJS", logo: reactIcon },
+   { name: "Laravel", logo: laravelIcon },
+  ],
  },
  {
   id: 8,
@@ -104,7 +133,10 @@ export const ProjectsData: Projects[] = [
    "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [
+   { name: "ReactJS", logo: reactIcon },
+   { name: "TensorFlow", logo: tensorflowIcon },
+  ],
  },
  {
   id: 9,
@@ -113,7 +145,11 @@ export const ProjectsData: Projects[] = [
    "Archived is an open platform where users can anonymously read short sentences or paragraphs shared by others, and also post their own anonymous messages, fostering a space for free expression and connection.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [
+   { name: "ReactJS", logo: reactIcon },
+   { name: "NodeJS", logo: nodeIcon },
+   { name: "MongoDB", logo: mongodbIcon },
+  ],
  },
  {
   id: 10,
@@ -122,7 +158,7 @@ export const ProjectsData: Projects[] = [
    "ReviewUP Admin is the powerful administrative panel for managing ReviewUP users and reviewers, enabling admins to handle reported content, delete inappropriate reviews, and ensure a seamless experience for the community.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
  {
   id: 11,
@@ -131,7 +167,7 @@ export const ProjectsData: Projects[] = [
    "Counsefi is a web-based information management system designed to securely store students' personal data, allowing counselors to analyze trends and patterns to provide tailored financial counseling and planning.",
   img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
  {
   id: 12,
@@ -146,6 +182,6 @@ export const ProjectsData: Projects[] = [
    simplichat_5,
   ],
   status: "Completed",
-  stacks: [{ name: "ReactJS", logo: "" }],
+  stacks: [{ name: "ReactJS", logo: reactIcon }],
  },
 ];
