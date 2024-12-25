@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
- title: "Patrick James Dionen",
+ title: "Patrick Dionen - Software Engineer",
  description: "Personal Website: Patrick James Dionen",
 };
 

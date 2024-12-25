@@ -28,7 +28,7 @@ export default function Projects() {
  }, []);
 
  return (
-  <main id="recent-projects" className="relative h-full w-full my-32 py-32">
+  <main id="recent-projects" className="relative h-auto w-full my-32 py-32">
    <div className="flex items-center justify-between gap-4 mb-10">
     <motion.h1
      initial={{ opacity: 0, x: 300 }}
@@ -47,7 +47,7 @@ export default function Projects() {
      <div className=" text-white shrink-0">Projects made with 💓</div>
     </div>
    </div>
-   <div className="flex flex-col gap-8">
+   <div className="flex flex-col gap-8 max-h-[700px] mt-16">
     {ProjectsData.map((data, index) => (
      <motion.div
       initial={{ opacity: 0, y: 200 }}
@@ -116,6 +116,9 @@ export default function Projects() {
       </div>
      </motion.div>
     ))}
+   </div>
+   <div className="mt-32">
+    <h1 className="font-integral text-white">View More Projects</h1>
    </div>
   </main>
  );

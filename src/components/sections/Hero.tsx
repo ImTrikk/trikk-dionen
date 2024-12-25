@@ -33,13 +33,13 @@ export default function Hero() {
     }}
     className="lg:flex-shrink-0 flex items-center justify-center pt-16 md:pt-0"
    >
-    <Image
+    {/* <Image
      src={HeroTrikk}
      alt="trikk image"
      // width={320}
      // height={320}
      className="w-[200px] md:w-[320px]"
-    />
+    /> */}
    </motion.div>
    <div className="flex w-full md:w-[600px] flex-col gap-2 items-start flex-shrink-0">
     <div className="flex flex-col justify-start">
