@@ -14,16 +14,16 @@ export default function Home() {
    <Navbar />
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     <Hero />
-    <About />
+    {/* <About /> */}
    </div>
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
     {/* <div className="overflow-hidden"> */}
-    <Projects />
+    {/* <Projects /> */}
     {/* </div> */}
-    <Stack />
+    {/* <Stack /> */}
     {/* <OtherSkills /> */}
-    <Connect />
-    <Footer />
+    {/* <Connect /> */}
+    {/* <Footer /> */}
    </div>
   </main>
  );

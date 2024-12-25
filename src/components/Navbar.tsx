@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS"];
-// const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS", "SKILLS"];
 
 export default function Navbar() {
  const [isActive, setIsActive] = useState<string>("HOME"); // Default to first link
@@ -55,8 +54,8 @@ export default function Navbar() {
    transition={{ duration: 0.7 }}
    className="sticky top-5 z-50 sm:px-10"
   >
-   <div className="max-w-xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md ">
-    <h1 className="glitch" data-text="⚡ TRKKU.">
+   <div className="max-w-xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md">
+    <h1 className="glitch text-xs sm:text-base shrink-0" data-text="⚡ TRKKU.">
      <motion.span
       initial={{ rotate: 0 }}
       animate={{ rotate: 360 }}
@@ -72,7 +71,7 @@ export default function Navbar() {
       <li
        onClick={() => handleNav(data)}
        key={id}
-       className={`text-[10px] list-none cursor-pointer px-4 py-2 ${
+       className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
         isActive === data
          ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
          : "text-white"
@@ -88,7 +87,7 @@ export default function Navbar() {
        isActive === "CONTACT"
         ? "bg-green-500 text-white"
         : "bg-white text-black"
-      } px-4 py-2 rounded-full text-xs font-semibold`}
+      } px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs font-semibold`}
      >
       BLOGS
      </button>
