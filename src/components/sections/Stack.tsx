@@ -63,7 +63,7 @@ export default function Stack() {
       </CardContainer>
      </motion.div>
     </div>
-    <div className="grid grid-cols-3 gap-3">
+    {/* <div className="grid grid-cols-3 gap-3">
      <div className="col-span-1 h-[60px] text-white flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
       Framer Motion
      </div>
@@ -73,7 +73,7 @@ export default function Stack() {
      <div className="col-span-1 h-[60px] text-white flex items-center justify-center border border-gray-300 rounded-xl bg-darkgray-500">
       Material UI
      </div>
-    </div>
+    </div> */}
    </div>
    <div className="mt-32">
     <GithubGraph />

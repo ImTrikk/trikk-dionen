@@ -1,16 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import type { Projects } from "@/data/projects";
 import { ProjectsData } from "@/data/projects";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { ImEarth } from "react-icons/im";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { ProjectInfoCard } from "../ui/ProjectInfoCard";
+import { once } from "events";
 
 export default function Projects() {
  const [currentImages, setCurrentImages] = useState<number[]>(
-  ProjectsData.map(() => 0) // Initialize with the first image for each project
+  ProjectsData.map(() => 0) // Initialize with or first image for each project
+ );
+
+ const [selectedProject, setSelectedProject] = useState<Projects | undefined>(
+  undefined
  );
 
  useEffect(() => {
@@ -28,7 +35,7 @@ export default function Projects() {
  }, []);
 
  return (
-  <main id="recent-projects" className="relative h-auto w-full my-32 py-32">
+  <main id="projects" className="relative h-auto w-full my-32 py-32">
    <div className="flex items-center justify-between gap-4 mb-10">
     <motion.h1
      initial={{ opacity: 0, x: 300 }}
@@ -47,79 +54,50 @@ export default function Projects() {
      <div className=" text-white shrink-0">Projects made with 💓</div>
     </div>
    </div>
-   <div className="flex flex-col gap-8 max-h-[700px] mt-16">
-    {ProjectsData.map((data, index) => (
-     <motion.div
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
-      key={index}
-     >
-      <div className="flex gap-4">
-       <div className="w-full h-auto relative rounded-xl border border-white">
-        <AnimatePresence>
-         <motion.div
-          key={currentImages[index]}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0"
-         >
-          <Image
-           src={data.img_url[currentImages[index]]}
-           alt="project_picture"
-           className="h-auto rounded-xl"
-           layout="fill"
-           objectFit="cover"
-          />
-         </motion.div>
-        </AnimatePresence>
-       </div>
-       <div className="w-full">
-        <div className="flex items-end gap-2">
-         <h1 className="text-2xl font-integral font-bold text-white">
-          {data.title}
-         </h1>
-         <motion.div
-          initial={{ opacity: 1, rotate: 0 }}
-          whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
-          className="flex items-center gap-2 text-green-500"
-         >
-          <FaArrowAltCircleRight size={18} />
-         </motion.div>
-        </div>
-        <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
-         <p className="text-xs font-medium text-white">{data.description}</p>
-        </div>
-        <div className="mt-5">
-         <p className="text-white text-xs font-light">Stack: </p>
-         <div className="flex items-center gap-2">
-          {data.stacks.map((data, index) => (
-           <div key={index} className="flex items-center gap-2 mt-2">
-            <p className="text-orange-400">
-             <data.logo />
-            </p>
-            <h1 className="text-xs font-light text-white">{data.name}</h1>
-           </div>
-          ))}
+   <div className="flex items-start justify-between mt-14 gap-6">
+    <div className="relative flex flex-col gap-8 max-h-[500px] overflow-scroll w-[350px]  shrink-0 px-2">
+     <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t to-transparent pointer-events-none"></div>
+
+     {/* Project Content */}
+     {ProjectsData.map((data, index) => (
+      <div
+       // initial={{ opacity: 0, y: 200 }}
+       // whileInView={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
+       key={index}
+       className={`cursor-pointer transition-all duration-300 ${
+        selectedProject === data ? "border border-green-500 p-2 rounded-xl" : ""
+       }`}
+       onClick={() => setSelectedProject(data)}
+      >
+       <div className="flex gap-4">
+        <div className="w-full">
+         <div className="flex items-end gap-2">
+          <h1 className="text-2xl font-integral font-bold text-white">
+           {data.title}
+          </h1>
+          {/* <motion.div
+           initial={{ opacity: 1, rotate: 0 }}
+           whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
+           className="flex items-center gap-2 text-green-500"
+          >
+           <FaArrowAltCircleRight size={18} />
+          </motion.div> */}
+         </div>
+         <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
+          <p className="text-xs font-medium text-white">{data.description}</p>
          </div>
         </div>
-        {/* <div className="mt-5 flex items-center gap-2">
-         <div
-          className={`${
-           data.status === "Completed" ? "bg-green-500" : "bg-red-500"
-          } w-2 h-2 rounded-full flex items-center justify-center`}
-         ></div>
-         <p className="text-xs text-white font-light">{data.status}</p>
-        </div> */}
        </div>
       </div>
-     </motion.div>
-    ))}
+     ))}
+    </div>
+    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/40 to-transparent z-40" />
+    {selectedProject && <ProjectInfoCard project={selectedProject} />}
    </div>
-   <div className="mt-32">
-    <h1 className="font-integral text-white">View More Projects</h1>
-   </div>
+
+   {/* <div className="h-10 bg-gray-400 bg-opacity-15 border border-gray-400 flex items-center justify-center rounded-full">
+    <button className="text-white">View More Projects</button>
+   </div> */}
   </main>
  );
 }

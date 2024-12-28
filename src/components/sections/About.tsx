@@ -15,8 +15,11 @@ import {
  TextRevealCardTitle,
 } from "../ui/text-reveal-card";
 import { h1 } from "framer-motion/client";
+import { Achievements } from "../ui/Achievements";
 
 export default function About() {
+ const [achievements, setAchievements] = useState(false);
+
  return (
   <section id="about" className="h-auto w-full flex flex-col gap-1">
    <CardContainer className="inter-var ">
@@ -61,7 +64,9 @@ export default function About() {
 
      <div className="mt-5">
       <CardItem translateZ="80" as="div">
-       <h1 className="text-2xl text-white font-semibold">MEET THE PROBLEM SOLVER</h1>
+       <h1 className="text-2xl text-white font-semibold">
+        MEET THE PROBLEM SOLVER
+       </h1>
       </CardItem>
       <CardItem translateZ="100" as="div" className="mb-2">
        <h1 className="text-4xl font-black font-integral text-green-600">
@@ -113,8 +118,11 @@ export default function About() {
 
      <CardItem translateZ="40">
       <div className="mt-5 flex items-end justify-end">
-       <button className="h-10 text-white text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2">
-        see more
+       <button
+        onClick={() => setAchievements(true)}
+        className="h-10 text-white text-xs rounded-xl border border-white px-4 flex items-center justify-center gap-2"
+       >
+        Achievements
         <svg
          xmlns="http://www.w3.org/2000/svg"
          fill="none"
@@ -134,6 +142,7 @@ export default function About() {
      </CardItem>
     </CardBody>
    </CardContainer>
+   {achievements && <Achievements setAchievements={setAchievements} />}
   </section>
  );
 }

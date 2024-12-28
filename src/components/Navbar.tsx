@@ -3,10 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const links = ["HOME", "ABOUT", "RECENT PROJECTS", "STACKS"];
+const links = ["HOME", "ABOUT", "PROJECTS", "STACKS"];
 
 export default function Navbar() {
  const [isActive, setIsActive] = useState<string>("HOME"); // Default to first link
+ const [showContent, setShowContent] = useState<boolean>(false);
 
  const handleNav = (data: string) => {
   setIsActive(data); // Update active state
@@ -31,8 +32,7 @@ export default function Navbar() {
     if (element) {
      const rect = element.getBoundingClientRect();
      const isInView =
-      rect.top <= window.innerHeight / 2 &&
-      rect.bottom >= window.innerHeight / 2;
+      rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
      if (isInView) {
       setIsActive(section);
      }
@@ -47,52 +47,80 @@ export default function Navbar() {
   };
  }, []);
 
+ useEffect(() => {
+  const timer = setTimeout(() => {
+   setShowContent(true);
+  }, 3000); // Show content after 3 seconds
+
+  return () => clearTimeout(timer);
+ }, []);
+
  return (
-  <motion.nav
-   initial={{ opacity: 0, y: 600 }}
-   animate={{ opacity: 1, y: 0 }}
-   transition={{ duration: 0.7 }}
-   className="sticky top-5 z-50 sm:px-10"
-  >
-   <div className="max-w-xl mx-auto h-14 border border-white rounded-3xl flex items-center justify-between px-4 bg-black/10 backdrop-blur-md">
-    <h1 className="glitch text-xs sm:text-base shrink-0" data-text="⚡ TRKKU.">
-     <motion.span
-      initial={{ rotate: 0 }}
-      animate={{ rotate: 360 }}
-      transition={{ duration: 2, repeat: Infinity }}
-     >
-      ⚡
-     </motion.span>{" "}
-     TRKKU.
-    </h1>
-
-    <div className="flex items-center gap-2">
-     {links.map((data, id) => (
-      <li
-       onClick={() => handleNav(data)}
-       key={id}
-       className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
-        isActive === data
-         ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
-         : "text-white"
-       }`}
+  <>
+   <motion.nav
+    initial={{ opacity: 0, y: 600 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    className="sticky top-5 z-50 sm:px-10 overflow-hidden"
+   >
+    <motion.div
+     initial={{ width: 56, height: 56 }}
+     animate={{
+      width: showContent ? "max-content" : 56,
+      height: 56,
+      borderRadius: showContent ? "1.5rem" : "50%",
+     }}
+     transition={{ duration: 0.7 }}
+     className={`${
+      !showContent ? "border-2 border-white" : "border border-white"
+     } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden`}
+    >
+     <h1 className="glitch text-xs sm:text-base shrink-0" data-text="⚡">
+      <motion.span
+       initial={{ rotate: 0 }}
+       animate={{ rotate: 360 }}
+       transition={{ duration: 2, repeat: Infinity }}
       >
-       {data}
-      </li>
-     ))}
+       ⚡
+      </motion.span>
+      {showContent && "TRKKU."}
+     </h1>
 
-     <button
-      onClick={() => handleNav("CONTACT")}
-      className={`${
-       isActive === "CONTACT"
-        ? "bg-green-500 text-white"
-        : "bg-white text-black"
-      } px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs font-semibold`}
-     >
-      BLOGS
-     </button>
-    </div>
-   </div>
-  </motion.nav>
+     {showContent && (
+      <motion.div
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       transition={{ duration: 1 }}
+       className="flex items-center gap-2"
+      >
+       {links.map((data, id) => (
+        <li
+         onClick={() => handleNav(data)}
+         key={id}
+         className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
+          isActive === data
+           ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
+           : "text-white"
+         }`}
+        >
+         {data}
+        </li>
+       ))}
+
+       <button
+        onClick={() => handleNav("CONTACT")}
+        className={`${
+         isActive === "CONTACT"
+          ? "bg-green-500 text-white"
+          : "bg-white text-black"
+        } px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs font-semibold w-auto`} // Added w-auto to prevent full width
+       >
+        CONTACT
+       </button>
+      </motion.div>
+     )}
+    </motion.div>
+   </motion.nav>
+  </>
  );
 }
