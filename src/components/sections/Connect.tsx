@@ -7,29 +7,50 @@ import { SiGmail } from "react-icons/si";
 
 export default function Connect() {
  return (
-  <section
-   id="contact"
-   className="mt-44 w-full flex items-start justify-between gap-10"
-  >
-   <div className="flex flex-col gap-2">
-    <motion.h1
+  <section id="contact" className="mt-44 w-full">
+   <div className="w-full flex flex-col gap-2">
+    <motion.div
      initial={{ opacity: 0, x: 100 }}
-     whileInView={{ opacity: 0.7, x: 0, transition: { duration: 0.8 } }}
-     className="text-4xl text-white font-bold font-integral"
+     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+     className="flex items-center justify-between gap-5"
     >
-     LETs CONNECT
-    </motion.h1>
-    <p className="text-xs text-white font-light">
-     You can contact me through this form, feel free to message me anytime and I
-     will get back to you promply.
-    </p>
+     <h1 className="text-4xl text-white font-bold font-integral shrink-0">
+      LET <span style={{ fontFamily: "Poppins" }}>'</span>s{" "}
+      <span className="text-green-500 font-integral">
+       CONNECT{" "}
+       <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+        .
+       </span>{" "}
+      </span>
+     </h1>
+     <div className="w-full">
+      <hr />
+     </div>
+    </motion.div>
+    <motion.p
+     initial={{ y: 100, opacity: 0 }}
+     whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+     className="text-xs text-white font-light w-[300px] mt-5"
+    >
+     Let's connect and collaborate on projects, ideas, and more. I'm always open
+     to new opportunities and challenges.
+    </motion.p>
 
     <div className="flex flex-col text-white gap-2 mt-5">
-     <h1 className="text-lg font-bold font-integral">Socials</h1>
-     <p className="text-xs font-light">
-      You can also reach me through these platforms
-     </p>
-     <div className="flex items-center gap-4">
+     <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1, transition: { duration: 0.8 } }}
+     >
+      <h1 className="text-lg font-bold font-integral">Socials</h1>
+      <p className="text-xs font-light">
+       You can also reach me through these platforms
+      </p>
+     </motion.div>
+     <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+      className="flex items-center gap-4"
+     >
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
        <FaGithub className="text-gray-400" /> <span>Github</span>
       </div>
@@ -42,7 +63,7 @@ export default function Connect() {
       <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
        <FaFacebookSquare className="text-blue-600" /> <span>Facebook</span>
       </div>
-     </div>
+     </motion.div>
     </div>
    </div>
    <div className="w-[700px]">

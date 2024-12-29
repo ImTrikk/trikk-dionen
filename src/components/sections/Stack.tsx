@@ -16,7 +16,7 @@ export default function Stack() {
    <div>
     <motion.h1
      initial={{ opacity: 0, x: 100 }}
-     whileInView={{ opacity: 0.8, x: 0, transition: { duration: 0.8 } }}
+     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
      className="text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
     >
      TECH STACK {""}

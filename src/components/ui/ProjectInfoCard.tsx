@@ -3,7 +3,10 @@
 import { Projects } from "@/data/projects";
 import Image from "next/image";
 import { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+ IoIosArrowDroprightCircle,
+ IoIosArrowDropleftCircle,
+} from "react-icons/io";
 
 export const ProjectInfoCard = ({ project }: { project: Projects }) => {
  const [currentImageIndex, setCurrentImageIndex] = useState(1); // Start at the first real image
@@ -87,15 +90,15 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
      {/* Navigation Buttons */}
      <button
       onClick={handlePrevClick}
-      className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+      className="absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-800 p-2 rounded-full"
      >
-      <FaArrowLeft />
+      <IoIosArrowDropleftCircle />
      </button>
      <button
       onClick={handleNextClick}
-      className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+      className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-800 p-2 rounded-full"
      >
-      <FaArrowRight />
+      <IoIosArrowDroprightCircle />
      </button>
     </div>
     <div className="mt-5">

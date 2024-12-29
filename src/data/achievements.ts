@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import build_wireframe from "../assets/achievements/build_wireframe.png";
 import conduct_ux from "../assets/achievements/conduct_ux.png";
 import csc_passed from "../assets/achievements/csc_passed.png";
@@ -9,18 +10,16 @@ import parago from "../assets/achievements/parago.png";
 import user_experience from "../assets/achievements/user_experience.png";
 import ux_design_process from "../assets/achievements/ux_design_process.png";
 
-
-
-export interface achievements {
+export interface Achievement {
  id: number;
  name: string;
  date: string;
  description: string;
  by: string;
- img: object;
+ img: string | StaticImageData;
 }
 
-export const achievementData: achievements[] = [
+export const achievementData: Achievement[] = [
  {
   id: 1,
   name: "1st runnerup PSC7",

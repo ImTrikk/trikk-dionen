@@ -73,9 +73,9 @@ export default function Navbar() {
      transition={{ duration: 0.7 }}
      className={`${
       !showContent ? "border-2 border-white" : "border border-white"
-     } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden`}
+     } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden gap-5`}
     >
-     <h1 className="glitch text-xs sm:text-base shrink-0" data-text="⚡">
+     <h1 className="glitch font-integral text-[5px] shrink-0" data-text="⚡">
       <motion.span
        initial={{ rotate: 0 }}
        animate={{ rotate: 360 }}
@@ -91,7 +91,7 @@ export default function Navbar() {
        initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}
        transition={{ duration: 1 }}
-       className="flex items-center gap-2"
+       className="flex items-center "
       >
        {links.map((data, id) => (
         <li
@@ -115,7 +115,7 @@ export default function Navbar() {
           : "bg-white text-black"
         } px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs font-semibold w-auto`} // Added w-auto to prevent full width
        >
-        CONTACT
+        CONNECT
        </button>
       </motion.div>
      )}

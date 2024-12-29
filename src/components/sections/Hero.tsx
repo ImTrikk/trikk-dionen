@@ -16,32 +16,17 @@ export default function Hero() {
  return (
   <main
    id="home"
-   className="relative h-auto md:h-screen w-full md:flex items-center justify-center md:gap-8"
+   className="relative h-auto md:h-screen w-full md:flex items-center justify-center gap-3"
   >
-   {/* <Vortex
-    backgroundColor="black"
-    rangeY={200}
-    particleCount={20}
-    baseHue={900}
-    className="h-screen w-full flex items-center justify-center gap-8"
-   > */}{" "}
-   {/* <motion.div
-    initial={{ opacity: 0, x: 100 }}
-    whileInView={{
-     opacity: 1,
-     x: 0,
-     transition: { duration: 0.5 },
-    }}
-    className="lg:flex-shrink-0 flex items-center justify-center pt-16 md:pt-0"
-   >
+   <div className="w-[250px] h-[250px] rounded-lg overflow-hidden border border-gray-500 p-2 flex items-center justify-center shrink-0">
     <Image
-     src={HeroTrikk}
+     src={trkmain}
      alt="trikk image"
-     // width={320}
-     // height={320}
-     className="w-[200px] md:w-[320px]"
+     // objectFit="fill"
+     className="w-[250px] h-[250px] rounded-xl overflow-hidden shrink-0"
     />
-   </motion.div> */}
+   </div>
+
    <div className="flex w-full md:w-[600px] flex-col gap-2 items-start flex-shrink-0">
     <div className="flex flex-col justify-start">
      <motion.div
@@ -56,36 +41,26 @@ export default function Hero() {
       </p>
      </motion.div>
      <motion.div className="w-full flex gap-2">
-      <div className="w-[200px] h-[200px] rounded-lg overflow-hidden border border-gray-500 p-2 flex items-center justify-center shrink-0">
-       <Image
-        src={trkmain}
-        alt="trikk image"
-        // objectFit="fill"
-        className="w-[200px] h-[180px] rounded-lg overflow-hidden shrink-0"
-       />
-      </div>
-      <div className="flex flex-col">
-       <motion.h1
+      <motion.h1
+       initial={{ opacity: 0, y: 100 }}
+       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+       className="text-xl md:text-2xl lg:text-5xl tracking-widest font-black text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+      >
+       PATRICK DIONEN
+      </motion.h1>
+     </motion.div>
+     <div className="flex items-center gap-2 mt-3">
+      {tags.map((data, id) => (
+       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-        className="text-xl md:text-2xl lg:text-5xl tracking-widest font-black text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] font-integral"
+        key={id}
+        className="border border-white rounded-md px-5 py-1 flex items-center justify-center text-[8px] sm:text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white w-full"
        >
-        PATRICK JAMES DIONEN
-       </motion.h1>
-       <div className="flex items-center gap-2 mt-3">
-        {tags.map((data, id) => (
-         <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-          key={id}
-          className="border border-white rounded-md px-5 py-1 flex items-center justify-center text-[8px] sm:text-xs font-regular hover:shadow-md hover:shadow-[#39FF14] transition-all duration-500 text-white w-full"
-         >
-          {data}
-         </motion.div>
-        ))}
-       </div>
-      </div>
-     </motion.div>
+        {data}
+       </motion.div>
+      ))}
+     </div>
      <motion.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
@@ -166,7 +141,6 @@ export default function Hero() {
      </motion.div>
     </div>
    </div>
-   {/* </Vortex> */}
   </main>
  );
 }
