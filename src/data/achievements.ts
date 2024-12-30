@@ -22,10 +22,10 @@ export interface Achievement {
 export const achievementData: Achievement[] = [
  {
  id: 1,
- name: "1st runnerup PSC7",
+ name: "PSC 7 Regionals",
  date: "November 2022",
- by: "DICT Caraga",
- description: "1st runner-up in the Philippine Startup Challenge 7",
+ by: "DICT",
+ description: "1st runner-up during the Philippine Startup Challenge 7",
  img: parago,
  },
 

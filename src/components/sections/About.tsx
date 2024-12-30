@@ -129,20 +129,32 @@ export default function About() {
     </CardBody>
    </CardContainer>
    <div className="mt-20">
-    <h1 className="text-4xl font-integral text-white">
-     Experience{" "}
-     <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
-      and
-     </span>{" "}
-    </h1>{" "}
-    <span className="text-2xl font-semibold text-white">Achievements</span>
+    <div className="flex items-center justify-between gap-2">
+     <div className="shrink-0 flex flex-col">
+      <h1 className="text-4xl font-integral text-white">
+       EXPERIENCE{" "}
+       <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+        and
+       </span>{" "}
+      </h1>{" "}
+      <span className="text-2xl font-medium text-white">Achievements</span>
+     </div>
+     <div className="w-full">
+      <hr className="text-gray-400" />
+     </div>
+    </div>
    </div>
    <div className="flex items-center justify-between mt-5">
     <div className="relative">
      {/* Vertical Line for the Timeline */}
      <div className="absolute left-[22px] top-0 h-full w-[2px] bg-gray-700"></div>
      {experiences.map((exp, index) => (
-      <div key={index} className="relative flex items-start mt-8">
+      <motion.div
+       initial={{ opacity: 0, y: 100 }}
+       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
+       key={index}
+       className="relative flex items-start mt-8"
+      >
        <div className="relative z-10 flex items-center justify-center w-12">
         {/* Timeline Marker */}
         <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-3 h-3 bg-green-500 rounded-full hover:bg-orange-500"></div>
@@ -154,12 +166,17 @@ export default function About() {
          {exp.description}
         </p>
        </div>
-      </div>
+      </motion.div>
      ))}
     </div>
     <div className="w-[280px] bg-opacity-10 rounded-xl flex flex-col gap-4">
      {achievementData.map((data, index) => (
-      <motion.div initial={{}} key={index} className="text-white">
+      <motion.div
+       initial={{ opacity: 0, y: 100 }}
+       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+       key={index}
+       className="text-white"
+      >
        <div className="flex items-center justify-between">
         <p className="text-sm font-medium">{data.name}</p>
         <p className=" shrink-0 text-[12px] text-gray-500">{data.date}</p>
@@ -181,16 +198,25 @@ export default function About() {
     </div>
    </div>
    <div className="mt-16">
-    <h1 className="text-4xl font-integral text-white">
-     CERTIFICATES{" "}
-     <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
-      and
-     </span>{" "}
-    </h1>{" "}
-    <span className="text-2xl font-semibold text-white">Participations</span>
+    <div className="flex items-center justify-between gap-2">
+     <div className="shrink-0 flex flex-col">
+      <h1 className="text-4xl font-integral text-white">
+       CERTIFICATES{" "}
+       <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+        and
+       </span>{" "}
+      </h1>{" "}
+      <span className="text-2xl font-medium text-white">Participations</span>
+     </div>
+     <div className="w-full">
+      <hr className="text-gray-400" />
+     </div>
+    </div>
     <div className="w-full flex flex-wrap items-center justify-center gap-2 mt-10">
      {certificates.map((cert, index) => (
       <motion.div
+       initial={{ opacity: 0, y: 100 }}
+       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
        whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
        key={index}
        className="h-[80px] flex flex-col gap-1  bg-gray-500 bg-opacity-10 p-3 border border-gray-500 rounded-lg"
