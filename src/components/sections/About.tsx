@@ -7,10 +7,13 @@ import trik1 from "@/assets/trkk/trik1.jpg";
 import trik2 from "@/assets/trkk/trik2.jpg";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 import { achievementData } from "@/data/achievements";
+import Marquee from "react-fast-marquee";
+import { certificates } from "@/data/certs";
+import { BiMedal } from "react-icons/bi";
 
 export default function About() {
  const [achievements, setAchievements] = useState(false);
-const [colors, setColors] = useState<string[]>([]);
+ const [colors, setColors] = useState<string[]>([]);
 
  useEffect(() => {
   // Generate random pastel colors only on the client side
@@ -29,16 +32,16 @@ const [colors, setColors] = useState<string[]>([]);
 
  const experiences = [
   {
-   date: "January 2023 - June 2024",
-   title: "Full Stack Developer | UI/UX Designer | ParaGO",
-   description:
-    "Worked on creating dynamic web applications using React and Node.js, improving application performance and scalability.",
-  },
-  {
    date: "December 2024 - Present",
    title: "Full Stack Developer | Exon",
    description:
     "Developing advanced APIs and enhancing user interfaces to drive better user experiences and functionality.",
+  },
+  {
+   date: "January 2023 - June 2024",
+   title: "Full Stack Developer | UI/UX Designer | ParaGO",
+   description:
+    "Worked on creating dynamic web applications using React and Node.js, improving application performance and scalability.",
   },
  ];
 
@@ -126,13 +129,18 @@ const [colors, setColors] = useState<string[]>([]);
     </CardBody>
    </CardContainer>
    <div className="mt-20">
-    <h1 className="text-3xl font-integral text-white">Experience</h1>{" "}
-    <span className="text-2xl text-white">Achievements</span>
+    <h1 className="text-4xl font-integral text-white">
+     Experience{" "}
+     <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+      and
+     </span>{" "}
+    </h1>{" "}
+    <span className="text-2xl font-semibold text-white">Achievements</span>
    </div>
-   <div className="flex  gap-5 mt-5 w-[500px]">
+   <div className="flex items-center justify-between mt-5">
     <div className="relative">
      {/* Vertical Line for the Timeline */}
-     <div className="absolute left-[21px] top-0 h-full w-[2px] bg-gray-700"></div>
+     <div className="absolute left-[22px] top-0 h-full w-[2px] bg-gray-700"></div>
      {experiences.map((exp, index) => (
       <div key={index} className="relative flex items-start mt-8">
        <div className="relative z-10 flex items-center justify-center w-12">
@@ -149,21 +157,60 @@ const [colors, setColors] = useState<string[]>([]);
       </div>
      ))}
     </div>
-    <div className="flex flex-col gap-2 max-h-[300px] bg-gray-500 bg-opacity-10 overflow-scroll p-3 rounded-xl w-[400px]">
-     {achievementData.map((data, index) => {
-      return (
-       <div
-        key={index}
-        className="p-3 rounded-xl w-[300px] h-[70px] text-white"
-        style={{ backgroundColor: colors[index] }} // Use the colors state here
-       >
-        <div className="flex items-center justify-between">
-         <p className="text-xs">{data.name}</p>
-         <p className="text-xs font-medium">{data.date}</p>
+    <div className="w-[280px] bg-opacity-10 rounded-xl flex flex-col gap-4">
+     {achievementData.map((data, index) => (
+      <motion.div initial={{}} key={index} className="text-white">
+       <div className="flex items-center justify-between">
+        <p className="text-sm font-medium">{data.name}</p>
+        <p className=" shrink-0 text-[12px] text-gray-500">{data.date}</p>
+       </div>
+       <div className="w-full text-justify">
+        <p className="text-[9px] text-gray-400 font-medium">
+         {data.description}
+        </p>
+       </div>
+       <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}>
+        <Image
+         src={data.img}
+         alt={data.name}
+         className="w-[350px] max-h-[110px] rounded-lg object-cover mt-1"
+        />
+       </motion.div>
+      </motion.div>
+     ))}
+    </div>
+   </div>
+   <div className="mt-16">
+    <h1 className="text-4xl font-integral text-white">
+     CERTIFICATES{" "}
+     <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+      and
+     </span>{" "}
+    </h1>{" "}
+    <span className="text-2xl font-semibold text-white">Participations</span>
+    <div className="w-full flex flex-wrap items-center justify-center gap-2 mt-10">
+     {certificates.map((cert, index) => (
+      <motion.div
+       whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
+       key={index}
+       className="h-[80px] flex flex-col gap-1  bg-gray-500 bg-opacity-10 p-3 border border-gray-500 rounded-lg"
+      >
+       <div className="flex items-start gap-1">
+        <BiMedal size={16} className="text-orange-400 shrink-0 mt-1" />
+        <div className="flex flex-col">
+         <div className="w-[220px] flex items-start justify-between gap-2">
+          <p className="text-xs font-medium text-white">{cert.name}</p>
+          <p className="shrink-0 text-xs font-light text-gray-400">
+           {cert.date}
+          </p>
+         </div>
         </div>
        </div>
-      );
-     })}
+       <div className="mt-auto ml-[16px]">
+        <p className="text-xs text-gray-400 font-medium">{cert.by}</p>
+       </div>
+      </motion.div>
+     ))}
     </div>
    </div>
   </section>

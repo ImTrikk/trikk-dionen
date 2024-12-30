@@ -16,15 +16,15 @@ export default function Connect() {
     >
      <h1 className="text-4xl text-white font-bold font-integral shrink-0">
       LET <span style={{ fontFamily: "Poppins" }}>'</span>s{" "}
-      <span className="text-green-500 font-integral">
+      <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
        CONNECT{" "}
        <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         .
        </span>{" "}
       </span>
      </h1>
-     <div className="w-full">
-      <hr />
+     <div className="w-full flex items-center gap-2">
+      <hr className="shrink-0 w-full" /> <span className="text-xl">⚡</span>
      </div>
     </motion.div>
     <motion.p

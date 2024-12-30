@@ -51,10 +51,12 @@ export default function Projects() {
      <div className="w-full">
       <hr />
      </div>
-     <div className=" text-white shrink-0">Projects made with 💓</div>
+     <div className=" text-white font-bold shrink-0">
+      Featured projects <span className="text-lg"> ⚡</span>
+     </div>
     </div>
    </div>
-   <div className="flex items-start justify-between mt-14 gap-6">
+   <div className="flex items-start justify-between mt-14 gap-6 mx-2">
     <div className="relative flex flex-col gap-8 max-h-[500px] overflow-scroll w-[350px]  shrink-0 px-2">
      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t to-transparent pointer-events-none"></div>
 
@@ -91,7 +93,7 @@ export default function Projects() {
       </div>
      ))}
     </div>
-    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/40 to-transparent z-40" />
+    {/* <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black via-black/40 to-transparent z-40" /> */}
     {selectedProject && <ProjectInfoCard project={selectedProject} />}
    </div>
 
