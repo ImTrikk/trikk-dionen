@@ -17,7 +17,7 @@ export default function Projects() {
  );
 
  const [selectedProject, setSelectedProject] = useState<Projects | undefined>(
-  undefined
+  ProjectsData[0] // Set the initial selected project to the first project
  );
 
  useEffect(() => {
@@ -47,14 +47,18 @@ export default function Projects() {
       .
      </span>
     </motion.h1>
-    <div className="flex items-center gap-2 w-full">
+    <motion.div
+     initial={{ opacity: 0 }}
+     whileInView={{ opacity: 1, transition: { duration: 1.4 } }}
+     className="flex items-center gap-2 w-full"
+    >
      <div className="w-full">
       <hr />
      </div>
      <div className=" text-white font-bold shrink-0">
       Featured projects <span className="text-lg"> ⚡</span>
      </div>
-    </div>
+    </motion.div>
    </div>
    <div className="flex items-start justify-between mt-14 gap-6 mx-2">
     <div className="relative flex flex-col gap-8 max-h-[500px] overflow-scroll w-[350px]  shrink-0 px-2">
@@ -73,17 +77,11 @@ export default function Projects() {
       >
        <div className="flex gap-4">
         <div className="w-full">
+        
          <div className="flex items-end gap-2">
           <h1 className="text-2xl font-integral font-bold text-white">
            {data.title}
           </h1>
-          {/* <motion.div
-           initial={{ opacity: 1, rotate: 0 }}
-           whileHover={{ rotate: 45, transition: { duration: 0.5 } }}
-           className="flex items-center gap-2 text-green-500"
-          >
-           <FaArrowAltCircleRight size={18} />
-          </motion.div> */}
          </div>
          <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
           <p className="text-xs font-medium text-white">{data.description}</p>
@@ -98,8 +96,8 @@ export default function Projects() {
    </div>
 
    {/* <div className="h-10 bg-gray-400 bg-opacity-15 border border-gray-400 flex items-center justify-center rounded-full">
-    <button className="text-white">View More Projects</button>
-   </div> */}
+  <button className="text-white">View More Projects</button>
+  </div> */}
   </main>
  );
 }

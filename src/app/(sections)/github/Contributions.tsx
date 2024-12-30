@@ -153,9 +153,9 @@ export const GithubGraph = () => {
      <motion.p
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-      className="mt-2 text-white text-lg font-bold"
+      className="mt-2 text-gray-400 text-md font-medium"
      >
-      Commited to changes
+      Commited to changes, Dedicated to progress
      </motion.p>
     </div>
 

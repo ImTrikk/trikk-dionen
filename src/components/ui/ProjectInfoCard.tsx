@@ -53,12 +53,17 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
  }
 
  return (
-  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-15 p-6 border border-gray-300 rounded-xl">
+  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-10 p-6 border border-gray-300 rounded-xl">
    <div>
-    <h1 className="text-white text-lg font-integral font-bold">
-     {project.title}
-    </h1>
-    <div>
+    <div className="flex items-center gap-2">
+     <div className="w-6 h-6 flex items-center justify-center rounded-full border">
+      <p className="text-xs text-white font-medium">{project.id}</p>
+     </div>
+     <h1 className="text-white text-lg font-integral font-bold">
+      {project.title}
+     </h1>
+    </div>
+    <div className="mt-2">
      <hr className="border-gray-600" />
     </div>
     <div className="relative mt-3 border border-gray-600 p-2 rounded overflow-hidden max-w-full h-auto">
