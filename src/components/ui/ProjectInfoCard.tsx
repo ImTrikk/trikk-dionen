@@ -53,7 +53,7 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
  }
 
  return (
-  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-10 p-6 border border-gray-500 rounded-xl">
+  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-10 p-6 border border-gray-600 border-opacity-20 rounded-xl">
    <div>
     <div className="flex items-center gap-2">
      <div className="w-6 h-6 flex items-center justify-center rounded-full border border-green-500">

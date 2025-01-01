@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaFacebookSquare, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 export default function Connect() {
  return (
@@ -29,71 +30,52 @@ export default function Connect() {
       <hr className="w-full" /> <span className="text-xl">⚡</span>
      </div>
     </div>
-    <motion.p
-     initial={{ y: 100, opacity: 0 }}
-     whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-     className="text-xs text-white font-light w-[300px] mt-5"
-    >
-     Let's connect and collaborate on projects, ideas, and more. I'm always open
-     to new opportunities and challenges.
-    </motion.p>
-
-    <div className="flex flex-col text-white gap-2 mt-5">
-     <motion.div
+    <div className="flex items-start justify-between gap-5 mt-20">
+     <motion.p
       initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1, transition: { duration: 0.8 } }}
+      whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
+      className="text-lg text-white font-integral w-[500px] mt-5"
      >
-      <h1 className="text-lg font-bold font-integral">Socials</h1>
-      <p className="text-xs font-light">
-       You can also reach me through these platforms
-      </p>
-     </motion.div>
-     <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-      className="flex items-center gap-4"
-     >
-      <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaGithub className="text-gray-400" /> <span>Github</span>
-      </div>
-      <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <SiGmail className="text-orange-500" /> <span>Gmail</span>
-      </div>
-      <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaLinkedin className="text-blue-300" /> <span>Linkedin</span>
-      </div>
-      <div className="flex items-center gap-2 hover:border border-white rounded-lg p-2">
-       <FaFacebookSquare className="text-blue-600" /> <span>Facebook</span>
-      </div>
+      Let <span>'</span>s connect and collaborate on projects, ideas, and more.
+      I am always open to new opportunities and challenges.
+     </motion.p>
+     <motion.div initial={{opacity: 0, y: 100}} whileInView={{opacity: 1, y: 0, transition: {duration: 0.8}}} className="flex flex-col gap-5">
+      <CardContainer className="inter-var">
+       <CardBody className="w-auto group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-10 p-4 border border-gray-600 rounded-xl">
+        <CardItem>
+         <div
+          className="text-white"
+         >
+          <h1 className="text-lg font-bold font-integral">Socials</h1>
+          <p className="text-xs font-light">
+           You can also reach me through these platforms
+          </p>
+         </div>
+        </CardItem>
+        <div className="flex items-start justify-between">
+         <CardItem translateZ={90}>
+          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+           <FaGithub className="text-gray-400" />{" "}
+           <span className="text-xs">Github</span>
+          </div>
+         </CardItem>
+         <CardItem translateZ={90}>
+          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+           <FaLinkedin className="text-blue-300" />{" "}
+           <span className="text-xs">Linkedin</span>
+          </div>
+         </CardItem>
+         <CardItem translateZ={90}>
+          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+           <FaFacebookSquare className="text-blue-600" />{" "}
+           <span className="text-xs">Facebook</span>
+          </div>
+         </CardItem>
+        </div>
+       </CardBody>
+      </CardContainer>
      </motion.div>
     </div>
-   </div>
-   <div className="w-[700px]">
-    {/* <form action="" className="border border-white rounded-xl p-4">
-     <div className="flex flex-col gap-2 mt-2">
-      <label htmlFor="">Email</label>
-      <input
-       type="text"
-       className="h-10 px-4 border border-white bg-black rounded-lg"
-      />
-     </div>
-     <div className="flex flex-col gap-2 mt-2">
-      <label htmlFor="">Subject</label>
-      <input
-       type="text"
-       className="h-10 px-4 border border-white bg-black rounded-lg"
-      />
-     </div>
-     <div className="flex flex-col gap-2 mt-2">
-      <label htmlFor="">Message</label>
-      <textarea className="min-h-[150px] px-4 py-2 border border-white bg-black rounded-lg" />
-     </div>
-     <div className="mt- 5 w-full">
-      <button className="w-full h-10 border border-white text-xs font-medium px-4 rounded-lg">
-       send message
-      </button>
-     </div>
-    </form> */}
    </div>
   </section>
  );

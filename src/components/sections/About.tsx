@@ -33,15 +33,17 @@ export default function About() {
  const experiences = [
   {
    date: "December 2024 - Present",
-   title: "Full Stack Developer | Exon",
+   title: "Freelance Full Stack Developer | Exon",
+   tags: ["Freelance", "Full Stack Developer", "UI/UX Designer"],
    description:
-    "Developing advanced APIs and enhancing user interfaces to drive better user experiences and functionality.",
+    "I designed web applications to meet client-specific needs and expectations, ensuring user satisfaction and functionality, while developing dynamic and responsive applications using React.js, Laravel, and PostgreSQL for efficient backend and frontend integration, and creating scalable and robust system architectures to support application performance and maintainability.",
   },
   {
    date: "January 2023 - June 2024",
-   title: "Full Stack Developer | UI/UX Designer | ParaGO",
+   title: "Co-Founder and CTO | ParaGO",
+   tags: ["Startup", "Full Stack Developer", "UI/UX Designer"],
    description:
-    "Worked on creating dynamic web applications using React and Node.js, improving application performance and scalability.",
+    "I co-founded ParaGO, a web-based application that enables users to book events organized by municipal tourism offices, promoting unique local adventures, and designed and developed the platform using ReactJS for dynamic and responsive interfaces, NodeJS with ExpressJS for efficient server-side communication, and MongoDB for scalable data storage. I spearheaded the UI/UX design, crafting user-centric interfaces to ensure an intuitive and seamless experience across all devices, while ensuring the application was fully responsive and optimized for performance to enhance accessibility for diverse user bases.",
   },
  ];
 
@@ -144,7 +146,7 @@ export default function About() {
      </div>
     </div>
    </div>
-   <div className="flex items-center justify-between mt-5">
+   <div className="flex items-start justify-between mt-5">
     <div className="relative">
      {/* Vertical Line for the Timeline */}
      <div className="absolute left-[22px] top-0 h-full w-[2px] bg-gray-700"></div>
@@ -159,17 +161,20 @@ export default function About() {
         {/* Timeline Marker */}
         <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-3 h-3 bg-green-500 rounded-full hover:bg-orange-500"></div>
        </div>
-       <div className="ml-1 flex flex-col gap-2 text-white bg-gray-500 bg-opacity-10 p-3 rounded-xl w-[450px]">
+       <div className="ml-1 flex flex-col gap-2 text-white bg-gray-500 bg-opacity-10 p-3 rounded-xl w-[400px]">
         <p className="text-sm text-gray-400">{exp.date}</p>
         <p className="font-bold text-lg">{exp.title}</p>
-        <p className="text-sm text-gray-300 w-[400px] text-justify">
-         {exp.description}
-        </p>
+        <div className="flex items-center gap-1">
+         {exp.tags.map((tag, index) => (
+          <p key={index} className="text-xs text-gray-600">{tag} | </p>
+         ))}
+        </div>
+        <p className="text-sm text-gray-300 text-justify">{exp.description}</p>
        </div>
       </motion.div>
      ))}
     </div>
-    <div className="w-[280px] bg-opacity-10 rounded-xl flex flex-col gap-4">
+    <div className="w-[300px] bg-opacity-10 rounded-xl flex flex-col gap-4">
      {achievementData.map((data, index) => (
       <motion.div
        initial={{ opacity: 0, y: 100 }}
@@ -190,7 +195,7 @@ export default function About() {
         <Image
          src={data.img}
          alt={data.name}
-         className="w-[350px] max-h-[110px] rounded-lg object-cover mt-1"
+         className="w-[350px] max-h-[130px] rounded-lg object-cover mt-1"
         />
        </motion.div>
       </motion.div>
