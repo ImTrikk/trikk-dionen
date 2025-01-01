@@ -53,10 +53,10 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
  }
 
  return (
-  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-10 p-6 border border-gray-300 rounded-xl">
+  <main className="bg-gray-400 w-full max-w-[800px] h-[500px] mx-auto bg-opacity-10 p-6 border border-gray-500 rounded-xl">
    <div>
     <div className="flex items-center gap-2">
-     <div className="w-6 h-6 flex items-center justify-center rounded-full border">
+     <div className="w-6 h-6 flex items-center justify-center rounded-full border border-green-500">
       <p className="text-xs text-white font-medium">{project.id}</p>
      </div>
      <h1 className="text-white text-lg font-integral font-bold">
@@ -107,16 +107,24 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
      </button>
     </div>
     <div className="mt-5">
-     <p className="text-white text-xs font-light">Stack: </p>
+     <p className="text-white text-xs font-semibold">Stack: </p>
      <div className="flex items-center gap-2">
       {project.stacks.map((data, index) => (
        <div key={index} className="flex items-center gap-2 mt-2">
-        <p className="text-orange-400">
+        <p className="text-orange-500">
          <data.logo />
         </p>
-        <h1 className="text-xs font-light text-white">{data.name}</h1>
+        <h1 className="text-xs font-medium text-white">{data.name}</h1>
        </div>
       ))}
+     </div>
+    </div>
+    <div className="mt-5 flex flex-col gap-3">
+     <div className="bg-gray-500 bg-opacity-10 h-10 px-4 rounded-lg border border-gray-600 flex items-center justify-between">
+      <p className="text-xs font-medium text-white">Live Demo: {"linke in here"}</p>
+     </div>
+     <div className="bg-gray-500 bg-opacity-10 h-10 px-4 rounded-lg border border-gray-600 flex items-center justify-between">
+      <p className="text-xs font-medium text-white">Github: {"linke in here"}</p>
      </div>
     </div>
    </div>

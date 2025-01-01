@@ -83,8 +83,8 @@ export default function Projects() {
            {data.title}
           </h1>
          </div>
-         <div className="mt-3 w-full bg-gray-500 border border-white bg-opacity-25 rounded-lg p-2 text-justify">
-          <p className="text-xs font-medium text-white">{data.description}</p>
+         <div className="mt-3 w-full bg-gray-500 border border-gray-500 bg-opacity-25 rounded-lg p-2 text-justify">
+          <p className="text-xs font-medium text-gray-300">{data.description}</p>
          </div>
         </div>
        </div>
