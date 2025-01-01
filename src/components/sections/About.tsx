@@ -36,16 +36,21 @@ export default function About() {
    title: "Freelance Full Stack Developer | Exon",
    tags: ["Freelance", "Full Stack Developer", "UI/UX Designer"],
    description:
-    "I designed web applications to meet client-specific needs and expectations, ensuring user satisfaction and functionality, while developing dynamic and responsive applications using React.js, Laravel, and PostgreSQL for efficient backend and frontend integration, and creating scalable and robust system architectures to support application performance and maintainability.",
+    "Designed web applications to meet client-specific needs and expectations, ensuring user satisfaction and functionality. Developed dynamic and responsive applications using React.js, Laravel, and PostgreSQL for efficient backend and frontend integration. Created scalable and robust system architectures to support application performance and maintainability.",
   },
   {
    date: "January 2023 - June 2024",
    title: "Co-Founder and CTO | ParaGO",
    tags: ["Startup", "Full Stack Developer", "UI/UX Designer"],
    description:
-    "I co-founded ParaGO, a web-based application that enables users to book events organized by municipal tourism offices, promoting unique local adventures, and designed and developed the platform using ReactJS for dynamic and responsive interfaces, NodeJS with ExpressJS for efficient server-side communication, and MongoDB for scalable data storage. I spearheaded the UI/UX design, crafting user-centric interfaces to ensure an intuitive and seamless experience across all devices, while ensuring the application was fully responsive and optimized for performance to enhance accessibility for diverse user bases.",
+    "Co-founded ParaGO, a web-based application that enables users to book events organized by municipal tourism offices, promoting unique local adventures. Designed and developed the platform using ReactJS for dynamic and responsive interfaces, NodeJS with ExpressJS for efficient server-side communication, and MongoDB for scalable data storage. Spearheaded the UI/UX design, crafting user-centric interfaces to ensure an intuitive and seamless experience across all devices. Ensured the application was fully responsive and optimized for performance to enhance accessibility for diverse user bases.",
   },
  ];
+
+ const exp_projs = {
+  no_exp: 12,
+  projs: 10,
+ };
 
  return (
   <section id="about" className="h-auto w-full flex flex-col gap-1">
@@ -91,42 +96,56 @@ export default function About() {
        </h1>
       </CardItem>
       <CardItem translateZ="100" as="div" className="mb-2">
-       <h1 className="text-4xl font-black font-integral text-green-600">
+       <h1 className="text-4xl font-black text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         PATRICK JAMES DIONEN
        </h1>
       </CardItem>
 
-      <CardItem translateZ="80" className="">
-       <CardItem translateZ="50" className="mt-10">
-        <div className="text-md font-bold text-violet-700">
-         trkku <span className="text-orange-600">=</span>{" "}
-         <span className="text-md text-yellow-500">[</span>
+      <div className="flex items-center justify-between gap-2">
+       <CardItem translateZ="80" className="w-[500px]">
+        <CardItem translateZ="50" className="mt-10">
+         <div className="text-md font-bold text-violet-700">
+          trkku <span className="text-orange-600">=</span>{" "}
+          <span className="text-md text-yellow-500">[</span>
+         </div>
+        </CardItem>
+
+        <CardItem
+         translateZ="150"
+         className="text-sm text-white font-regular text-justify px-4 leading-6"
+        >
+         I am a senior Bachelor of Science in Information Technology student at
+         Caraga State University, with experience in creating dynamic web
+         applications and developing user interfaces. My focus is on combining
+         functionality with design to deliver effective and user-friendly
+         experiences.
+        </CardItem>
+
+        <CardItem
+         translateZ="60"
+         className="text-sm text-white font-medium text-justify mt-3 px-4 leading-6"
+        >
+         When I'm away from my desk, I like to keep my mind sharp and enjoy
+         nature by engaging in physical activities, such as running early in the
+         morning.
+        </CardItem>
+        <CardItem translateZ="100">
+         <span className="text-md text-yellow-500">]</span>
+        </CardItem>
+       </CardItem>
+       <CardItem>
+        <div className="flex flex-col items-start gap-2">
+         <p className="text-white text-3xl font-integral ">
+          {exp_projs.no_exp}{" "}
+          <span className="text-sm font-medium">+ Months</span>
+         </p>
+         <p className="text-white text-3xl font-integral ">
+          {exp_projs.no_exp}{" "}
+          <span className="text-sm font-medium">+ Projects</span>
+         </p>
         </div>
        </CardItem>
-
-       <CardItem
-        translateZ="100"
-        className="text-md text-white font-regular text-justify px-4 leading-6"
-       >
-        I am a senior Bachelor of Science in Information Technology student at
-        Caraga State University, with experience in creating dynamic web
-        applications and developing user interfaces. My focus is on combining
-        functionality with design to deliver effective and user-friendly
-        experiences.
-       </CardItem>
-
-       <CardItem
-        translateZ="60"
-        className="text-md text-white font-medium text-justify mt-3 px-4 leading-6"
-       >
-        When I'm away from my desk, I like to keep my mind sharp and enjoy
-        nature by engaging in physical activities, such as running early in the
-        morning.
-       </CardItem>
-       <CardItem translateZ="100">
-        <span className="text-md text-yellow-500">]</span>
-       </CardItem>
-      </CardItem>
+      </div>
      </div>
     </CardBody>
    </CardContainer>
@@ -166,7 +185,9 @@ export default function About() {
         <p className="font-bold text-lg">{exp.title}</p>
         <div className="flex items-center gap-1">
          {exp.tags.map((tag, index) => (
-          <p key={index} className="text-xs text-gray-600">{tag} | </p>
+          <p key={index} className="text-xs text-gray-600">
+           {tag} |{" "}
+          </p>
          ))}
         </div>
         <p className="text-sm text-gray-300 text-justify">{exp.description}</p>
