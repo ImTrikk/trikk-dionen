@@ -143,19 +143,19 @@ export const GithubGraph = () => {
   <section className="px-4 py-8">
    <div className="flex flex-col items-center justify-center">
     <div className="my-6 flex flex-col text-center">
-     <motion.h1
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-      className="text-4xl tracking-widest font-black text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] font-integral"
-     >
-      One Feature at a Time Dedicated to Progress
-     </motion.h1>
+    <motion.h1
+     initial={{ opacity: 0, y: 100 }}
+     whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+     className="text-3xl tracking-widest font-black text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] font-integral"
+    >
+     Committed to Improvement, One Feature at a Time
+    </motion.h1>
      <motion.p
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
       className="mt-2 text-gray-400 text-md font-medium"
      >
-      Commited to changes, Dedicated to progress
+      
      </motion.p>
     </div>
 

@@ -101,51 +101,53 @@ export default function About() {
        </h1>
       </CardItem>
 
-      <div className="flex items-center justify-between gap-2">
-       <CardItem translateZ="80" className="w-[500px]">
-        <CardItem translateZ="50" className="mt-10">
-         <div className="text-md font-bold text-violet-700">
-          trkku <span className="text-orange-600">=</span>{" "}
-          <span className="text-md text-yellow-500">[</span>
-         </div>
-        </CardItem>
-
-        <CardItem
-         translateZ="150"
-         className="text-sm text-white font-regular text-justify px-4 leading-6"
-        >
-         I am a senior Bachelor of Science in Information Technology student at
-         Caraga State University, with experience in creating dynamic web
-         applications and developing user interfaces. My focus is on combining
-         functionality with design to deliver effective and user-friendly
-         experiences.
-        </CardItem>
-
-        <CardItem
-         translateZ="60"
-         className="text-sm text-white font-medium text-justify mt-3 px-4 leading-6"
-        >
-         When I'm away from my desk, I like to keep my mind sharp and enjoy
-         nature by engaging in physical activities, such as running early in the
-         morning.
-        </CardItem>
-        <CardItem translateZ="100">
-         <span className="text-md text-yellow-500">]</span>
-        </CardItem>
+      <CardItem translateZ="80" className="w-[500px]">
+       <CardItem translateZ="50" className="mt-10">
+        <div className="text-md font-bold text-violet-700">
+         trkku <span className="text-orange-600">=</span>{" "}
+         <span className="text-md text-yellow-500">[</span>
+        </div>
        </CardItem>
-       <CardItem>
-        <div className="flex flex-col items-start gap-2">
+
+       <CardItem
+        translateZ="150"
+        className="text-sm text-gray-400 font-regular text-justify px-4 leading-6"
+       >
+        I am a senior Bachelor of Science in Information Technology student at
+        Caraga State University, with experience in creating dynamic web
+        applications and developing user interfaces. My focus is on combining
+        functionality with design to deliver effective and user-friendly
+        experiences.
+       </CardItem>
+
+       <CardItem
+        translateZ="60"
+        className="text-sm text-gray-400  font-medium text-justify mt-3 px-4 leading-6"
+       >
+        When I'm away from my desk, I like to keep my mind sharp and enjoy
+        nature by engaging in physical activities, such as running early in the
+        morning.
+       </CardItem>
+       <CardItem translateZ="100">
+        <span className="text-md text-yellow-500">]</span>
+       </CardItem>
+      </CardItem>
+      <CardItem translateZ={120}>
+       <div className="flex flex-col items-start gap-2">
+        <div className="w-[150px] h-[90px] flex place-items-center justify-center border border-gray-500 rounded-xl ">
          <p className="text-white text-3xl font-integral ">
           {exp_projs.no_exp}{" "}
           <span className="text-sm font-medium">+ Months</span>
          </p>
+        </div>
+        <div className="w-[150px] h-[90px] flex place-items-center justify-center border border-gray-500 rounded-xl ">
          <p className="text-white text-3xl font-integral ">
           {exp_projs.no_exp}{" "}
           <span className="text-sm font-medium">+ Projects</span>
          </p>
         </div>
-       </CardItem>
-      </div>
+       </div>
+      </CardItem>
      </div>
     </CardBody>
    </CardContainer>

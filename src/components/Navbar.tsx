@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = ["HOME", "ABOUT", "PROJECTS", "STACKS"];
 
 export default function Navbar() {
  const [isActive, setIsActive] = useState<string>("HOME"); // Default to first link
  const [showContent, setShowContent] = useState<boolean>(false);
+ const [isMobile, setIsMobile] = useState<boolean>(false);
 
  const handleNav = (data: string) => {
   setIsActive(data); // Update active state
@@ -55,6 +56,10 @@ export default function Navbar() {
   return () => clearTimeout(timer);
  }, []);
 
+ const showMobile = () => {
+  setIsMobile((prev) => !prev); // Toggle isMobile state
+ };
+
  return (
   <>
    <motion.nav
@@ -73,9 +78,13 @@ export default function Navbar() {
      transition={{ duration: 0.7 }}
      className={`${
       !showContent ? "border-2 border-white" : "border border-white"
-     } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden gap-5`}
+     } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden gap-5 z-50`}
     >
-     <h1 className="glitch font-integral text-[5px] shrink-0" data-text="⚡">
+     <h1
+      onClick={() => showMobile()}
+      className="glitch font-integral text-[5px] shrink-0"
+      data-text="⚡"
+     >
       <motion.span
        initial={{ rotate: 0 }}
        animate={{ rotate: 360 }}
@@ -91,7 +100,7 @@ export default function Navbar() {
        initial={{ opacity: 0 }}
        animate={{ opacity: 1 }}
        transition={{ duration: 1 }}
-       className="flex items-center "
+       className="hidden md:flex items-center "
       >
        {links.map((data, id) => (
         <li
@@ -121,6 +130,45 @@ export default function Navbar() {
      )}
     </motion.div>
    </motion.nav>
+   <AnimatePresence>
+    {isMobile && (
+     <motion.div
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 1 }}
+      exit={{ opacity: 0, y: -100 }}
+      transition={{ duration: 0.8 }}
+      className="fixed z-40 w-full flex items-center justify-center"
+     >
+      <div className="mx-5 w-full flex flex-col justify-center gap-2 bg-black/10 backdrop-blur-md p-4 rounded-2xl border border-gray-700 text-center">
+       {links.map((data, id) => (
+        <li
+         onClick={() => handleNav(data)}
+         key={id}
+         className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
+          isActive === data
+           ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
+           : "text-white"
+         }`}
+        >
+         {data}
+        </li>
+       ))}
+       <div className="flex items-center justify-center">
+        <button
+         onClick={() => handleNav("CONTACT")}
+         className={`${
+          isActive === "CONTACT"
+           ? "bg-green-500 text-white"
+           : "bg-white text-black"
+         } px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs font-semibold w-[100px]`} // Adjusted padding to make the button smaller
+        >
+         CONNECT
+        </button>
+       </div>
+      </div>
+     </motion.div>
+    )}
+   </AnimatePresence>
   </>
  );
 }
