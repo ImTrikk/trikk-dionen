@@ -16,7 +16,9 @@ export default function Projects() {
   ProjectsData.map(() => 0) // Initialize with or first image for each project
  );
 
- const [selectedProject, setSelectedProject] = useState<Projects | null>(null);
+ const [selectedProject, setSelectedProject] = useState<Projects | null>(
+  ProjectsData[0]
+ );
 
  const projectInfoRef = useRef<HTMLDivElement>(null);
 
@@ -128,7 +130,6 @@ export default function Projects() {
        </div>
       </motion.div>
      ))}
-     {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent pointer-events-none lg:block hidden" /> */}
     </div>
     <div ref={projectInfoRef} className="w-full scroll-mt-4">
      <AnimatePresence mode="wait">
