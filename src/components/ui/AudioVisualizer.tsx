@@ -1,36 +1,58 @@
 // components/AudioVisualizer.tsx
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 
-declare global {
- interface Window {
-  webkitAudioContext: AudioContext;
- }
+interface AudioVisualizerProps {
+ isPlaying: boolean;
 }
 
-const AudioVisualizer: React.FC = () => {
- const [isPlaying, setIsPlaying] = useState(false);
+const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ isPlaying }) => {
  const canvasRef = useRef<HTMLCanvasElement | null>(null);
  const audioContextRef = useRef<AudioContext | null>(null);
  const sourceNodeRef = useRef<AudioBufferSourceNode | null>(null);
  const analyserRef = useRef<AnalyserNode | null>(null);
-
- const audioSrc = "/audio/monalisa.mp3";
+ const previousFrequencyData = useRef<Uint8Array | null>(null);
+ const audioBufferRef = useRef<AudioBuffer | null>(null);
+ const requestAnimationFrameId = useRef<number>(0);
 
  useEffect(() => {
   // Initialize audio context
-  audioContextRef.current = new (window.AudioContext ||
-   window.webkitAudioContext)();
+  audioContextRef.current = new (window.AudioContext || window.AudioContext)();
+
+  // Start the draw function immediately
+  draw();
 
   // Fetch and decode audio file
-  fetch(audioSrc)
+  fetch("/audio/monalisa.mp3")
    .then((response) => response.arrayBuffer())
    .then((arrayBuffer) => {
     audioContextRef.current?.decodeAudioData(arrayBuffer, (audioBuffer) => {
+     audioBufferRef.current = audioBuffer;
      setupAudioNodes(audioBuffer);
     });
    });
+
+  // Cleanup function
+  return () => {
+   cancelAnimationFrame(requestAnimationFrameId.current);
+  };
  }, []);
+
+ useEffect(() => {
+  if (!audioContextRef.current || !audioBufferRef.current) return;
+
+  if (isPlaying) {
+   const source = audioContextRef.current.createBufferSource();
+   source.buffer = audioBufferRef.current;
+   source.connect(analyserRef.current!);
+   analyserRef.current?.connect(audioContextRef.current.destination);
+   source.start(0);
+   sourceNodeRef.current = source;
+  } else {
+   sourceNodeRef.current?.stop();
+   sourceNodeRef.current = null;
+  }
+ }, [isPlaying]);
 
  const setupAudioNodes = (audioBuffer: AudioBuffer) => {
   if (!audioContextRef.current || !canvasRef.current) return;
@@ -39,30 +61,8 @@ const AudioVisualizer: React.FC = () => {
   analyser.fftSize = 128;
   analyserRef.current = analyser;
 
-  const source = audioContextRef.current.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect(analyser);
-  analyser.connect(audioContextRef.current.destination);
-  sourceNodeRef.current = source;
-
   // Start visualization
   draw();
- };
-
- const togglePlayPause = () => {
-  if (!audioContextRef.current || !sourceNodeRef.current) return;
-
-  if (!isPlaying) {
-   // Create new source node when playing
-   const source = audioContextRef.current.createBufferSource();
-   source.buffer = sourceNodeRef.current.buffer;
-   source.connect(analyserRef.current!);
-   source.start();
-   sourceNodeRef.current = source;
-  } else {
-   sourceNodeRef.current.stop();
-  }
-  setIsPlaying(!isPlaying);
  };
 
  const draw = () => {
@@ -72,7 +72,6 @@ const AudioVisualizer: React.FC = () => {
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
 
-  // Use the existing analyser instead of creating a new one
   const analyser = analyserRef.current;
   const frequencyBufferLength = analyser.frequencyBinCount;
   const frequencyData = new Uint8Array(frequencyBufferLength);
@@ -83,24 +82,22 @@ const AudioVisualizer: React.FC = () => {
   const barWidth = canvas.width / frequencyBufferLength;
 
   const renderFrame = () => {
-   requestAnimationFrame(renderFrame);
+   requestAnimationFrameId.current = requestAnimationFrame(renderFrame);
    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
    analyser.getByteFrequencyData(frequencyData);
 
-   const scaleFactor = 0.1;
-   const centerX = canvas.width / 2; // Get the horizontal center point
-
-   // Only process half of the frequency data to create mirror effect
+   const scaleFactor = 0.12;
+   const centerX = canvas.width / 2;
    const halfLength = Math.floor(frequencyBufferLength / 2);
 
    for (let i = 0; i < halfLength; i++) {
     const barHeight = frequencyData[i] * scaleFactor;
-    canvasContext.fillStyle = `#00${frequencyData[i]
+    canvasContext.fillStyle = `#00${Math.floor(frequencyData[i])
      .toString(16)
      .padStart(2, "0")}00`;
 
-    // Left side (going left from center)
+    // Left side
     canvasContext.fillRect(
      centerX - i * barWidth - barWidth,
      canvas.height - barHeight,
@@ -108,7 +105,7 @@ const AudioVisualizer: React.FC = () => {
      barHeight
     );
 
-    // Right side (going right from center)
+    // Right side
     canvasContext.fillRect(
      centerX + i * barWidth,
      canvas.height - barHeight,
@@ -122,24 +119,26 @@ const AudioVisualizer: React.FC = () => {
  };
 
  return (
-  <div className="">
-   <button
-    onClick={togglePlayPause}
-    className="h-10 w-10 rounded-full bg-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)] flex items-center justify-center cursor-pointer z-50"
+  <div className="flex flex-col items-center gap-1">
+   <div
+    style={{ transform: "none", height: "100px" }}
+    className="flex items-center justify-center"
    >
-    {isPlaying ? "⏸️" : "▶️"}
-   </button>
-   <div style={{ transform: "none", width: "100%", height: "100%" }}>
     <canvas
      ref={canvasRef}
      style={{
-      width: "30%",
-      height: "100px%",
+      width: "100%",
+      height: "100px",
       display: "block",
       bottom: 0,
      }}
     />
    </div>
+   {isPlaying && (
+    <div className="text-gray-500 text-xs font-medium">
+     Now Playing: Mona Lisa
+    </div>
+   )}
   </div>
  );
 };

@@ -12,7 +12,7 @@ export default function Hero() {
  return (
   <main
    id="home"
-   className="relative h-full md:min-h-screen w-full lg:py-0 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
+   className="relative h-auto mb-52 w-full lg:py-0 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
   >
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5 lg:flex items-center justify-between gap-12 h-screen">
     {/* Left Content */}
@@ -76,7 +76,7 @@ export default function Hero() {
       transition={{ duration: 0.5, delay: 0.6 }}
       className="text-gray-400 text-sm max-w-[460px] leading-relaxed text-justify"
      >
-      A 22-year-old aspiring Software Engineer with a focus on full-stack
+      A 22-year-old Software Engineer with a focus on full-stack
       development, experienced in modern web technologies and frameworks.
       Skilled in designing and building scalable, user-friendly web applications
       that deliver seamless user experiences.

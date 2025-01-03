@@ -11,10 +11,12 @@ import Marquee from "react-fast-marquee";
 import { certificates } from "@/data/certs";
 import { BiMedal } from "react-icons/bi";
 import AudioVisualizer from "../ui/AudioVisualizer";
+import { IoPlay, IoPause } from "react-icons/io5";
 
 export default function About() {
  const [achievements, setAchievements] = useState(false);
  const [colors, setColors] = useState<string[]>([]);
+ const [isPlaying, setIsPlaying] = useState(false);
 
  useEffect(() => {
   // Generate random pastel colors only on the client side
@@ -53,6 +55,10 @@ export default function About() {
   projs: 10,
  };
 
+ const togglePlayPause = () => {
+  setIsPlaying(!isPlaying);
+ };
+
  return (
   <section id="about" className="h-auto w-full flex flex-col gap-1">
    <CardContainer className="inter-var ">
@@ -69,7 +75,7 @@ export default function About() {
      <div className="grid grid-cols-3 gap-3 w-full mt-5">
       <CardItem
        translateZ="120"
-       className="col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
+       className="col-span-3 sm:col-span-2 w-full h-[200px] relative border border-white rounded-xl overflow-hidden"
       >
        <Image
         src={trik1}
@@ -80,34 +86,55 @@ export default function About() {
       </CardItem>
 
       <CardItem translateZ="90">
-       <div className="w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
+       <div className="hidden sm:block w-full h-[200px] relative border border-white rounded-xl overflow-hidden">
         <Image
          src={trik2}
          alt="trik2"
-         className="object-cover group-hover/card:shadow-xl"
+         className="object-fit group-hover/card:shadow-xl"
         />
        </div>
       </CardItem>
      </div>
 
      <div className="mt-5">
-      <CardItem translateZ="80" as="div">
-       <h1 className="text-2xl text-white font-semibold">
-        MEET THE PROBLEM SOLVER
-       </h1>
-      </CardItem>
-      <CardItem translateZ="100" as="div" className="mb-2">
-       <h1 className="text-4xl font-black text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
-        PATRICK JAMES DIONEN
-       </h1>
-      </CardItem>
-      <CardBody>
-       <CardItem translateZ={120} className="w-full">
-        <AudioVisualizer />
-       </CardItem>
+      <CardBody className="flex items-center gap-2 md:gap-14">
+       <CardBody>
+        <CardItem translateZ="100" as="div">
+         <h1 className="text-md md:text-2xl text-white font-semibold">
+          MEET THE PROBLEM SOLVER
+         </h1>
+        </CardItem>
+        <CardItem translateZ="160" as="div" className="mb-2">
+         <h1 className="text-xl md:text-4xl font-black text-green-600 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.3)]">
+          PATRICK JAMES DIONEN
+         </h1>
+        </CardItem>
+       </CardBody>
+       <CardBody>
+        <CardItem translateZ={120} className="w-full">
+         <AudioVisualizer isPlaying={isPlaying} />
+         <button
+          onClick={togglePlayPause}
+          className="h-10 w-10 rounded-full bg-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)] flex items-center justify-center cursor-pointer"
+          style={{
+           position: "absolute",
+           top: "20px",
+           left: "50%",
+           transform: "translateX(-50%)",
+           zIndex: 100,
+          }}
+         >
+          {isPlaying ? (
+           <IoPause className="text-white" />
+          ) : (
+           <IoPlay className="text-white" />
+          )}
+         </button>
+        </CardItem>
+       </CardBody>
       </CardBody>
-      <CardBody className="flex items-center justify-between gap-5 mt-5">
-       <CardItem translateZ="50" className="w-[490px] shrink-0">
+      <CardBody className="flex flex-col md:flex-row items-center justify-between gap-12 mt-5">
+       <CardItem translateZ="50" className="w-full md:w-[500px]  md:shrink-0">
         <CardItem
          translateZ="80"
          className="text-sm text-gray-400 font-regular text-justify leading-6"
@@ -128,23 +155,27 @@ export default function About() {
         </CardItem>
        </CardItem>
        <CardBody className="w-full">
-        <div className="w-fulll flex flex-col items-start gap-2">
+        <div className="flex flex-col sm:flex-row md:flex-col items-start gap-4">
          <CardItem
           translateZ={70}
-          className="w-full h-[90px] bg-gray-500 bg-opacity-10 flex place-items-center justify-center border border-gray-500 rounded-xl "
+          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
-          <p className="text-white text-3xl font-integral ">
-           {exp_projs.no_exp}{" "}
-           <span className="text-sm font-medium">+ Months</span>
+          <p className="text-white text-4xl font-integral ">
+           {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
+          </p>
+          <p className="text-xs text-gray-500">
+           relevant design and development experience
           </p>
          </CardItem>
          <CardItem
           translateZ={100}
-          className="w-full h-[90px] bg-gray-500 bg-opacity-10 flex place-items-center justify-center border border-gray-500 rounded-xl "
+          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
-          <p className="text-white text-3xl font-integral ">
-           {exp_projs.no_exp}{" "}
-           <span className="text-sm font-medium">+ Projects</span>
+          <p className="text-white text-4xl font-integral ">
+           {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
+          </p>
+          <p className="text-xs text-gray-500">
+           final projects, personal projects, and commissions completed
           </p>
          </CardItem>
         </div>
@@ -155,8 +186,8 @@ export default function About() {
    </CardContainer>
    <div className="mt-20">
     <div className="flex items-center justify-between gap-2">
-     <div className="shrink-0 flex flex-col">
-      <h1 className="text-4xl font-integral text-white">
+     <div className="md:shrink-0 flex flex-col">
+      <h1 className="text-xl md:text-4xl font-integral text-white">
        EXPERIENCE{" "}
        <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         and
@@ -164,12 +195,9 @@ export default function About() {
       </h1>{" "}
       <span className="text-2xl font-medium text-white">Achievements</span>
      </div>
-     <div className="w-full">
-      <hr className="text-gray-400" />
-     </div>
     </div>
    </div>
-   <div className="flex items-start justify-between mt-5">
+   <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-5">
     <div className="relative">
      {/* Vertical Line for the Timeline */}
      <div className="absolute left-[22px] top-0 h-full w-[2px] bg-gray-700"></div>
@@ -184,7 +212,7 @@ export default function About() {
         {/* Timeline Marker */}
         <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-3 h-3 bg-green-500 rounded-full hover:bg-orange-500"></div>
        </div>
-       <div className="ml-1 flex flex-col gap-2 text-white bg-gray-500 bg-opacity-10 p-3 rounded-xl w-[400px]">
+       <div className="ml-1 flex flex-col gap-2 text-white bg-gray-500 bg-opacity-10 p-3 rounded-xl w-full md:w-[400px]">
         <p className="text-sm text-gray-400">{exp.date}</p>
         <p className="font-bold text-lg">{exp.title}</p>
         <div className="flex items-center gap-1">
@@ -199,7 +227,7 @@ export default function About() {
       </motion.div>
      ))}
     </div>
-    <div className="w-[300px] bg-opacity-10 rounded-xl flex flex-col gap-4">
+    <div className="mt-6 md:mt-0 md:w-[300px] bg-opacity-10 rounded-xl flex flex-col gap-4">
      {achievementData.map((data, index) => (
       <motion.div
        initial={{ opacity: 0, y: 100 }}
@@ -220,7 +248,7 @@ export default function About() {
         <Image
          src={data.img}
          alt={data.name}
-         className="w-[350px] max-h-[130px] rounded-lg object-cover mt-1"
+         className="w-full md:w-[350px] max-h-[130px] rounded-lg object-cover mt-1"
         />
        </motion.div>
       </motion.div>
@@ -230,16 +258,13 @@ export default function About() {
    <div className="mt-16">
     <div className="flex items-center justify-between gap-2">
      <div className="shrink-0 flex flex-col">
-      <h1 className="text-4xl font-integral text-white">
+      <h1 className="text-xl md:text-4xl font-integral text-white">
        CERTIFICATES{" "}
        <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         and
        </span>{" "}
       </h1>{" "}
       <span className="text-2xl font-medium text-white">Participations</span>
-     </div>
-     <div className="w-full">
-      <hr className="text-gray-400" />
      </div>
     </div>
     <div className="w-full flex flex-wrap items-center justify-center gap-2 mt-10">
