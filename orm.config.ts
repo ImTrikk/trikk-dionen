@@ -1,7 +1,10 @@
-import "./envConfig.ts";
+import { createConnection } from "typeorm";
 
-export default defineConfig({
- dbCredentials: {
-  connectionString: process.env.DATABASE_URL!,
- },
+export default createConnection({
+ type: "postgres",
+ url: process.env.DATABASE_URL!,
+ synchronize: true,
+ logging: false,
+ entities: ["src/entities/**/*.ts"],
+ migrations: ["src/migrations/**/*.ts"],
 });
