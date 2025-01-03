@@ -235,7 +235,7 @@ export default function Projects() {
           </div>
 
           {/* Action Links */}
-          {/* <div className="flex gap-3 pt-2">
+          <div className="flex gap-3 pt-2">
            {data.demo_url && (
             <a
              href={data.demo_url}
@@ -262,7 +262,7 @@ export default function Projects() {
              View Source →
             </a>
            )}
-          </div> */}
+          </div>
          </div>
         </motion.div>
        )}

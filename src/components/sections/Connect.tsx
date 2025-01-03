@@ -30,11 +30,11 @@ export default function Connect() {
       <hr className="w-full" /> <span className="text-xl">⚡</span>
      </div> */}
     </div>
-    <div className="md:flex items-start justify-between gap-5 mt-20">
+    <div className="md:flex items-center justify-between gap-5 mt-20">
      <motion.p
       initial={{ y: 100, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-      className="text-sm text-white font-integral md:w-[500px] mt-5 text-center"
+      className="text-sm md:text-xl text-white font-integral md:w-[500px] mt-5 text-center"
      >
       Let <span>'</span>s connect and collaborate on projects, ideas, and more.
       I am always open to new opportunities and challenges.
@@ -50,7 +50,7 @@ export default function Connect() {
          <div className="text-white">
           <h1 className="text-lg font-bold font-integral">Socials</h1>
           <p className="text-xs font-light">
-           You can also reach me through these platforms
+           You can also reach me through these platforms.
           </p>
          </div>
         </CardItem>
