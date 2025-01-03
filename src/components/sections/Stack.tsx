@@ -56,8 +56,8 @@ export default function Stack() {
      </div>
 
      <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
      >
       <CardContainer className="inter-var">
        <CardBody className="mt-10 md:mt-0 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] p-6 border md:w-[300px] md:h-[300px] rounded-full flex items-center justify-center">

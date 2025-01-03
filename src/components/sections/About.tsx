@@ -242,7 +242,7 @@ export default function About() {
       </motion.div>
      ))}
     </div>
-    <div className="mt-6 md:mt-0 md:w-[300px] bg-opacity-10 rounded-xl flex flex-col gap-4">
+    <div className="mt-14 mx-10 md:mt-0 md:w-[300px] bg-opacity-10 rounded-xl flex flex-col gap-5">
      {achievementData.map((data, index) => (
       <motion.div
        initial={{ opacity: 0, y: 100 }}
@@ -250,8 +250,8 @@ export default function About() {
        key={index}
        className="text-white"
       >
-       <div className="flex items-center justify-between">
-        <p className="text-lg font-medium">{data.name}</p>
+       <div className="flex items-start justify-between">
+        <p className="text-lg font-bold">{data.name}</p>
         <p className=" shrink-0 text-[12px] text-gray-500">{data.date}</p>
        </div>
        <div className="w-full text-justify">
@@ -291,12 +291,12 @@ export default function About() {
        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
        whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
        key={index}
-       className="h-[80px] flex flex-col gap-1  bg-gray-500 bg-opacity-10 p-3 border border-gray-500 rounded-lg"
+       className="w-full md:w-auto h-[80px] flex flex-col gap-1  bg-gray-500 bg-opacity-10 p-3 border border-gray-500 rounded-lg"
       >
        <div className="flex items-start gap-1">
         <BiMedal size={16} className="text-orange-400 shrink-0 mt-1" />
         <div className="flex flex-col">
-         <div className="w-[220px] flex items-start justify-between gap-2">
+         <div className="md:w-[220px] flex items-start justify-between gap-2">
           <p className="text-xs font-medium text-white">{cert.name}</p>
           <p className="shrink-0 text-xs font-light text-gray-400">
            {cert.date}
