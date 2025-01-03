@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import trik1 from "@/assets/trkk/trik1.jpg";
 import trik2 from "@/assets/trkk/trik2.jpg";
@@ -10,6 +10,7 @@ import { achievementData } from "@/data/achievements";
 import Marquee from "react-fast-marquee";
 import { certificates } from "@/data/certs";
 import { BiMedal } from "react-icons/bi";
+import { AudioVisualizer } from "../ui/AudioVisualizer";
 
 export default function About() {
  const [achievements, setAchievements] = useState(false);
@@ -100,54 +101,55 @@ export default function About() {
         PATRICK JAMES DIONEN
        </h1>
       </CardItem>
+      <CardBody>
+       <CardItem>
+        <AudioVisualizer />
+       </CardItem>
+      </CardBody>
+      <CardBody className="flex items-center justify-between gap-5 mt-5">
+       <CardItem translateZ="50" className="w-[490px] shrink-0">
+        <CardItem
+         translateZ="80"
+         className="text-sm text-gray-400 font-regular text-justify leading-6"
+        >
+         Currently a graduating Bachelor of Science in Information Technology
+         student at Caraga State University, with hands-on experience in
+         developing dynamic web applications and crafting user interfaces.
+         Focused on integrating functionality and design to create efficient and
+         user-friendly digital solutions.
+        </CardItem>
 
-      <CardItem translateZ="80" className="w-[500px]">
-       <CardItem translateZ="50" className="mt-10">
-        <div className="text-md font-bold text-violet-700">
-         trkku <span className="text-orange-600">=</span>{" "}
-         <span className="text-md text-yellow-500">[</span>
+        <CardItem
+         translateZ="60"
+         className="text-sm text-gray-400  font-medium text-justify mt-3 leading-6"
+        >
+         When I'm not at my desk, I enjoy keeping my mind sharp and connecting
+         with nature through physical activities like early morning runs.
+        </CardItem>
+       </CardItem>
+       <CardBody className="w-full">
+        <div className="w-fulll flex flex-col items-start gap-2">
+         <CardItem
+          translateZ={70}
+          className="w-full h-[90px] bg-gray-500 bg-opacity-10 flex place-items-center justify-center border border-gray-500 rounded-xl "
+         >
+          <p className="text-white text-3xl font-integral ">
+           {exp_projs.no_exp}{" "}
+           <span className="text-sm font-medium">+ Months</span>
+          </p>
+         </CardItem>
+         <CardItem
+          translateZ={100}
+          className="w-full h-[90px] bg-gray-500 bg-opacity-10 flex place-items-center justify-center border border-gray-500 rounded-xl "
+         >
+          <p className="text-white text-3xl font-integral ">
+           {exp_projs.no_exp}{" "}
+           <span className="text-sm font-medium">+ Projects</span>
+          </p>
+         </CardItem>
         </div>
-       </CardItem>
-
-       <CardItem
-        translateZ="150"
-        className="text-sm text-gray-400 font-regular text-justify px-4 leading-6"
-       >
-        I am a senior Bachelor of Science in Information Technology student at
-        Caraga State University, with experience in creating dynamic web
-        applications and developing user interfaces. My focus is on combining
-        functionality with design to deliver effective and user-friendly
-        experiences.
-       </CardItem>
-
-       <CardItem
-        translateZ="60"
-        className="text-sm text-gray-400  font-medium text-justify mt-3 px-4 leading-6"
-       >
-        When I'm away from my desk, I like to keep my mind sharp and enjoy
-        nature by engaging in physical activities, such as running early in the
-        morning.
-       </CardItem>
-       <CardItem translateZ="100">
-        <span className="text-md text-yellow-500">]</span>
-       </CardItem>
-      </CardItem>
-      <CardItem translateZ={120}>
-       <div className="flex flex-col items-start gap-2">
-        <div className="w-[150px] h-[90px] flex place-items-center justify-center border border-gray-500 rounded-xl ">
-         <p className="text-white text-3xl font-integral ">
-          {exp_projs.no_exp}{" "}
-          <span className="text-sm font-medium">+ Months</span>
-         </p>
-        </div>
-        <div className="w-[150px] h-[90px] flex place-items-center justify-center border border-gray-500 rounded-xl ">
-         <p className="text-white text-3xl font-integral ">
-          {exp_projs.no_exp}{" "}
-          <span className="text-sm font-medium">+ Projects</span>
-         </p>
-        </div>
-       </div>
-      </CardItem>
+       </CardBody>
+      </CardBody>
      </div>
     </CardBody>
    </CardContainer>
