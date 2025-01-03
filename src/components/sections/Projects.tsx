@@ -233,36 +233,6 @@ export default function Projects() {
           <div className="rounded-xl overflow-hidden border border-gray-800/50">
            <ProjectInfoCard project={data} />
           </div>
-
-          {/* Action Links */}
-          <div className="flex gap-3 pt-2">
-           {data.demo_url && (
-            <a
-             href={data.demo_url}
-             target="_blank"
-             rel="noopener noreferrer"
-             className="flex-1 text-center py-2.5 px-4 rounded-xl
-               bg-green-500/10 border border-green-500/20 
-               text-white text-sm font-medium
-               transition-colors hover:bg-green-500/20"
-            >
-             View Live Demo →
-            </a>
-           )}
-           {data.github_url && (
-            <a
-             href={data.github_url}
-             target="_blank"
-             rel="noopener noreferrer"
-             className="flex-1 text-center py-2.5 px-4 rounded-xl
-               bg-gray-900/50 border border-gray-700/50 
-               text-white text-sm font-medium
-               transition-colors hover:bg-gray-800/50"
-            >
-             View Source →
-            </a>
-           )}
-          </div>
          </div>
         </motion.div>
        )}

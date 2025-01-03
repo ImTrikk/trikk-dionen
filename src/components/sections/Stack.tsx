@@ -49,11 +49,7 @@ export default function Stack() {
         {item.text}
        </motion.h1>
       ))}
-      <motion.p
-       initial={{ opacity: 0, x: 100 }}
-       whileInView={{ opacity: 1, x: 0, transition: { duration: 1.8 } }}
-       className="text-xs text-gray-400 font-bold mt-10"
-      >
+      <motion.p className="text-xs text-gray-400 font-bold mt-10">
        To keep up with the latest technology, learning every day is crucial for
        a developer.
       </motion.p>
