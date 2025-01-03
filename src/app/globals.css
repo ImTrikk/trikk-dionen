@@ -41,14 +41,7 @@ canvas {
 ::-webkit-scrollbar-thumb {
  background-color: #39ff14; /* Neon Green color */
  border-radius: 10px;
- box-shadow: 0 0 8px #39ff14; /* Neon glowing effect */
  border: none; /* Remove any default border */
-}
-
-/* Hover effect for scrollbar handle */
-::-webkit-scrollbar-thumb:hover {
- background-color: #00ff00; /* Brighter Neon Green when hovered */
- box-shadow: 0 0 16px #00ff00; /* Brighter glowing effect when hovered */
 }
 
 #wrapper {

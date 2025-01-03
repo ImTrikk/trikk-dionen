@@ -152,26 +152,26 @@ export const ProjectsData: Projects[] = [
   { name: "MongoDB", logo: mongodbIcon },
  ],
  },
+ // {
+ // id: 10,
+ // title: "ReviewUP Admin",
+ // description:
+ //  "ReviewUP Admin is the powerful administrative panel for managing ReviewUP users and reviewers, enabling admins to handle reported content, delete inappropriate reviews, and ensure a seamless experience for the community.",
+ // img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ // status: "Completed",
+ // stacks: [{ name: "ReactJS", logo: reactIcon }],
+ // },
+ // {
+ // id: 11,
+ // title: "Counsefi",
+ // description:
+ //  "Counsefi is a web-based information management system designed to securely store students' personal data, allowing counselors to analyze trends and patterns to provide tailored financial counseling and planning.",
+ // img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ // status: "Completed",
+ // stacks: [{ name: "ReactJS", logo: reactIcon }],
+ // },
  {
  id: 10,
- title: "ReviewUP Admin",
- description:
-  "ReviewUP Admin is the powerful administrative panel for managing ReviewUP users and reviewers, enabling admins to handle reported content, delete inappropriate reviews, and ensure a seamless experience for the community.",
- img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
- status: "Completed",
- stacks: [{ name: "ReactJS", logo: reactIcon }],
- },
- {
- id: 11,
- title: "Counsefi",
- description:
-  "Counsefi is a web-based information management system designed to securely store students' personal data, allowing counselors to analyze trends and patterns to provide tailored financial counseling and planning.",
- img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
- status: "Completed",
- stacks: [{ name: "ReactJS", logo: reactIcon }],
- },
- {
- id: 12,
  title: "SimpliChat",
  description:
   "SimpliChat is a simple, real-time chat application built with React, allowing users to communicate seamlessly through Socket.IO for instant messaging and interactions.",

@@ -158,7 +158,7 @@ export default function About() {
         <div className="flex flex-col sm:flex-row md:flex-col items-start gap-4">
          <CardItem
           translateZ={70}
-          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
+          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex px-4 p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
           <p className="text-white text-4xl font-integral ">
            {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
@@ -169,7 +169,7 @@ export default function About() {
          </CardItem>
          <CardItem
           translateZ={100}
-          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
+          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex px-4 p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
           <p className="text-white text-4xl font-integral ">
            {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
@@ -236,11 +236,11 @@ export default function About() {
        className="text-white"
       >
        <div className="flex items-center justify-between">
-        <p className="text-sm font-medium">{data.name}</p>
+        <p className="text-lg font-medium">{data.name}</p>
         <p className=" shrink-0 text-[12px] text-gray-500">{data.date}</p>
        </div>
        <div className="w-full text-justify">
-        <p className="text-[9px] text-gray-400 font-medium">
+        <p className="text-[11px] text-gray-400 font-medium">
          {data.description}
         </p>
        </div>
