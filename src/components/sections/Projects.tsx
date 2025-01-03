@@ -66,7 +66,7 @@ export default function Projects() {
       .
      </span>
     </motion.h1>
-    <p className="md:hidden text-xs text-gray-600">Feature Projects by trkk</p>
+    <p className="md:hidden text-xs text-gray-600">Featured Projects by trkk</p>
     <motion.div
      initial={{ opacity: 0 }}
      whileInView={{ opacity: 1, transition: { duration: 1.4 } }}

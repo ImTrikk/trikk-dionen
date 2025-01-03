@@ -12,7 +12,7 @@ export default function Hero() {
  return (
   <main
    id="home"
-   className="relative h-auto mb-32 w-full lg:py-0 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
+   className="relative h-auto mt-20 md:mt-0 mb-26 w-full lg:py-0 px-4 sm:px-6 lg:px-8 flex items-center justify-center"
   >
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5 lg:flex items-center justify-between gap-12 h-screen">
     {/* Left Content */}

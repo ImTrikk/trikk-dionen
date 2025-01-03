@@ -144,7 +144,7 @@ export default function Navbar() {
         <li
          onClick={() => handleNav(data)}
          key={id}
-         className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
+         className={`text-sm list-none cursor-pointer px-2 md:px-4 py-2 ${
           isActive === data
            ? "text-green-500 font-bold drop-shadow-[0_0_20px_rgba(144,238,144,1)]"
            : "text-white"
