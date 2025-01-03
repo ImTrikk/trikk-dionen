@@ -295,8 +295,8 @@ export default function About() {
       >
        <div className="flex items-start gap-1">
         <BiMedal size={16} className="text-orange-400 shrink-0 mt-1" />
-        <div className="flex flex-col">
-         <div className="md:w-[220px] flex items-start justify-between gap-2">
+        <div className="w-full flex flex-col">
+         <div className="w-full md:w-[220px] flex items-start justify-between gap-2">
           <p className="text-xs font-medium text-white">{cert.name}</p>
           <p className="shrink-0 text-xs font-light text-gray-400">
            {cert.date}
