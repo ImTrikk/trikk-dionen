@@ -51,8 +51,8 @@ export default function About() {
  ];
 
  const exp_projs = {
-  no_exp: 12,
-  projs: 10,
+  no_exp: 10,
+  projs: 11,
  };
 
  const togglePlayPause = () => {
@@ -134,10 +134,21 @@ export default function About() {
        </CardBody>
       </CardBody>
       <CardBody className="flex flex-col md:flex-row items-start justify-between gap-12 mt-5">
-       <CardItem translateZ="50" className="w-full md:w-[500px]  md:shrink-0">
+       <CardItem translateZ="50" className="w-full md:w-[500px] md:shrink-0">
         <CardItem
          translateZ="80"
          className="text-sm text-gray-400 font-regular text-justify leading-6"
+        >
+         Hi, I'm Patrick (or Trikk for short)! I'm a software engineer
+         specializing in web development and desktop development. I'm passionate
+         about creating digital solutions that are both functional and visually
+         appealing. Always eager to learn new technologies, I strive to
+         continually improve my skills to deliver the best results for my
+         clients.
+        </CardItem>
+        <CardItem
+         translateZ="100"
+         className="text-sm text-gray-400 font-regular text-justify leading-6 mt-3"
         >
          Currently a graduating Bachelor of Science in Information Technology
          student at Caraga State University, with hands-on experience in
@@ -147,8 +158,8 @@ export default function About() {
         </CardItem>
 
         <CardItem
-         translateZ="60"
-         className="text-sm text-gray-400  font-medium text-justify mt-3 leading-6"
+         translateZ="120"
+         className="text-sm text-gray-400 font-medium text-justify mt-3 leading-6"
         >
          When I'm not at my desk, I enjoy keeping my mind sharp and connecting
          with nature through physical activities like early morning runs.
@@ -157,25 +168,27 @@ export default function About() {
        <CardBody className="w-full">
         <div className="flex flex-col sm:flex-row md:flex-col items-start gap-4">
          <CardItem
-          translateZ={70}
-          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex px-4 p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
+          translateZ={90}
+          className="w-full sm:w-[220px] h-[120px] bg-gray-500 bg-opacity-10 flex px-4 p-4 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
-          <p className="text-white text-4xl font-integral ">
-           {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
+          <p className="text-white text-3xl font-integral ">
+           {exp_projs.no_exp}{" "}
+           <span className="text-xl text-gray-500 font-black">+ Months</span>
           </p>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs mt-2 text-gray-500">
            relevant design and development experience
           </p>
          </CardItem>
          <CardItem
-          translateZ={100}
-          className="w-full sm:w-[180px] h-[100px] bg-gray-500 bg-opacity-10 flex px-4 p-2 flex-col items-start justify-center border border-gray-500 rounded-xl "
+          translateZ={120}
+          className="w-full sm:w-[220px] h-[120px] bg-gray-500 bg-opacity-10 flex px-4 p-4 flex-col items-start justify-center border border-gray-500 rounded-xl "
          >
-          <p className="text-white text-4xl font-integral ">
-           {exp_projs.no_exp} <span className="text-3xl font-black">+ </span>
+          <p className="text-white text-3xl font-integral ">
+           {exp_projs.projs}{" "}
+           <span className="text-xl text-gray-500 font-black">+ Projects</span>
           </p>
-          <p className="text-xs text-gray-500">
-           final projects, personal projects, and commissions completed
+          <p className="text-xs mt-2 text-gray-500">
+           completed final projects, personal projects, and commissions.
           </p>
          </CardItem>
         </div>

@@ -33,7 +33,7 @@ export default function Stack() {
       <hr className="w-full text-gray-400" /> <span>⚡</span>
      </motion.div> */}
     </div>
-    <div className="md:flex items-center justify-between mt-5 overflow-hidden">
+    <div className="md:flex items-center justify-between mt-5">
      <div className="md:w-[500px]">
       {[
        { text: "Equipped", delay: 0.6 },

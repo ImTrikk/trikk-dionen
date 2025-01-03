@@ -21,30 +21,31 @@ export interface Achievement {
 
 export const achievementData: Achievement[] = [
  {
- id: 1,
- name: "PSC 7 Regionals",
- date: "November 2022",
- by: "DICT",
- description: "1st runner-up during the Philippine Startup Challenge 7",
- img: parago,
+  id: 1,
+  name: "PSC 7 Regionals",
+  date: "November 2022",
+  by: "DICT",
+  description:
+   "1st runner-up during the Regional Philippine Startup Challenge 7",
+  img: parago,
  },
 
  {
- id: 2,
- name: "Civil Exam Service Passer",
- date: "August 2024",
- description:
-  "Passed the civil service exam with a passing rate of at least 145 out of 14,000 examinees",
- by: "Civil Service Commission",
- img: csc_passed,
+  id: 2,
+  name: "Civil Exam Service Passer",
+  date: "August 2024",
+  description:
+   "Passed the Civil Service Examination with a passing rate of 14.43% for the Professional Level, with 42,812 out of 296,758 candidates passing.",
+  by: "Civil Service Commission",
+  img: csc_passed,
  },
  {
- id: 3,
- name: "ICT Diagnostic Exam Passer",
- date: "October 2024",
- description:
-  "Passed the ICT diagnostic exam and is eligible to take the certification exam",
- by: "DICT",
- img: ict_diagnostic,
+  id: 3,
+  name: "ICT Diagnostic Exam Passer",
+  date: "October 2024",
+  description:
+   "Passed the ICT diagnostic exam and is eligible to take the certification exam",
+  by: "DICT",
+  img: ict_diagnostic,
  },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
