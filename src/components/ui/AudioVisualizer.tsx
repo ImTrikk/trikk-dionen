@@ -1,60 +1,116 @@
-import { useState, useEffect, useRef } from "react";
+// components/AudioVisualizer.tsx
 
-export const AudioVisualizer: React.FC = () => {
+import React, { useRef, useEffect, useState } from "react";
+
+declare global {
+ interface Window {
+  webkitAudioContext: AudioContext;
+ }
+}
+
+const AudioVisualizer: React.FC = () => {
+ const [isPlaying, setIsPlaying] = useState(false);
  const canvasRef = useRef<HTMLCanvasElement | null>(null);
  const audioContextRef = useRef<AudioContext | null>(null);
- const [audioBuffer, setAudioBuffer] = useState<AudioBuffer | null>(null);
- const [isPlaying, setIsPlaying] = useState(false);
- const [audioSource, setAudioSource] = useState<AudioBufferSourceNode | null>(
-  null
- );
+ const sourceNodeRef = useRef<AudioBufferSourceNode | null>(null);
+ const analyserRef = useRef<AnalyserNode | null>(null);
 
- const audioSrc = "/audio/monalisa.mp3"; // The audio file path
+ const audioSrc = "/audio/monalisa.mp3";
 
- const visualize = (audioBuffer: AudioBuffer) => {
+ useEffect(() => {
+  // Initialize audio context
+  audioContextRef.current = new (window.AudioContext ||
+   window.webkitAudioContext)();
+
+  // Fetch and decode audio file
+  fetch(audioSrc)
+   .then((response) => response.arrayBuffer())
+   .then((arrayBuffer) => {
+    audioContextRef.current?.decodeAudioData(arrayBuffer, (audioBuffer) => {
+     setupAudioNodes(audioBuffer);
+    });
+   });
+ }, []);
+
+ const setupAudioNodes = (audioBuffer: AudioBuffer) => {
+  if (!audioContextRef.current || !canvasRef.current) return;
+
+  const analyser = audioContextRef.current.createAnalyser();
+  analyser.fftSize = 128;
+  analyserRef.current = analyser;
+
+  const source = audioContextRef.current.createBufferSource();
+  source.buffer = audioBuffer;
+  source.connect(analyser);
+  analyser.connect(audioContextRef.current.destination);
+  sourceNodeRef.current = source;
+
+  // Start visualization
+  draw();
+ };
+
+ const togglePlayPause = () => {
+  if (!audioContextRef.current || !sourceNodeRef.current) return;
+
+  if (!isPlaying) {
+   // Create new source node when playing
+   const source = audioContextRef.current.createBufferSource();
+   source.buffer = sourceNodeRef.current.buffer;
+   source.connect(analyserRef.current!);
+   source.start();
+   sourceNodeRef.current = source;
+  } else {
+   sourceNodeRef.current.stop();
+  }
+  setIsPlaying(!isPlaying);
+ };
+
+ const draw = () => {
+  if (!canvasRef.current || !analyserRef.current) return;
+
   const canvas = canvasRef.current;
-  if (!canvas) return;
-
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
 
-  const audioContext = audioContextRef.current;
-  if (!audioContext) return;
-
-  const analyser = audioContext.createAnalyser();
-  analyser.fftSize = 512;
-
+  // Use the existing analyser instead of creating a new one
+  const analyser = analyserRef.current;
   const frequencyBufferLength = analyser.frequencyBinCount;
   const frequencyData = new Uint8Array(frequencyBufferLength);
-
-  const source = audioContext.createBufferSource();
-  source.buffer = audioBuffer;
-  source.connect(analyser);
-  analyser.connect(audioContext.destination);
-  setAudioSource(source);
 
   const canvasContext = canvas.getContext("2d");
   if (!canvasContext) return;
 
   const barWidth = canvas.width / frequencyBufferLength;
 
-  const draw = () => {
-   requestAnimationFrame(draw);
-
-   // Clear the canvas
+  const renderFrame = () => {
+   requestAnimationFrame(renderFrame);
    canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-   // Get frequency data
    analyser.getByteFrequencyData(frequencyData);
 
-   const heightScale = 0.25; // Adjust for visual appearance
+   const scaleFactor = 0.1;
+   const centerX = canvas.width / 2; // Get the horizontal center point
 
-   // Draw frequency bars
-   for (let i = 0; i < frequencyBufferLength; i++) {
-    const barHeight = frequencyData[i] * heightScale;
-    canvasContext.fillStyle = `rgba(${frequencyData[i]}, 118, 138, 0.8)`;
+   // Only process half of the frequency data to create mirror effect
+   const halfLength = Math.floor(frequencyBufferLength / 2);
+
+   for (let i = 0; i < halfLength; i++) {
+    const barHeight = frequencyData[i] * scaleFactor;
+    canvasContext.fillStyle = `#00${frequencyData[i]
+     .toString(16)
+     .padStart(2, "0")}00`;
+
+    // Left side (going left from center)
     canvasContext.fillRect(
-     i * barWidth,
+     centerX - i * barWidth - barWidth,
+     canvas.height - barHeight,
+     barWidth - 1,
+     barHeight
+    );
+
+    // Right side (going right from center)
+    canvasContext.fillRect(
+     centerX + i * barWidth,
      canvas.height - barHeight,
      barWidth - 1,
      barHeight
@@ -62,72 +118,30 @@ export const AudioVisualizer: React.FC = () => {
    }
   };
 
-  draw();
+  renderFrame();
  };
-
- const handlePlay = () => {
-  if (audioContextRef.current && audioBuffer) {
-   const audioContext = audioContextRef.current;
-
-   if (isPlaying) {
-    audioSource?.stop();
-    setIsPlaying(false);
-   } else {
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    source.connect(audioContext.destination);
-    source.start();
-    setAudioSource(source);
-    setIsPlaying(true);
-   }
-  }
- };
-
- useEffect(() => {
-  const audioContext = new (window.AudioContext ||
-   (window as any).webkitAudioContext)();
-  audioContextRef.current = audioContext;
-
-  const fetchAudio = async () => {
-   const response = await fetch(audioSrc);
-   const arrayBuffer = await response.arrayBuffer();
-   audioContext.decodeAudioData(arrayBuffer, (decodedAudioBuffer) => {
-    setAudioBuffer(decodedAudioBuffer);
-    visualize(decodedAudioBuffer);
-   });
-  };
-
-  fetchAudio();
- }, [audioSrc]);
 
  return (
-  <div>
+  <div className="">
    <button
-    onClick={handlePlay}
-    disabled={!audioBuffer}
-    style={{
-     width: "60px",
-     height: "60px",
-     borderRadius: "50%",
-     backgroundColor: isPlaying ? "green" : "#4caf50", // Green color for play button
-     border: "none",
-     color: "white",
-     fontSize: "24px",
-     boxShadow: "0 0 15px rgba(0, 255, 0, 0.5)",
-     cursor: "pointer",
-     display: "flex",
-     justifyContent: "center",
-     alignItems: "center",
-     transition: "all 0.3s ease",
-    }}
+    onClick={togglePlayPause}
+    className="h-10 w-10 rounded-full bg-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)] flex items-center justify-center cursor-pointer z-50"
    >
-    {isPlaying ? "❚❚" : "▶️"}
+    {isPlaying ? "⏸️" : "▶️"}
    </button>
-   <canvas
-    id="canvas"
-    ref={canvasRef}
-    style={{ width: "100%", height: "200px", backgroundColor: "transparent" }}
-   ></canvas>
+   <div style={{ transform: "none", width: "100%", height: "100%" }}>
+    <canvas
+     ref={canvasRef}
+     style={{
+      width: "30%",
+      height: "100px%",
+      display: "block",
+      bottom: 0,
+     }}
+    />
+   </div>
   </div>
  );
 };
+
+export default AudioVisualizer;

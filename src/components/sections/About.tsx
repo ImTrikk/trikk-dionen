@@ -10,7 +10,7 @@ import { achievementData } from "@/data/achievements";
 import Marquee from "react-fast-marquee";
 import { certificates } from "@/data/certs";
 import { BiMedal } from "react-icons/bi";
-import { AudioVisualizer } from "../ui/AudioVisualizer";
+import AudioVisualizer from "../ui/AudioVisualizer";
 
 export default function About() {
  const [achievements, setAchievements] = useState(false);
@@ -102,7 +102,7 @@ export default function About() {
        </h1>
       </CardItem>
       <CardBody>
-       <CardItem>
+       <CardItem translateZ={120} className="w-full">
         <AudioVisualizer />
        </CardItem>
       </CardBody>
