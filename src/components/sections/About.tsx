@@ -133,7 +133,7 @@ export default function About() {
         </CardItem>
        </CardBody>
       </CardBody>
-      <CardBody className="flex flex-col md:flex-row items-center justify-between gap-12 mt-5">
+      <CardBody className="flex flex-col md:flex-row items-start justify-between gap-12 mt-5">
        <CardItem translateZ="50" className="w-full md:w-[500px]  md:shrink-0">
         <CardItem
          translateZ="80"
