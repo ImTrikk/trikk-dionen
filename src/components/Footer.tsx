@@ -9,9 +9,11 @@ export default function Footer() {
      <ul className="flex items-center gap-2 text-xs">
       <li className="text-xs text-green-500">2024</li>
       <li className="text-xs text-white">Patrick James Dionen</li>
-      <li className="text-xs text-white">All Rights Reserved</li>
+      <li className="hidden md:block text-xs text-white">
+       All Rights Reserved
+      </li>
      </ul>
-     <p className="text-xs text-white">Made with Next.js</p>
+     <p className="hidden md:block text-xs text-white">Made with Next.js</p>
     </div>
    </div>
   </footer>

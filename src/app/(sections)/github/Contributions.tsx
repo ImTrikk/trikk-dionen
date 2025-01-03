@@ -143,38 +143,38 @@ export const GithubGraph = () => {
   <section className="px-4 py-8">
    <div className="flex flex-col items-center justify-center">
     <div className="my-6 flex flex-col text-center">
-    <motion.h1
-     initial={{ opacity: 0, y: 100 }}
-     whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
-     className="text-3xl tracking-widest font-black text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] font-integral"
-    >
-     Committed to Improvement, One Feature at a Time
-    </motion.h1>
+     <motion.h1
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.4 } }}
+      className="text-xl md:text-3xl tracking-widest font-black text-white drop-shadow-[0_0_7px_rgba(255,255,255,0.5)] font-integral"
+     >
+      Committed to Improvement, One Feature at a Time
+     </motion.h1>
      <motion.p
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
       className="mt-2 text-gray-400 text-md font-medium"
-     >
-      
-     </motion.p>
+     ></motion.p>
     </div>
 
     {/* motion div */}
     <div
      id="contributions"
-     className="flex flex-wrap gap-1 items-center justify-center"
+     className="flex flex-wrap gap-0.5 sm:gap-1 items-center justify-center overflow-x-hidden"
     >
      {Array.from({ length: 40 }).map((_, i) => (
       <div
        key={i}
        id={`week-${i}`}
-       className={`flex flex-col gap-1 ${i < 20 ? "hidden md:flex" : "flex"}`}
+       className={`flex flex-col gap-0.5 sm:gap-1 
+        ${i < 25 ? "sm:flex" : "flex"}`}
       >
        {Array.from({ length: 7 }).map((_, j) => (
         <motion.div
          key={j}
          id={`week-${i}-day-${j}`}
-         className="h-[10px] w-[10px] rounded-[2px]"
+         className="h-[4px] w-[4px] xs:h-[6px] xs:w-[6px] sm:h-[8px] sm:w-[8px] md:h-[10px] md:w-[10px] 
+           rounded-[1px] sm:rounded-[2px]"
          initial={{ opacity: 0 }}
          whileInView={{
           opacity: 1,

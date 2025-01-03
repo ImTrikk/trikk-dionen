@@ -55,21 +55,22 @@ export default function Projects() {
    id="projects"
    className="relative h-auto w-full my-16 sm:my-32 py-16 sm:py-32"
   >
-   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 sm:mb-16">
+   <div className="flex flex-col sm:flex-row items-center justify-between mb-5 gap-3">
     <motion.h1
-     initial={{ opacity: 0, x: 300 }}
-     whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7 } }}
-     className="text-xl md:text-4xl sm:text-6xl text-white font-bold font-integral shrink-0 flex items-center justify-center m-0"
+     initial={{ opacity: 0, y: 100 }}
+     whileInView={{ opacity: 1, y: 0, transition: { duration: 0.7 } }}
+     className="text-2xl md:text-4xl sm:text-6xl text-white font-bold font-integral shrink-0 flex items-center justify-center m-0"
     >
      PROJECTS{" "}
      <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
       .
      </span>
     </motion.h1>
+    <p className="md:hidden text-xs text-gray-600">Feature Projects by trkk</p>
     <motion.div
      initial={{ opacity: 0 }}
      whileInView={{ opacity: 1, transition: { duration: 1.4 } }}
-     className="flex items-center gap-3 w-full"
+     className="hidden md:flex items-center gap-3 w-full"
     >
      <div className="w-full">
       <hr className="border-green-500/20" />
@@ -79,7 +80,7 @@ export default function Projects() {
      </div>
     </motion.div>
    </div>
-   <div className="hidden lg:grid grid-cols-[350px,1fr] gap-8 sm:gap-12">
+   <div className="hidden lg:grid grid-cols-[350px,1fr] gap-8 sm:gap-12 md:mt-14">
     <div className="relative space-y-4 max-h-[400px] lg:max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-green-500/50 px-2">
      {ProjectsData.map((data, index) => (
       <motion.div

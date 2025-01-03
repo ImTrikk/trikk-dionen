@@ -11,30 +11,30 @@ export default function Stack() {
  return (
   <section
    id="stacks"
-   className="h-auto w-full flex flex-col justify-between mt-32 py-32 "
+   className="h-auto w-full flex flex-col justify-between md:mt-32 md:py-32 "
   >
    <div>
     <div className="flex items-center justify-between gap-4">
      <motion.h1
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
-      className="shrink-0 text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+      className="md:shrink-0 text-xl md:text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
      >
       TECH STACK {""}
       <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
        .
       </span>
      </motion.h1>
-     <motion.div
+     {/* <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, transition: { duration: 1.4 } }}
       className="w-full flex items-center gap-2"
      >
       <hr className="w-full text-gray-400" /> <span>⚡</span>
-     </motion.div>
+     </motion.div> */}
     </div>
-    <div className="flex items-center justify-between mt-5">
-     <div className="w-[500px]">
+    <div className="md:flex items-center justify-between mt-5 overflow-hidden">
+     <div className="md:w-[500px]">
       {[
        { text: "Equipped", delay: 0.6 },
        { text: "With Powerful", delay: 1.2 },
@@ -42,9 +42,9 @@ export default function Stack() {
       ].map((item, index) => (
        <motion.h1
         key={index}
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: item.delay } }}
-        className="text-3xl text-white font-black font-integral"
+        className="text-sm md:text-3xl text-white font-black font-integral"
        >
         {item.text}
        </motion.h1>
@@ -52,7 +52,7 @@ export default function Stack() {
       <motion.p
        initial={{ opacity: 0, x: 100 }}
        whileInView={{ opacity: 1, x: 0, transition: { duration: 1.8 } }}
-       className="text-md text-gray-400 font-bold mt-10"
+       className="text-xs text-gray-400 font-bold mt-10"
       >
        To keep up with the latest technology, learning every day is crucial for
        a developer.
@@ -64,9 +64,9 @@ export default function Stack() {
       whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
      >
       <CardContainer className="inter-var">
-       <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] p-6 border w-[300px] h-[300px] rounded-full flex items-center justify-center">
+       <CardBody className="mt-10 md:mt-0 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:border-white/[0.2] border-black/[0.1] p-6 border md:w-[300px] md:h-[300px] rounded-full flex items-center justify-center">
         <CardItem translateZ="140">
-         <Image src={stacks} alt="stacks" width={300} height={300} />
+         <Image src={stacks} alt="stacks" className="w-[200px] md:w-[500px]" />
         </CardItem>
        </CardBody>
       </CardContainer>

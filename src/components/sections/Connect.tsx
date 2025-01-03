@@ -12,13 +12,13 @@ export default function Connect() {
    <div className="w-full flex flex-col gap-2">
     <div className="flex items-center justify-between gap-3">
      <motion.div
-      initial={{ opacity: 0, x: 100 }}
+      initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
       className="flex items-center justify-between gap-5"
      >
-      <h1 className="text-4xl text-white font-bold font-integral">
+      <h1 className="text-xl md:text-4xl text-white font-bold font-integral">
        LET <span style={{ fontFamily: "Poppins" }}>'</span>s{" "}
-       <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
+       <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.1)]">
         CONNECT{" "}
         <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
          .
@@ -26,26 +26,28 @@ export default function Connect() {
        </span>
       </h1>
      </motion.div>
-     <div className="flex w-full items-center gap-2">
+     {/* <div className="flex w-full items-center gap-2">
       <hr className="w-full" /> <span className="text-xl">⚡</span>
-     </div>
+     </div> */}
     </div>
-    <div className="flex items-start justify-between gap-5 mt-20">
+    <div className="md:flex items-start justify-between gap-5 mt-20">
      <motion.p
       initial={{ y: 100, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
-      className="text-lg text-white font-integral w-[500px] mt-5"
+      className="text-sm text-white font-integral md:w-[500px] mt-5 text-center"
      >
       Let <span>'</span>s connect and collaborate on projects, ideas, and more.
       I am always open to new opportunities and challenges.
      </motion.p>
-     <motion.div initial={{opacity: 0, y: 100}} whileInView={{opacity: 1, y: 0, transition: {duration: 0.8}}} className="flex flex-col gap-5">
+     <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+      className="flex flex-col gap-5"
+     >
       <CardContainer className="inter-var">
-       <CardBody className="w-auto group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-10 p-4 border border-gray-600 rounded-xl">
+       <CardBody className="mt-10 md:mt-0 w-auto group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-10 p-4 border border-gray-600 rounded-xl">
         <CardItem>
-         <div
-          className="text-white"
-         >
+         <div className="text-white">
           <h1 className="text-lg font-bold font-integral">Socials</h1>
           <p className="text-xs font-light">
            You can also reach me through these platforms

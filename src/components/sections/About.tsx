@@ -64,7 +64,7 @@ export default function About() {
    <CardContainer className="inter-var ">
     <CardBody className=" relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] bg-gray-500 bg-opacity-10 dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-3xl p-8 border">
      <CardItem translateZ="50">
-      <h1 className="text-4xl text-white font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+      <h1 className="text-xl md:text-4xl text-white font-bold font-integral drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
        ABOUT ME{" "}
        <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         .
@@ -193,7 +193,9 @@ export default function About() {
         and
        </span>{" "}
       </h1>{" "}
-      <span className="text-2xl font-medium text-white">Achievements</span>
+      <span className="text-md md:text-2xl font-medium text-white">
+       Achievements
+      </span>
      </div>
     </div>
    </div>
@@ -264,7 +266,9 @@ export default function About() {
         and
        </span>{" "}
       </h1>{" "}
-      <span className="text-2xl font-medium text-white">Participations</span>
+      <span className="text-md md:text-2xl font-medium text-white">
+       Participations
+      </span>
      </div>
     </div>
     <div className="w-full flex flex-wrap items-center justify-center gap-2 mt-10">
