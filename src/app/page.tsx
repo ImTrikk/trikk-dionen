@@ -17,11 +17,11 @@ export default function Home() {
     <About />
    </div>
    <div className="max-w-4xl w-full mx-auto sm:px-10 px-5">
-    {/* <Projects /> */}
-    {/* <Stack /> */}
-    {/* <OtherSkills /> */}
-    {/* <Connect /> */}
-    {/* <Footer /> */}
+    <Projects />
+    <Stack />
+    <OtherSkills />
+    <Connect />
+    <Footer />
    </div>
   </main>
  );
