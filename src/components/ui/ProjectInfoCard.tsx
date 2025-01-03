@@ -126,7 +126,9 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
           bg-gray-900/50 border border-gray-700/30 
           hover:border-green-500/30 transition-colors"
        >
-        <tech.logo className="text-lg text-green-500" />
+        <p className="text-green-500">
+         <tech.logo />
+        </p>
         <p className="text-sm text-gray-300">{tech.name}</p>
        </div>
       ))}
@@ -134,7 +136,7 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
     </div>
 
     {/* Links Section */}
-    <div className="flex gap-4">
+    {/* <div className="flex gap-4">
      <a
       href={project.demo_url}
       target="_blank"
@@ -183,7 +185,7 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
        />
       </svg>
      </a>
-    </div>
+    </div> */}
    </div>
   </main>
  );
