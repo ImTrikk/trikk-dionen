@@ -19,6 +19,31 @@ import simplichat_3 from "@/assets/projects/simplichat_3.png";
 import simplichat_4 from "@/assets/projects/simplichat_4.png";
 import simplichat_5 from "@/assets/projects/simplichat_5.png";
 
+import archived_1 from "@/assets/projects/archived_1.png";
+import archived_2 from "@/assets/projects/archived_2.png";
+import archived_3 from "@/assets/projects/archived_3.png";
+import archived_4 from "@/assets/projects/archived_4.png";
+
+import synthstyle_1 from "@/assets/projects/synthstyle_1.png";
+import synthstyle_2 from "@/assets/projects/synthstyle_2.png";
+import synthstyle_3 from "@/assets/projects/synthstyle_3.png";
+import synthstyle_4 from "@/assets/projects/synthstyle_4.png";
+import synthstyle_5 from "@/assets/projects/synthstyle_5.png";
+
+import weather_1 from "@/assets/projects/weather_1.png";
+import weather_2 from "@/assets/projects/weather_2.png";
+import weather_3 from "@/assets/projects/weather_3.png";
+import weather_4 from "@/assets/projects/weather_4.png";
+import weather_5 from "@/assets/projects/weather_5.png";
+
+import review_1 from "@/assets/projects/review_1.png";
+import review_2 from "@/assets/projects/review_2.png";
+import review_3 from "@/assets/projects/review_3.png";
+import review_4 from "@/assets/projects/review_4.png";
+import review_5 from "@/assets/projects/review_5.png";
+
+import track from "@/assets/projects/track.png";
+
 // Import icons from react-icons
 import { FaReact as reactIcon } from "react-icons/fa";
 import { FaNodeJs as nodeIcon } from "react-icons/fa";
@@ -77,7 +102,7 @@ export const ProjectsData: Projects[] = [
   title: "ReviewUP",
   description:
    "ReviewUP is a student-driven platform for creating, sharing, and downloading reviewers, as well as crafting and practicing with custom quizzes, fostering collaborative learning and academic success.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [review_1, review_2, review_3, review_4, review_5],
   github_url: "https://github.com/ImTrikk/review-up.git",
   demo_url: "https://review-up.vercel.app/",
   stacks: [
@@ -92,7 +117,13 @@ export const ProjectsData: Projects[] = [
   title: "SynthStyle",
   description:
    "SynthStyle is an AI-powered platform that transforms images by blending them with desired artistic styles using advanced neural network algorithms, unlocking endless creative possibilities.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [
+   synthstyle_1,
+   synthstyle_2,
+   synthstyle_3,
+   synthstyle_4,
+   synthstyle_5,
+  ],
   github_url: "https://github.com/ImTrikk/SynthN-Style.git",
   demo_url: "",
   stacks: [
@@ -117,7 +148,7 @@ export const ProjectsData: Projects[] = [
   title: "DoTrack",
   description:
    "DoTrack is a web and mobile application designed to track student attendance during DoDay events, ensuring fair and equal participation time for all attendees.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [track],
   github_url: "https://github.com/ImTrikk/do-track-backend.git",
   demo_url: "",
   stacks: [{ name: "ReactJS", logo: reactIcon }],
@@ -127,7 +158,7 @@ export const ProjectsData: Projects[] = [
   title: "WeatherApp",
   description:
    "WeatherApp is a simple yet powerful application built with React.js and Laravel, leveraging the OpenWeather API to provide real-time weather updates and accurate forecasts for cities worldwide.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [weather_1, weather_2, weather_3, weather_4, weather_5],
   github_url: "https://github.com/ImTrikk/weather-web-app.git",
   demo_url: "",
   stacks: [
@@ -153,7 +184,7 @@ export const ProjectsData: Projects[] = [
   title: "Archived",
   description:
    "Archived is an open platform where users can anonymously read short sentences or paragraphs shared by others, and also post their own anonymous messages, fostering a space for free expression and connection.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [archived_1, archived_2, archived_3, archived_4],
   github_url: "https://github.com/ImTrikk/Archived.git",
   demo_url: "https://archived-lemon.vercel.app/",
   stacks: [
