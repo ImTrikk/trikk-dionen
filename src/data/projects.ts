@@ -42,6 +42,12 @@ import review_3 from "@/assets/projects/review_3.png";
 import review_4 from "@/assets/projects/review_4.png";
 import review_5 from "@/assets/projects/review_5.png";
 
+import parago_1 from "@/assets/projects/parago_1.png";
+import parago_2 from "@/assets/projects/parago_2.png";
+import parago_3 from "@/assets/projects/parago_3.png";
+import parago_4 from "@/assets/projects/parago_4.png";
+import parago_5 from "@/assets/projects/parago_5.png";
+
 import track from "@/assets/projects/track.png";
 
 // Import icons from react-icons
@@ -138,7 +144,7 @@ export const ProjectsData: Projects[] = [
   title: "ParaGO",
   description:
    "ParaGO is your all-in-one travel companion, offering personalized itineraries, uncovering hidden gems, seamless booking features, and opportunities to join exciting travel events for unforgettable adventures.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+  img_url: [parago_1, parago_2, parago_3, parago_4, parago_5],
   github_url: "https://github.com/ImTrikk/parago.git",
   demo_url: "https://parago.vercel.app/",
   stacks: [{ name: "ReactJS", logo: reactIcon }],
