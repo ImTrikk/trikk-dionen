@@ -81,8 +81,14 @@ export default function Navbar() {
      } mx-auto px-4 bg-black/10 backdrop-blur-md flex items-center justify-between overflow-hidden gap-5 z-50`}
     >
      <h1
-      onClick={() => showMobile()}
-      className="glitch font-integral text-[5px] shrink-0"
+      onClick={() => {
+       if (window.innerWidth < 768) {
+        showMobile(); // Show mobile content for screens smaller than md
+       } else {
+        handleNav("HOME"); // Navigate to the hero section for md and larger screens
+       }
+      }}
+      className="glitch font-integral text-[5px] shrink-0 cursor-pointer"
       data-text="⚡"
      >
       <motion.span
