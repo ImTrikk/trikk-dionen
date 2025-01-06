@@ -199,17 +199,21 @@ export default function About() {
    </CardContainer>
    <div className="mt-20">
     <div className="flex items-center justify-between gap-2">
-     <div className="md:shrink-0 flex flex-col">
+     <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+      className="md:shrink-0 flex flex-col"
+     >
       <h1 className="text-xl md:text-4xl font-integral text-white">
        EXPERIENCE{" "}
        <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         and
        </span>{" "}
       </h1>{" "}
-      <span className="text-md md:text-2xl font-medium text-white">
+      <span className="text-md md:text-2xl font-medium text-gray-500">
        Achievements
       </span>
-     </div>
+     </motion.div>
     </div>
    </div>
    <div className="flex flex-col md:flex-row items-center md:items-start justify-between mt-5">
@@ -272,17 +276,21 @@ export default function About() {
    </div>
    <div className="mt-16">
     <div className="flex items-center justify-between gap-2">
-     <div className="shrink-0 flex flex-col">
+     <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
+      className="shrink-0 flex flex-col"
+     >
       <h1 className="text-xl md:text-4xl font-integral text-white">
        CERTIFICATES{" "}
        <span className="text-sm font-light text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.5)]">
         and
        </span>{" "}
       </h1>{" "}
-      <span className="text-md md:text-2xl font-medium text-white">
+      <span className="text-md md:text-2xl font-medium text-gray-500">
        Participations
       </span>
-     </div>
+     </motion.div>
     </div>
     <div className="w-full flex flex-wrap items-center justify-center gap-2 mt-10">
      {certificates.map((cert, index) => (

@@ -16,8 +16,8 @@ export default function Stack() {
    <div>
     <div className="flex items-center justify-between gap-4">
      <motion.h1
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
       className="md:shrink-0 text-xl md:text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]"
      >
       TECH STACK {""}
@@ -49,7 +49,7 @@ export default function Stack() {
         {item.text}
        </motion.h1>
       ))}
-      <motion.p className="text-xs text-gray-400 font-bold mt-10">
+      <motion.p className="text-sm text-gray-400 font-medium mt-10">
        To keep up with the latest technology, learning every day is crucial for
        a developer.
       </motion.p>
