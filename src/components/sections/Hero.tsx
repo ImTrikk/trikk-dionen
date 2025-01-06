@@ -76,10 +76,10 @@ export default function Hero() {
       transition={{ duration: 0.5, delay: 0.6 }}
       className="text-gray-400 text-sm max-w-[460px] leading-relaxed text-justify"
      >
-      A 22-year-old Software Engineer with a focus on full-stack
-      development, experienced in modern web technologies and frameworks.
-      Skilled in designing and building scalable, user-friendly web applications
-      that deliver seamless user experiences.
+      A 22-year-old Software Engineer with a focus on full-stack development,
+      experienced in modern web technologies and frameworks. Skilled in
+      designing and building scalable, user-friendly web applications that
+      deliver seamless user experiences.
      </motion.p>
 
      <motion.div
@@ -88,8 +88,10 @@ export default function Hero() {
       transition={{ duration: 0.5, delay: 0.8 }}
       className="flex flex-wrap gap-4"
      >
-      <button
-       onClick={() => window.open("/path/to/your/resume.pdf", "_blank")}
+      <a
+       href="/DIONEN_RESUME.pdf"
+       target="_blank"
+       rel="noopener noreferrer"
        className="group flex items-center gap-2 px-4 py-2 text-xs bg-green-600 hover:bg-emerald-700 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.3)] rounded-lg text-white transition-all duration-300"
       >
        <svg
@@ -107,7 +109,7 @@ export default function Hero() {
         />
        </svg>
        <span>Download Resume</span>
-      </button>
+      </a>
 
       <button
        onClick={() => window.open("https://github.com/ImTrikk", "_blank")}
