@@ -56,22 +56,37 @@ export default function Connect() {
         </CardItem>
         <div className="flex items-start justify-between">
          <CardItem translateZ={90}>
-          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+          <a
+           href="https://github.com/ImTrikk"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2"
+          >
            <FaGithub className="text-gray-400" />{" "}
            <span className="text-xs">Github</span>
-          </div>
+          </a>
          </CardItem>
          <CardItem translateZ={90}>
-          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+          <a
+           href="https://linkedin.com/in/patrick-james-dionen-1b22aa2b1"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2"
+          >
            <FaLinkedin className="text-blue-300" />{" "}
            <span className="text-xs">Linkedin</span>
-          </div>
+          </a>
          </CardItem>
          <CardItem translateZ={90}>
-          <div className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2">
+          <a
+           href="https://www.facebook.com/patrickjames.dionen/"
+           target="_blank"
+           rel="noopener noreferrer"
+           className="text-white flex items-center gap-2 hover:border border-white rounded-lg p-2"
+          >
            <FaFacebookSquare className="text-blue-600" />{" "}
            <span className="text-xs">Facebook</span>
-          </div>
+          </a>
          </CardItem>
         </div>
        </CardBody>
