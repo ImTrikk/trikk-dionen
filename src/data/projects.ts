@@ -80,139 +80,150 @@ export interface Projects {
  github_url: string;
  demo_url: string;
  stacks: Stacks[];
+ role: string; // Added role property
 }
 
 export const ProjectsData: Projects[] = [
  {
-  id: 1,
-  title: "FoodieGO",
-  description:
-   "FoodieGO is a food recipe sharing application that lets users create, share, and review recipes while having the ability to download and generate AI nutrition information.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
-  github_url: "https://github.com/ImTrikk/FoodieGO.git",
-  demo_url: "https://myfoodiego.vercel.app/",
-  stacks: [{ name: "ReactJS", logo: reactIcon }],
+ id: 1,
+ title: "FoodieGO",
+ description:
+  "FoodieGO is a food recipe sharing application that lets users create, share, and review recipes while having the ability to download and generate AI nutrition information.",
+ img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ github_url: "https://github.com/ImTrikk/FoodieGO.git",
+ demo_url: "https://myfoodiego.vercel.app/",
+ stacks: [{ name: "ReactJS", logo: reactIcon }],
+ role: "Frontend Developer",
  },
  {
-  id: 2,
-  title: "Visualify",
-  description:
-   "Visualify is an advanced Business Intelligence platform designed to deliver actionable insights on retail performance, including sales trends, customer churn analysis, and more, empowering businesses to make data-driven decisions with ease.",
-  img_url: [visualify_1, visualify_2, visualify_3, visualify_4, visualify_5],
-  github_url: "https://github.com/ImTrikk/retail-store-visualization.git",
-  demo_url: "https://retail-visualify.streamlit.app/",
-  stacks: [{ name: "Python", logo: pythonIcon }],
+ id: 2,
+ title: "Visualify",
+ description:
+  "Visualify is an advanced Business Intelligence platform designed to deliver actionable insights on retail performance, including sales trends, customer churn analysis, and more, empowering businesses to make data-driven decisions with ease.",
+ img_url: [visualify_1, visualify_2, visualify_3, visualify_4, visualify_5],
+ github_url: "https://github.com/ImTrikk/retail-store-visualization.git",
+ demo_url: "https://retail-visualify.streamlit.app/",
+ stacks: [{ name: "Python", logo: pythonIcon }],
+ role: "Data Scientist",
  },
  {
-  id: 3,
-  title: "ReviewUP",
-  description:
-   "ReviewUP is a student-driven platform for creating, sharing, and downloading reviewers, as well as crafting and practicing with custom quizzes, fostering collaborative learning and academic success.",
-  img_url: [review_1, review_2, review_3, review_4, review_5],
-  github_url: "https://github.com/ImTrikk/review-up.git",
-  demo_url: "https://review-up.vercel.app/",
-  stacks: [
-   { name: "ReactJS", logo: reactIcon },
-   { name: "NodeJS", logo: nodeIcon },
-   { name: "PostgreSQL", logo: postgresIcon },
-   { name: "Firebase", logo: firebaseIcon },
-  ],
+ id: 3,
+ title: "ReviewUP",
+ description:
+  "ReviewUP is a student-driven platform for creating, sharing, and downloading reviewers, as well as crafting and practicing with custom quizzes, fostering collaborative learning and academic success.",
+ img_url: [review_1, review_2, review_3, review_4, review_5],
+ github_url: "https://github.com/ImTrikk/review-up.git",
+ demo_url: "https://review-up.vercel.app/",
+ stacks: [
+  { name: "ReactJS", logo: reactIcon },
+  { name: "NodeJS", logo: nodeIcon },
+  { name: "PostgreSQL", logo: postgresIcon },
+  { name: "Firebase", logo: firebaseIcon },
+ ],
+ role: "Full Stack Developer",
  },
  {
-  id: 4,
-  title: "SynthStyle",
-  description:
-   "SynthStyle is an AI-powered platform that transforms images by blending them with desired artistic styles using advanced neural network algorithms, unlocking endless creative possibilities.",
-  img_url: [
-   synthstyle_1,
-   synthstyle_2,
-   synthstyle_3,
-   synthstyle_4,
-   synthstyle_5,
-  ],
-  github_url: "https://github.com/ImTrikk/SynthN-Style.git",
-  demo_url: "",
-  stacks: [
-   { name: "ElectronJS", logo: electronIcon },
-   { name: "Flask", logo: flaskIcon },
-   { name: "Python", logo: pythonIcon },
-   { name: "PyTorch", logo: pytorchIcon },
-  ],
+ id: 4,
+ title: "SynthStyle",
+ description:
+  "SynthStyle is an AI-powered platform that transforms images by blending them with desired artistic styles using advanced neural network algorithms, unlocking endless creative possibilities.",
+ img_url: [
+  synthstyle_1,
+  synthstyle_2,
+  synthstyle_3,
+  synthstyle_4,
+  synthstyle_5,
+ ],
+ github_url: "https://github.com/ImTrikk/SynthN-Style.git",
+ demo_url: "",
+ stacks: [
+  { name: "ElectronJS", logo: electronIcon },
+  { name: "Flask", logo: flaskIcon },
+  { name: "Python", logo: pythonIcon },
+  { name: "PyTorch", logo: pytorchIcon },
+ ],
+ role: "AI Developer",
  },
  {
-  id: 5,
-  title: "ParaGO",
-  description:
-   "ParaGO is your all-in-one travel companion, offering personalized itineraries, uncovering hidden gems, seamless booking features, and opportunities to join exciting travel events for unforgettable adventures.",
-  img_url: [parago_1, parago_2, parago_3, parago_4, parago_5],
-  github_url: "https://github.com/ImTrikk/parago.git",
-  demo_url: "https://parago.vercel.app/",
-  stacks: [{ name: "ReactJS", logo: reactIcon }],
+ id: 5,
+ title: "ParaGO",
+ description:
+  "ParaGO is your all-in-one travel companion, offering personalized itineraries, uncovering hidden gems, seamless booking features, and opportunities to join exciting travel events for unforgettable adventures.",
+ img_url: [parago_1, parago_2, parago_3, parago_4, parago_5],
+ github_url: "https://github.com/ImTrikk/parago.git",
+ demo_url: "https://parago.vercel.app/",
+ stacks: [{ name: "ReactJS", logo: reactIcon }],
+ role: "Frontend Developer",
  },
  {
-  id: 6,
-  title: "DoTrack",
-  description:
-   "DoTrack is a web and mobile application designed to track student attendance during DoDay events, ensuring fair and equal participation time for all attendees.",
-  img_url: [track],
-  github_url: "https://github.com/ImTrikk/do-track-backend.git",
-  demo_url: "",
-  stacks: [{ name: "ReactJS", logo: reactIcon }],
+ id: 6,
+ title: "DoTrack",
+ description:
+  "DoTrack is a web and mobile application designed to track student attendance during DoDay events, ensuring fair and equal participation time for all attendees.",
+ img_url: [track],
+ github_url: "https://github.com/ImTrikk/do-track-backend.git",
+ demo_url: "",
+ stacks: [{ name: "ReactJS", logo: reactIcon }],
+ role: "Frontend Developer",
  },
  {
-  id: 7,
-  title: "WeatherApp",
-  description:
-   "WeatherApp is a simple yet powerful application built with React.js and Laravel, leveraging the OpenWeather API to provide real-time weather updates and accurate forecasts for cities worldwide.",
-  img_url: [weather_1, weather_2, weather_3, weather_4, weather_5],
-  github_url: "https://github.com/ImTrikk/weather-web-app.git",
-  demo_url: "",
-  stacks: [
-   { name: "ReactJS", logo: reactIcon },
-   { name: "Laravel", logo: laravelIcon },
-  ],
+ id: 7,
+ title: "WeatherApp",
+ description:
+  "WeatherApp is a simple yet powerful application built with React.js and Laravel, leveraging the OpenWeather API to provide real-time weather updates and accurate forecasts for cities worldwide.",
+ img_url: [weather_1, weather_2, weather_3, weather_4, weather_5],
+ github_url: "https://github.com/ImTrikk/weather-web-app.git",
+ demo_url: "",
+ stacks: [
+  { name: "ReactJS", logo: reactIcon },
+  { name: "Laravel", logo: laravelIcon },
+ ],
+ role: "Full Stack Developer",
  },
  {
-  id: 8,
-  title: "Speciefy",
-  description:
-   "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
-  img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
-  github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
-  demo_url: "",
-  stacks: [
-   { name: "ReactJS", logo: reactIcon },
-   { name: "TensorFlow", logo: tensorflowIcon },
-  ],
+ id: 8,
+ title: "Speciefy",
+ description:
+  "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
+ img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
+ demo_url: "",
+ stacks: [
+  { name: "ReactJS", logo: reactIcon },
+  { name: "TensorFlow", logo: tensorflowIcon },
+ ],
+ role: "AI Developer",
  },
  {
-  id: 9,
-  title: "Archived",
-  description:
-   "Archived is an open platform where users can anonymously read short sentences or paragraphs shared by others, and also post their own anonymous messages, fostering a space for free expression and connection.",
-  img_url: [archived_1, archived_2, archived_3, archived_4],
-  github_url: "https://github.com/ImTrikk/Archived.git",
-  demo_url: "https://archived-lemon.vercel.app/",
-  stacks: [
-   { name: "ReactJS", logo: reactIcon },
-   { name: "NodeJS", logo: nodeIcon },
-   { name: "MongoDB", logo: mongodbIcon },
-  ],
+ id: 9,
+ title: "Archived",
+ description:
+  "Archived is an open platform where users can anonymously read short sentences or paragraphs shared by others, and also post their own anonymous messages, fostering a space for free expression and connection.",
+ img_url: [archived_1, archived_2, archived_3, archived_4],
+ github_url: "https://github.com/ImTrikk/Archived.git",
+ demo_url: "https://archived-lemon.vercel.app/",
+ stacks: [
+  { name: "ReactJS", logo: reactIcon },
+  { name: "NodeJS", logo: nodeIcon },
+  { name: "MongoDB", logo: mongodbIcon },
+ ],
+ role: "Full Stack Developer",
  },
  {
-  id: 10,
-  title: "SimpliChat",
-  description:
-   "SimpliChat is a simple, real-time chat application built with React, allowing users to communicate seamlessly through Socket.IO for instant messaging and interactions.",
-  img_url: [
-   simplichat_1,
-   simplichat_2,
-   simplichat_3,
-   simplichat_4,
-   simplichat_5,
-  ],
-  github_url: "https://github.com/ImTrikk/Simpli-Chat.git",
-  demo_url: "https://simpli-chat.vercel.app/",
-  stacks: [{ name: "ReactJS", logo: reactIcon }],
+ id: 10,
+ title: "SimpliChat",
+ description:
+  "SimpliChat is a simple, real-time chat application built with React, allowing users to communicate seamlessly through Socket.IO for instant messaging and interactions.",
+ img_url: [
+  simplichat_1,
+  simplichat_2,
+  simplichat_3,
+  simplichat_4,
+  simplichat_5,
+ ],
+ github_url: "https://github.com/ImTrikk/Simpli-Chat.git",
+ demo_url: "https://simpli-chat.vercel.app/",
+ stacks: [{ name: "ReactJS", logo: reactIcon }],
+ role: "Frontend Developer",
  },
 ];
