@@ -13,7 +13,7 @@ export default function Footer() {
        All Rights Reserved
       </li>
      </ul>
-     <p className="hidden md:block text-xs text-white">trrk ⚡</p>
+     <p className="hidden md:block text-xs text-white">trkk ⚡</p>
     </div>
    </div>
   </footer>
