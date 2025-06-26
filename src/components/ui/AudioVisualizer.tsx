@@ -14,6 +14,8 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ isPlaying }) => {
  const previousFrequencyData = useRef<Uint8Array | null>(null);
  const audioBufferRef = useRef<AudioBuffer | null>(null);
  const requestAnimationFrameId = useRef<number>(0);
+ const playbackTimeRef = useRef<number>(0); // Track current playback time
+ const startTimestampRef = useRef<number | null>(null); // When playback started
 
  useEffect(() => {
   // Initialize audio context
@@ -46,11 +48,32 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ isPlaying }) => {
    source.buffer = audioBufferRef.current;
    source.connect(analyserRef.current!);
    analyserRef.current?.connect(audioContextRef.current.destination);
-   source.start(0);
+   source.start(0, playbackTimeRef.current);
+   startTimestampRef.current =
+    audioContextRef.current.currentTime - playbackTimeRef.current;
+   source.onended = () => {
+    // Only reset if we reached the end of the audio
+    if (
+     audioContextRef.current &&
+     playbackTimeRef.current +
+      (audioContextRef.current.currentTime - startTimestampRef.current!) >=
+      audioBufferRef.current!.duration - 0.05 // allow small margin
+    ) {
+     playbackTimeRef.current = 0;
+     startTimestampRef.current = null;
+    }
+   };
    sourceNodeRef.current = source;
   } else {
-   sourceNodeRef.current?.stop();
-   sourceNodeRef.current = null;
+   if (sourceNodeRef.current) {
+    if (startTimestampRef.current !== null && audioContextRef.current) {
+     playbackTimeRef.current =
+      audioContextRef.current.currentTime - startTimestampRef.current;
+    }
+    sourceNodeRef.current.stop();
+    sourceNodeRef.current = null;
+    startTimestampRef.current = null;
+   }
   }
  }, [isPlaying]);
 
