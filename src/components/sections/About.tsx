@@ -42,13 +42,13 @@ export default function About() {
     "Designed web applications to meet client-specific needs and expectations, ensuring user satisfaction and functionality. Developed dynamic and responsive applications using React.js, Laravel, and PostgreSQL for efficient backend and frontend integration. Created scalable and robust system architectures to support application performance and maintainability.",
   },
   {
-    date: "February 2025 - May 2025",
-    title: "DOST CARAGA Intern | Project LODIXR",
-    tags: ['Internship', 'Developer', 'Programmer'],
-    description: `Contributed to the development and improvement of core system features to support project goals and user needs.
+   date: "February 2025 - May 2025",
+   title: "DOST CARAGA Intern | Project LODIXR",
+   tags: ["Internship", "Developer", "Programmer"],
+   description: `Contributed to the development and improvement of core system features to support project goals and user needs.
 Developed solutions to enhance workflow efficiency, including status-based controls and automated communication features.
 Conducted testing, debugging, and refinement of features to ensure quality and stability across various use cases.
-Collaborated with mentors and team members in an Agile-like environment, participating in regular meetings to report progress and align on deliverables.`
+Collaborated with mentors and team members in an Agile-like environment, participating in regular meetings to report progress and align on deliverables.`,
   },
   {
    date: "January 2023 - June 2024",
@@ -159,11 +159,11 @@ Collaborated with mentors and team members in an Agile-like environment, partici
          translateZ="100"
          className="text-sm text-gray-400 font-regular text-justify leading-6 mt-3"
         >
-         Currently a graduating Bachelor of Science in Information Technology
-         student at Caraga State University, with hands-on experience in
-         developing dynamic web applications and crafting user interfaces.
-         Focused on integrating functionality and design to create efficient and
-         user-friendly digital solutions.
+         Just recently graduated with the degree of Bachelor of Science in
+         Information Technology at Caraga State University, with hands-on
+         experience in developing dynamic web applications and crafting user
+         interfaces. Focused on integrating functionality and design to create
+         efficient and user-friendly digital solutions.
         </CardItem>
 
         <CardItem
