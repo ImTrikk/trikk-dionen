@@ -32,10 +32,10 @@ export const achievementData: Achievement[] = [
 
  {
   id: 2,
-  name: "Civil Exam Service Passer",
+  name: "Career Service Professional Passer",
   date: "August 2024",
   description:
-   "Passed the Civil Service Examination with a passing rate of 14.43% for the Professional Level, with 42,812 out of 296,758 candidates passing.",
+   "Passed the Career Service Examination with a passing rate of 14.43% for the Professional Level, with 42,812 out of 296,758 candidates passing.",
   by: "Civil Service Commission",
   img: csc_passed,
  },
