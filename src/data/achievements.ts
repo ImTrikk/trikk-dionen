@@ -48,4 +48,4 @@ export const achievementData: Achievement[] = [
   by: "DICT",
   img: ict_diagnostic,
  },
-].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+]
