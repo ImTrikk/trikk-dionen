@@ -35,15 +35,15 @@ export default function About() {
 
  const experiences = [
   {
-   date: "December 2024 - Present",
-   title: "Freelance Full Stack Developer | Exon",
+   date: "June 2024 - Present",
+   title: "Full Stack Developer | Exon | Freelance",
    tags: ["Freelance", "Full Stack Developer", "UI/UX Designer"],
    description:
     "Designed web applications to meet client-specific needs and expectations, ensuring user satisfaction and functionality. Developed dynamic and responsive applications using React.js, Laravel, and PostgreSQL for efficient backend and frontend integration. Created scalable and robust system architectures to support application performance and maintainability.",
   },
   {
    date: "February 2025 - May 2025",
-   title: "DOST CARAGA Intern | Project LODIXR",
+   title: "Intern Developer/Programmer | DOST CARAGA",
    tags: ["Internship", "Developer", "Programmer"],
    description: `Contributed to the development and improvement of core system features to support project goals and user needs.
 Developed solutions to enhance workflow efficiency, including status-based controls and automated communication features.
@@ -52,7 +52,7 @@ Collaborated with mentors and team members in an Agile-like environment, partici
   },
   {
    date: "January 2023 - June 2024",
-   title: "Co-Founder and CTO | ParaGO",
+   title: "Full Stack Developer | Co-Founder and CTO | ParaGO",
    tags: ["Startup", "Full Stack Developer", "UI/UX Designer"],
    description:
     "Co-founded ParaGO, a web-based application that enables users to book events organized by municipal tourism offices, promoting unique local adventures. Designed and developed the platform using ReactJS for dynamic and responsive interfaces, NodeJS with ExpressJS for efficient server-side communication, and MongoDB for scalable data storage. Spearheaded the UI/UX design, crafting user-centric interfaces to ensure an intuitive and seamless experience across all devices. Ensured the application was fully responsive and optimized for performance to enhance accessibility for diverse user bases.",
@@ -60,8 +60,8 @@ Collaborated with mentors and team members in an Agile-like environment, partici
  ];
 
  const exp_projs = {
-  no_exp: 10,
-  projs: 11,
+  no_exp: 14,
+  projs: 12,
  };
 
  const togglePlayPause = () => {
