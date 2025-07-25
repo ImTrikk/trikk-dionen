@@ -2,7 +2,7 @@
 
 import { Projects } from "@/data/projects";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
  IoIosArrowDroprightCircle,
  IoIosArrowDropleftCircle,
@@ -49,9 +49,12 @@ export const ProjectInfoCard = ({ project }: { project: Projects }) => {
  };
 
  // Reset the `disableTransition` flag after the instant jump
- if (disableTransition) {
-  setTimeout(() => setDisableTransition(false), 0);
- }
+ useEffect(() => {
+  if (disableTransition) {
+   const timer = setTimeout(() => setDisableTransition(false), 0);
+   return () => clearTimeout(timer);
+  }
+ }, [disableTransition]);
 
  // Handle URL clicks
  const handleDemoClick = (e: React.MouseEvent) => {

@@ -60,7 +60,7 @@ Collaborated with mentors and team members in an Agile-like environment, partici
  ];
 
  const exp_projs = {
-  no_exp: 14,
+  no_exp: 15,
   projs: 12,
  };
 
