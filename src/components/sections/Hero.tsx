@@ -7,7 +7,7 @@ import { FaMapPin } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import trkmain from "@/assets/trkk/trkmain.svg";
 
-const tags = ["Software Engineer", "Full Stack Developer", "UI/UX Designer"];
+const tags = ["Software Engineer", "Full Stack Developer", "Web Developer"];
 
 export default function Hero() {
  return (
