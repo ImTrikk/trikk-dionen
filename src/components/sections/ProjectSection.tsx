@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 const ProjectSection: React.FC = () => {
  const router = useRouter();
  const handleProjectClick = (projectId: number) => {
-  router.push(`/pages?id=${projectId}`);
+  router.push(`/pages/project-details?id=${projectId}`);
  };
 
  return (
