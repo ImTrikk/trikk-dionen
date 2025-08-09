@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { ProjectsData, Projects } from "@/data/projects";
+import { IconType } from "react-icons";
 
 const ProjectSection: React.FC = () => {
  return (
@@ -83,7 +84,9 @@ const ProjectSection: React.FC = () => {
            key={idx}
            className="flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full border border-white/20"
           >
-           <Icon className="text-green-400 w-4 h-4" />
+           <span className="text-green-400 w-4 h-4">
+            <Icon />
+           </span>
            <span className="text-xs text-white">{stack.name}</span>
           </div>
          );
