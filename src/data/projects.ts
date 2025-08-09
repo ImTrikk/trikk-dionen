@@ -104,7 +104,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/retail-store-visualization.git",
  demo_url: "https://retail-visualify.streamlit.app/",
  stacks: [{ name: "Python", logo: pythonIcon }],
- role: "Data Scientist",
+ role: "Full Stack Developer",
  },
  {
  id: 3,
@@ -142,7 +142,7 @@ export const ProjectsData: Projects[] = [
   { name: "Python", logo: pythonIcon },
   { name: "PyTorch", logo: pytorchIcon },
  ],
- role: "AI Developer",
+ role: "Full Stack Developer",
  },
  {
  id: 5,
@@ -153,7 +153,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/parago.git",
  demo_url: "https://parago.vercel.app/",
  stacks: [{ name: "ReactJS", logo: reactIcon }],
- role: "Frontend Developer",
+ role: "Full Stack Developer",
  },
  {
  id: 6,
@@ -164,7 +164,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/do-track-backend.git",
  demo_url: "",
  stacks: [{ name: "ReactJS", logo: reactIcon }],
- role: "Frontend Developer",
+ role: "Backend Developer",
  },
  {
  id: 7,
