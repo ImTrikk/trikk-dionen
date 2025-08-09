@@ -6,8 +6,14 @@ import Image, { StaticImageData } from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { ProjectsData, Projects } from "@/data/projects";
 import { IconType } from "react-icons";
+import { useRouter } from "next/navigation";
 
 const ProjectSection: React.FC = () => {
+ const router = useRouter();
+ const handleProjectClick = (projectId: number) => {
+  router.push(`/pages?id=${projectId}`);
+ };
+
  return (
   <main
    id="projects"
@@ -52,9 +58,10 @@ const ProjectSection: React.FC = () => {
        transition: { duration: 0.7, delay: index * 0.1 },
       }}
       className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center hover:bg-green-800/10 hover:border border-green-500/30 transition-all duration-300 p-6 rounded-xl cursor-pointer"
+      onClick={() => handleProjectClick(project.id)}
      >
       {/* Image */}
-      <div className="relative h-full group overflow-hidden rounded-lg border border-white/20">
+      <div className="relative h-full group overflow-hidden rounded-xl border border-white/20">
        <Image
         src={project.img_url[0]}
         alt={project.title}
@@ -99,6 +106,7 @@ const ProjectSection: React.FC = () => {
          href={project.github_url}
          target="_blank"
          rel="noopener noreferrer"
+         onClick={(e) => e.stopPropagation()}
          className="flex items-center gap-2 text-sm text-white border border-white/20 px-4 py-2 rounded-md hover:bg-white/10 transition"
         >
          <FaGithub /> GitHub
@@ -108,6 +116,7 @@ const ProjectSection: React.FC = () => {
           href={project.demo_url}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
           className="flex items-center gap-2 text-sm text-white border border-green-500/30 px-4 py-2 rounded-md hover:bg-green-500/20 transition"
          >
           <FaExternalLinkAlt /> Live Demo

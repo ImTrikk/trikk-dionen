@@ -180,20 +180,20 @@ export const ProjectsData: Projects[] = [
  ],
  role: "Full Stack Developer",
  },
- {
- id: 8,
- title: "Speciefy",
- description:
-  "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
- img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
- github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
- demo_url: "",
- stacks: [
-  { name: "ReactJS", logo: reactIcon },
-  { name: "TensorFlow", logo: tensorflowIcon },
- ],
- role: "AI Developer",
- },
+ // {
+ // id: 8,
+ // title: "Speciefy",
+ // description:
+ //  "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
+ // img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ // github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
+ // demo_url: "",
+ // stacks: [
+ //  { name: "ReactJS", logo: reactIcon },
+ //  { name: "TensorFlow", logo: tensorflowIcon },
+ // ],
+ // role: "AI Developer",
+ // },
  {
  id: 9,
  title: "Archived",
