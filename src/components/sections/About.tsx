@@ -12,6 +12,7 @@ import { certificates } from "@/data/certs";
 import { BiMedal } from "react-icons/bi";
 import AudioVisualizer from "../ui/AudioVisualizer";
 import { IoPlay, IoPause } from "react-icons/io5";
+import { div } from "framer-motion/client";
 
 export default function About() {
  const [achievements, setAchievements] = useState(false);
@@ -43,12 +44,10 @@ export default function About() {
   },
   {
    date: "February 2025 - May 2025",
-   title: "Intern Developer/Programmer | DOST CARAGA",
-   tags: ["Internship", "Developer", "Programmer"],
-   description: `Contributed to the development and improvement of core system features to support project goals and user needs.
-Developed solutions to enhance workflow efficiency, including status-based controls and automated communication features.
-Conducted testing, debugging, and refinement of features to ensure quality and stability across various use cases.
-Collaborated with mentors and team members in an Agile-like environment, participating in regular meetings to report progress and align on deliverables.`,
+   title: "Full Stack Developer/Programmer | DOST CARAGA",
+   tags: ["Internship", "Full Stack Developer", "Programmer"],
+   description:
+    "Contributed to the development and improvement of core system features to support project goals and user needs.\nDeveloped solutions to enhance workflow efficiency, including status-based controls and automated communication features.\nConducted testing, debugging, and refinement of features to ensure quality and stability across various use cases. Collaborated with mentors and team members in an Agile-like environment, participating in regular meetings to report progress and align on deliverables.",
   },
   {
    date: "January 2023 - June 2024",
@@ -185,9 +184,9 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.no_exp}{" "}
            <span className="text-xl text-gray-500 font-black">+ Months</span>
           </p>
-            <p className="text-xs mt-2 text-gray-500">
-             hands-on experience in software development and design
-            </p>
+          <p className="text-xs mt-2 text-gray-500">
+           hands-on experience in software development and design
+          </p>
          </CardItem>
          <CardItem
           translateZ={120}
@@ -197,9 +196,10 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.projs}{" "}
            <span className="text-xl text-gray-500 font-black">+ Projects</span>
           </p>
-            <p className="text-xs mt-2 text-gray-500">
-             successfully delivered projects including client work, personal ventures, and academic solutions
-            </p>
+          <p className="text-xs mt-2 text-gray-500">
+           successfully delivered projects including client work, personal
+           ventures, and academic solutions
+          </p>
          </CardItem>
         </div>
        </CardBody>
@@ -246,12 +246,26 @@ Collaborated with mentors and team members in an Agile-like environment, partici
         <p className="font-bold text-lg">{exp.title}</p>
         <div className="flex items-center gap-1">
          {exp.tags.map((tag, index) => (
-          <p key={index} className="text-xs text-gray-600">
-           {tag} |{" "}
-          </p>
+          <motion.div
+           key={index}
+           whileHover={{ scale: 1.05 }}
+           className="px-3 py-1 bg-orange-500/10 border border-orange-500/20 rounded-full"
+          >
+           <p className="text-xs font-medium text-orange-400">{tag}</p>
+          </motion.div>
          ))}
         </div>
-        <p className="text-sm text-gray-300 text-justify">{exp.description}</p>
+        <div className="text-sm text-gray-300">
+         {exp.description
+          .split(". ")
+          .filter(Boolean)
+          .map((point, idx) => (
+           <div key={idx} className="flex items-start gap-2 mb-1 text-justify">
+            <span className="text-green-500 mt-1.5">•</span>
+            <p>{point.trim()}</p>
+           </div>
+          ))}
+        </div>
        </div>
       </motion.div>
      ))}

@@ -64,12 +64,18 @@ export default function Hero() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex items-center gap-1"
+      className="flex items-center gap-3"
      >
-      <FaMapPin size={13} className="text-orange-400 animate-pulse" />
-      <p className="text-sm font-medium text-emerald-400">
-       Butuan City, Philippines
-      </p>
+      <div className="flex items-center gap-1">
+       <FaMapPin size={13} className="text-orange-400 animate-[pulse_1s_ease-in-out_infinite]" />
+       <p className="text-sm font-medium text-emerald-400">
+        Butuan City, Philippines
+       </p>
+      </div>
+      <div className="flex items-center gap-1.5 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+       <div className="w-2 h-2 bg-emerald-500 rounded-full animate-[pulse_0.8s_ease-in-out_infinite]" />
+       <span className="text-xs text-emerald-400">Open for Work</span>
+      </div>
      </motion.div>
      <motion.p
       initial={{ opacity: 0, y: 20 }}
