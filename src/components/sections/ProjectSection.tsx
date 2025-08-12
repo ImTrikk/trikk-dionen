@@ -57,7 +57,7 @@ const ProjectSection: React.FC = () => {
        y: 0,
        transition: { duration: 0.7, delay: index * 0.1 },
       }}
-      className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center hover:bg-green-800/10 hover:border border-green-500/30 transition-all duration-300 p-6 rounded-xl cursor-pointer"
+      className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center hover:bg-green-800/10 border border-gray-400/20  hover:border-green-500/30 transition-all duration-300 p-6 rounded-xl cursor-pointer"
       onClick={() => handleProjectClick(project.id)}
      >
       {/* Image */}

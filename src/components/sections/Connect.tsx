@@ -16,7 +16,7 @@ export default function Connect() {
       whileInView={{ opacity: 1, x: 0, transition: { duration: 0.8 } }}
       className="flex items-center justify-between gap-5"
      >
-      <h1 className="text-xl md:text-4xl text-white font-bold font-integral">
+      <h1 className="md:shrink-0 text-xl md:text-4xl text-white font-bold font-integral drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
        LET <span style={{ fontFamily: "Poppins" }}>'</span>s{" "}
        <span className="text-green-500 font-integral drop-shadow-[0_0_10px_rgba(144,238,144,0.1)]">
         CONNECT{" "}
@@ -36,8 +36,8 @@ export default function Connect() {
       whileInView={{ y: 0, opacity: 1, transition: { duration: 0.5 } }}
       className="text-sm md:text-xl text-white font-integral md:w-[500px] mt-5 text-center"
      >
-      Let <span>'</span>s connect and collaborate on projects, ideas, and more.
-      I am always open to new opportunities and challenges.
+      Open to collaborations and new opportunities. Ready to transform ideas
+      into reality.
      </motion.p>
      <motion.div
       initial={{ opacity: 0, y: 100 }}

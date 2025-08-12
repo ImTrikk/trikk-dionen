@@ -60,7 +60,7 @@ Collaborated with mentors and team members in an Agile-like environment, partici
  ];
 
  const exp_projs = {
-  no_exp: 15,
+  no_exp: 13,
   projs: 12,
  };
 
@@ -185,9 +185,9 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.no_exp}{" "}
            <span className="text-xl text-gray-500 font-black">+ Months</span>
           </p>
-          <p className="text-xs mt-2 text-gray-500">
-           relevant design and development experience
-          </p>
+            <p className="text-xs mt-2 text-gray-500">
+             hands-on experience in software development and design
+            </p>
          </CardItem>
          <CardItem
           translateZ={120}
@@ -197,9 +197,9 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.projs}{" "}
            <span className="text-xl text-gray-500 font-black">+ Projects</span>
           </p>
-          <p className="text-xs mt-2 text-gray-500">
-           completed final projects, personal projects, and commissions.
-          </p>
+            <p className="text-xs mt-2 text-gray-500">
+             successfully delivered projects including client work, personal ventures, and academic solutions
+            </p>
          </CardItem>
         </div>
        </CardBody>

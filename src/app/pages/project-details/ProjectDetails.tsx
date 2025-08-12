@@ -169,14 +169,14 @@ export default function ProjectDetails() {
       </div> */}
      </section>
     </div>
-    <section>
+    {/* <section>
      <h1 className="mt-5 text-xl font-bold ">Details</h1>
      <hr className="mt-1 border-t-[0.5px] border-white/20" />
      <h1 className="mt-5 text-xl font-bold ">Problem</h1>
      <hr className="mt-1 border-t-[0.5px] border-white/20" />
      <h1 className="mt-5 text-xl font-bold ">Solution</h1>
      <hr className="mt-1 border-t-[0.5px] border-white/20" />
-    </section>
+    </section> */}
    </div>
   </main>
  );
