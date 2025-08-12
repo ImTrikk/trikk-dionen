@@ -60,7 +60,7 @@ Collaborated with mentors and team members in an Agile-like environment, partici
  ];
 
  const exp_projs = {
-  no_exp: 15,
+  no_exp: 13,
   projs: 12,
  };
 
@@ -148,30 +148,31 @@ Collaborated with mentors and team members in an Agile-like environment, partici
          translateZ="80"
          className="text-sm text-gray-400 font-regular text-justify leading-6"
         >
-         Hi, I'm Patrick (or Trikk for short)! I'm a software engineer
-         specializing in web development and desktop development. I'm passionate
-         about creating digital solutions that are both functional and visually
-         appealing. Always eager to learn new technologies, I strive to
-         continually improve my skills to deliver the best results for my
-         clients.
+         I'm Patrick Dionen, a recent graduate with a Bachelor of Science in
+         Information Technology from Caraga State University. As an aspiring
+         software engineer, I focus on web and desktop development, with a
+         strong interest in creating digital solutions that are both functional
+         and visually engaging.
         </CardItem>
         <CardItem
          translateZ="100"
          className="text-sm text-gray-400 font-regular text-justify leading-6 mt-3"
         >
-         Just recently graduated with the degree of Bachelor of Science in
-         Information Technology at Caraga State University, with hands-on
-         experience in developing dynamic web applications and crafting user
-         interfaces. Focused on integrating functionality and design to create
-         efficient and user-friendly digital solutions.
+         Throughout my academic journey, I gained practical experience in
+         building dynamic web applications and designing intuitive user
+         interfaces. I take pride in combining clean design principles with
+         efficient, scalable code to develop user-friendly and
+         performance-driven products.
         </CardItem>
 
         <CardItem
          translateZ="120"
          className="text-sm text-gray-400 font-medium text-justify mt-3 leading-6"
         >
-         When I'm not at my desk, I enjoy keeping my mind sharp and connecting
-         with nature through physical activities like early morning runs.
+         I’m committed to continuous learning and always open to exploring new
+         technologies to enhance my capabilities as a developer. Outside of
+         tech, I enjoy early morning runs and outdoor activities to stay
+         balanced and motivated.
         </CardItem>
        </CardItem>
        <CardBody className="w-full">
@@ -184,9 +185,9 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.no_exp}{" "}
            <span className="text-xl text-gray-500 font-black">+ Months</span>
           </p>
-          <p className="text-xs mt-2 text-gray-500">
-           relevant design and development experience
-          </p>
+            <p className="text-xs mt-2 text-gray-500">
+             hands-on experience in software development and design
+            </p>
          </CardItem>
          <CardItem
           translateZ={120}
@@ -196,9 +197,9 @@ Collaborated with mentors and team members in an Agile-like environment, partici
            {exp_projs.projs}{" "}
            <span className="text-xl text-gray-500 font-black">+ Projects</span>
           </p>
-          <p className="text-xs mt-2 text-gray-500">
-           completed final projects, personal projects, and commissions.
-          </p>
+            <p className="text-xs mt-2 text-gray-500">
+             successfully delivered projects including client work, personal ventures, and academic solutions
+            </p>
          </CardItem>
         </div>
        </CardBody>

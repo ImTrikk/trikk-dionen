@@ -104,7 +104,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/retail-store-visualization.git",
  demo_url: "https://retail-visualify.streamlit.app/",
  stacks: [{ name: "Python", logo: pythonIcon }],
- role: "Data Scientist",
+ role: "Full Stack Developer",
  },
  {
  id: 3,
@@ -142,7 +142,7 @@ export const ProjectsData: Projects[] = [
   { name: "Python", logo: pythonIcon },
   { name: "PyTorch", logo: pytorchIcon },
  ],
- role: "AI Developer",
+ role: "Full Stack Developer",
  },
  {
  id: 5,
@@ -153,7 +153,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/parago.git",
  demo_url: "https://parago.vercel.app/",
  stacks: [{ name: "ReactJS", logo: reactIcon }],
- role: "Frontend Developer",
+ role: "Full Stack Developer",
  },
  {
  id: 6,
@@ -164,7 +164,7 @@ export const ProjectsData: Projects[] = [
  github_url: "https://github.com/ImTrikk/do-track-backend.git",
  demo_url: "",
  stacks: [{ name: "ReactJS", logo: reactIcon }],
- role: "Frontend Developer",
+ role: "Backend Developer",
  },
  {
  id: 7,
@@ -180,20 +180,20 @@ export const ProjectsData: Projects[] = [
  ],
  role: "Full Stack Developer",
  },
- {
- id: 8,
- title: "Speciefy",
- description:
-  "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
- img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
- github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
- demo_url: "",
- stacks: [
-  { name: "ReactJS", logo: reactIcon },
-  { name: "TensorFlow", logo: tensorflowIcon },
- ],
- role: "AI Developer",
- },
+ // {
+ // id: 8,
+ // title: "Speciefy",
+ // description:
+ //  "Speciefy is a web application that uses TensorFlow to identify species from images. Simply drag and drop a picture to instantly recognize the species and access detailed information about it.",
+ // img_url: [foodiego_1, foodiego_2, foodiego_3, foodiego_4, foodiego_5],
+ // github_url: "https://github.com/ImTrikk/Specie-Identifier.git",
+ // demo_url: "",
+ // stacks: [
+ //  { name: "ReactJS", logo: reactIcon },
+ //  { name: "TensorFlow", logo: tensorflowIcon },
+ // ],
+ // role: "AI Developer",
+ // },
  {
  id: 9,
  title: "Archived",
@@ -201,7 +201,8 @@ export const ProjectsData: Projects[] = [
   "Archived is an open platform where users can anonymously read short sentences or paragraphs shared by others, and also post their own anonymous messages, fostering a space for free expression and connection.",
  img_url: [archived_1, archived_2, archived_3, archived_4],
  github_url: "https://github.com/ImTrikk/Archived.git",
- demo_url: "https://archived-lemon.vercel.app/",
+ // demo_url: "https://archived-lemon.vercel.app/",
+ demo_url: "",
  stacks: [
   { name: "ReactJS", logo: reactIcon },
   { name: "NodeJS", logo: nodeIcon },
@@ -222,7 +223,8 @@ export const ProjectsData: Projects[] = [
   simplichat_5,
  ],
  github_url: "https://github.com/ImTrikk/Simpli-Chat.git",
- demo_url: "https://simpli-chat.vercel.app/",
+ // demo_url: "https://simpli-chat.vercel.app/",
+ demo_url: "",
  stacks: [{ name: "ReactJS", logo: reactIcon }],
  role: "Frontend Developer",
  },
