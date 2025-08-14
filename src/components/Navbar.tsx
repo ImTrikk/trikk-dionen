@@ -10,17 +10,15 @@ export default function Navbar() {
  const [showContent, setShowContent] = useState<boolean>(false);
  const [isMobile, setIsMobile] = useState<boolean>(false);
 
- const handleNav = (data: string) => {
+ // Scroll to section without changing hash in URL
+ const scrollToSection = (data: string) => {
   setIsActive(data); // Update active state
 
-  // Scroll to the target section
   const target = document.getElementById(data.toLowerCase().replace(" ", "-"));
   if (target) {
    target.scrollIntoView({ behavior: "smooth" });
   }
-
-  // Update hash
-  window.location.hash = data.toLowerCase().replace(" ", "-");
+  // Do NOT update window.location.hash
  };
 
  useEffect(() => {
@@ -85,7 +83,7 @@ export default function Navbar() {
        if (window.innerWidth < 768) {
         showMobile(); // Show mobile content for screens smaller than md
        } else {
-        handleNav("HOME"); // Navigate to the hero section for md and larger screens
+        scrollToSection("HOME"); // Scroll to the hero section for md and larger screens
        }
       }}
       className="glitch font-integral text-[5px] shrink-0 cursor-pointer"
@@ -110,7 +108,7 @@ export default function Navbar() {
       >
        {links.map((data, id) => (
         <li
-         onClick={() => handleNav(data)}
+         onClick={() => scrollToSection(data)}
          key={id}
          className={`text-[8px] sm:text-[10px] list-none cursor-pointer px-2 md:px-4 py-2 ${
           isActive === data
@@ -123,7 +121,7 @@ export default function Navbar() {
        ))}
 
        <button
-        onClick={() => handleNav("CONTACT")}
+        onClick={() => scrollToSection("CONTACT")}
         className={`${
          isActive === "CONTACT"
           ? "bg-green-500 text-white"
@@ -148,7 +146,10 @@ export default function Navbar() {
       <div className="mx-5 w-full flex flex-col justify-center gap-2 bg-black/10 backdrop-blur-md p-4 rounded-2xl border border-gray-700 text-center">
        {links.map((data, id) => (
         <li
-         onClick={() => handleNav(data)}
+         onClick={() => {
+          scrollToSection(data);
+          setIsMobile(false);
+         }}
          key={id}
          className={`text-sm list-none cursor-pointer px-2 md:px-4 py-2 ${
           isActive === data
@@ -161,7 +162,10 @@ export default function Navbar() {
        ))}
        <div className="flex items-center justify-center">
         <button
-         onClick={() => handleNav("CONTACT")}
+         onClick={() => {
+          scrollToSection("CONTACT");
+          setIsMobile(false);
+         }}
          className={`${
           isActive === "CONTACT"
            ? "bg-green-500 text-white"
