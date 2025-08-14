@@ -23,7 +23,7 @@ export default function Navbar() {
 
  useEffect(() => {
   const handleScroll = () => {
-   // Detect which section is currently in view
+   let foundActive = false;
    links.forEach((section) => {
     const element = document.getElementById(
      section.toLowerCase().replace(" ", "-")
@@ -34,9 +34,21 @@ export default function Navbar() {
       rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
      if (isInView) {
       setIsActive(section);
+      foundActive = true;
      }
     }
    });
+
+   // Check CONTACT section
+   const contactElement = document.getElementById("contact");
+   if (contactElement && !foundActive) {
+    const rect = contactElement.getBoundingClientRect();
+    const isContactInView =
+     rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
+    if (isContactInView) {
+     setIsActive("CONTACT");
+    }
+   }
   };
 
   window.addEventListener("scroll", handleScroll);
